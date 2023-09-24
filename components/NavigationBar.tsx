@@ -15,19 +15,19 @@ export default function NavigationBar() {
   const cartProducts = useSelector((state: any) => state.cartProducts);
 
   return (
-    <Navbar bg="light" expand="lg" className="bg-white py-4 fixed-top">
+    <Navbar bg="light" expand="lg" className="bg-black py-4 fixed-top">
       <Container>
         <Link
           href="/"
           className="navbar-brand order-lg-0"
         >
           <Image
-            src="/logo1.png"
+            src="/logo1-2.png"
             alt="contact"
             width="1000"
             height="30"
           />
-          <span id="brand-name">Philippine Card Marketplace</span>
+          <span className="text-white" id="brand-name"> Philippine Card Marketplace</span>
           <span id="brand-name2">PCM</span>
         </Link>
 

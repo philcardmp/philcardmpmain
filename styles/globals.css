@@ -3,10 +3,14 @@
   --lg-font: 'Kaisei Tokumin', serif;
   --sm-font: 'Poppins', sans-serif;
   --general: gray !important;
+
 }
+
+
 body {
   font-family: var(--sm-font);
   --general: gray !important;
+    
 }
 .btn:not(.nav-btns .btn){
   background-color: white;
@@ -36,9 +40,10 @@ body {
   width: 30px;
 }
 #brand-name{
-  letter-spacing: 2px;
-  font-family: var(--lg-font);
-  font-size: 18px;
+    letter-spacing: 1px;
+    font-family: var(--lg-font);
+    font-size: 18px;
+    font-family: "Rockwell", sans-serif; /* Change font to Colombo */
 }
 .navbar{
  box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1); 
