@@ -20,7 +20,7 @@ export default function AboutUs() {
     <>
       <Head>
         <title>Philippine Card Marketplace</title>
-        <link rel="icon" href="/logo.png" />
+        <link rel="icon" href="/main.png" />
       </Head>
 
       <NavigationBar />
@@ -43,7 +43,7 @@ export default function AboutUs() {
 
             <div className="col-lg-6 order-lg-0">
               <Image
-                src="/banner.gif"
+                src="/banner.png"
                 alt="about-us"
                 width="500"
                 height="1000"
@@ -132,7 +132,7 @@ export default function AboutUs() {
             </div>
             <div className="col-lg-6">
               <Image
-                src="/6.png"
+                src="/logo2.png"
                 alt="contact"
                 width="1000"
                 height="400"

@@ -49,7 +49,7 @@ export default function NavigationBar() {
             <Form.Control
               type="search"
               className="w-100"
-              placeholder="Search your card"
+              placeholder="Search a card"
               aria-label="Search"
             />
             <div className="nav-btns">

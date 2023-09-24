@@ -48,6 +48,14 @@ export default function Footer() {
                   <FontAwesomeIcon icon={faChevronRight} height={20} /> About Us
                 </Link>
               </li>
+              <li className="my-3">
+                <Link
+                    href="/seller"
+                    className="text-white text-decoration-none text-muted"
+                >
+                  <FontAwesomeIcon icon={faChevronRight} height={20} /> Sell with Us
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="col-md-6 col-lg-3">
