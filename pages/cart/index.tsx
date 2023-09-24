@@ -68,8 +68,8 @@ export default function Cart() {
   return (
     <div>
       <Head>
-        <title>Talasulod Jewelry</title>
-        <link rel="icon" href="/logo.png" />
+        <title>Philippine Card Marketplace</title>
+        <link rel="icon" href="/logo1.png" />
       </Head>
 
       <NavigationBar />
@@ -189,7 +189,7 @@ export default function Cart() {
                   <br />
                   For faster transaction please message us here:
                   <br />
-                  <a href="https://www.facebook.com/profile.php?id=100090652545502&mibextid=LQQJ4d">Talasulod Facebook Page</a>
+                  <a href="https://www.facebook.com/phcardsmp">Philippine Card Marketplace</a>
                 </Modal.Body>
                 <Modal.Footer>
                   <Button onClick={closeModal}>Close</Button>

@@ -19,13 +19,14 @@ export default function Footer() {
         <div className="row text-white g-4">
           <div className="col-md-6 col-lg-3">
             <Link href="/" className="brand text-decoration-none text-white">
-              Talasulod
+              Philippine Card Marketplace
             </Link>
             <p className="text-white mt-3 text-muted">
-              We are currently located at Yumul Street Mining, Angeles City
-              Pampanga. We offer a variety gold accessories, from necklace,
-              braclets, rings, etc. We do the delivery every saturday around
-              Pampanga but expedited/express shipping is also an option.
+              We are currently located at Angeles City
+              Pampanga. Feel free to browse the card collections!
+              Have fun collecting and earning at the same time.
+              Please contact us if you want to sell your cards
+              on our website. Have fun!
             </p>
           </div>
           <div className="col-md-6 col-lg-3">
@@ -55,7 +56,7 @@ export default function Footer() {
               <span className="me-3">
                 <FontAwesomeIcon icon={faEnvelope} height={20} />
               </span>
-              <span className="fw-light">talasulodjewelry@gmail.com</span>
+              <span className="fw-light">philcardmp@gmail.com</span>
             </div>
             <div className="d-flex justify-content-start align-items-start my-2 text-muted">
               <span className="me-3">
@@ -77,7 +78,7 @@ export default function Footer() {
             <ul className="list-unstyled d-flex">
               <li className="text-decoration-none text-muted fs-4 me-4">
                 <Link
-                  href="https://www.facebook.com/profile.php?id=100090652545502"
+                  href="https://www.facebook.com/phcardsmp"
                   target="_blank"
                   className="text-white text-decoration-none text-muted"
                 >
@@ -90,7 +91,7 @@ export default function Footer() {
               </li>
               <li className="text-decoration-none text-muted fs-4 me-4">
                 <Link
-                  href="https://www.instagram.com/talasuludjewelry/?igshid=YmMyMTA2M2Y%3D&fbclid=IwAR24RGG3au3VSdINnRFQiXvGPPC3hBw467iTkT7drzaWoakfi89tDLbC6ro"
+                  href="https://www.instagram.com/jowel.castaneda"
                   target="_blank"
                   className="text-white text-decoration-none text-muted"
                 >
@@ -103,7 +104,7 @@ export default function Footer() {
               </li>
               <li className="text-decoration-none text-muted fs-4 me-4">
                 <Link
-                  href="https://www.tiktok.com/@talasuludjewelry?_t=8aTLQ69iHt1&_r=1&fbclid=IwAR2AD-3O5Hfq1XvO3247Kx3XeNDKvqhUGpmNfyojYNmeuIPKJAvI3gRD5tI"
+                  href="www.tiktok.com/@philcardmp.breaks"
                   target="_blank"
                   className="text-white text-decoration-none text-muted"
                 >
