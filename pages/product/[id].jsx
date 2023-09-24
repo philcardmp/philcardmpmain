@@ -19,34 +19,34 @@ const Product = () => {
   const router = useRouter();
   const { id } = router.query;
   const [showModal, setShowModal] = useState(false);
-  const [isLike, setIsLike] = useState(false);
+  //const [isLike, setIsLike] = useState(false);
   const { addToCart } = bindActionCreators(actionCart, dispatch);
 
   const [productList] = useCollection(
     db.collection("products").orderBy("timestamp", "desc")
   );
 
-  const getLike = (product) => {
-    if (!isLike) {
-      db.collection("products")
-        .doc(product.id)
-        .update({
-          ...product.data,
-          likes: product.data().likes + 1,
-        });
-
-      setIsLike(true);
-    } else {
-      db.collection("products")
-        .doc(product.id)
-        .update({
-          ...product.data,
-          likes: product.data().likes - 1,
-        });
-
-      setIsLike(false);
-    }
-  };
+  // const getLike = (product) => {
+  //   if (!isLike) {
+  //     db.collection("products")
+  //       .doc(product.id)
+  //       .update({
+  //         ...product.data,
+  //         likes: product.data().likes + 1,
+  //       });
+  //
+  //     setIsLike(true);
+  //   } else {
+  //     db.collection("products")
+  //       .doc(product.id)
+  //       .update({
+  //         ...product.data,
+  //         likes: product.data().likes - 1,
+  //       });
+  //
+  //     setIsLike(false);
+  //   }
+  // };
 
   const closeModal = (e) => {
     e.preventDefault();
@@ -104,18 +104,18 @@ const Product = () => {
               <p className="col-6 display-6 lead fw-bolder">
                 ₱ {parseInt(item.data().price).toLocaleString()}
               </p>
-              <p
-                className="col-6 lead fw-bolder text-secondary d-flex align-items-center"
-                role="button"
-                onClick={() => getLike(item)}
-              >
-                <FontAwesomeIcon
-                  icon={faStar}
-                  height={35}
-                  color={isLike ? "gold" : "grey"}
-                />
-                {item.data().likes}Likes
-              </p>
+              {/*<p*/}
+              {/*  className="col-6 lead fw-bolder text-secondary d-flex align-items-center"*/}
+              {/*  role="button"*/}
+              {/*  onClick={() => getLike(item)}*/}
+              {/*>*/}
+              {/*  <FontAwesomeIcon*/}
+              {/*    icon={faStar}*/}
+              {/*    height={35}*/}
+              {/*    color={isLike ? "gold" : "grey"}*/}
+              {/*  />*/}
+              {/*  {item.data().likes}Likes*/}
+              {/*</p>*/}
             </div>
 
             <p className="lead">{item.data().description}</p>
@@ -136,8 +136,8 @@ const Product = () => {
   return (
     <div className="max-w-7xl mx-auto">
       <Head>
-        <title>Talasulod Jewelry</title>
-        <link rel="icon" href="/logo.png" />
+        <title>Philippine Card Marketplace</title>
+        <link rel="icon" href="/logo1.png" />
       </Head>
 
       <main>
@@ -150,10 +150,10 @@ const Product = () => {
         <br />
         <Modal show={showModal}>
           <Modal.Header>
-            <Modal.Title className="text-dark">Congratulation!</Modal.Title>
+            <Modal.Title className="text-dark">Congratulations!</Modal.Title>
           </Modal.Header>
           <Modal.Body className="text-dark">
-            ⭐ Your product has been added to your cart!
+            ⭐ The card has been added to your cart!
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={closeModal}>Close</Button>
