@@ -13,15 +13,15 @@ body {
     
 }
 .btn:not(.nav-btns .btn){
-  background-color: white;
-  color: rgb(200, 165, 112);
+  background-color: whitesmoke;
+  color: rgb(1, 27, 69);
   padding: 10px 28px;
   border-radius: 25px;
-  border: 1px solid rgb(200, 165, 112);
+  border: 1px solid rgb(0, 0, 0);
 }
 .btn:not(.nav-btns .btn):hover{
-  background: rgb(200, 165, 112);
-  color: black;
+  background: rgb(2, 37, 94);
+  color: white;
   border: var(--general);
 }
 .title h2::before{
@@ -118,8 +118,8 @@ body {
   border-color: var(--general) !important;
 }
 .active-tab {
-  background: rgb(200, 165, 112) !important;
-  color: black !important;
+  background: rgb(1, 27, 69) !important;
+  color: white !important;
   border: var(--general) !important;
 }
 .collection-img span{

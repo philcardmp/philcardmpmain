@@ -38,7 +38,7 @@ export default function Collection() {
   const addProductToCart = (product) => {
     addToCart(product);
 
-    toast.success(` ⭐ ${product.productName} has been added to your cart!`, {
+    toast.success(` ${product.productName} has been added to your cart! ⭐`, {
       position: "top-center",
       autoClose: 3000,
       hideProgressBar: false,
@@ -51,8 +51,8 @@ export default function Collection() {
 
   const renderCollectionList = () => {
     return productList?.docs
-      .filter((product) => product.data().type === "REGULAR")
-      .filter((product) => product.data().filter === activeFilter)
+      // .filter((product) => product.data().type === "REGULAR")
+      // .filter((product) => product.data().filter === activeFilter)
       .map((item) => (
         <div className="col-md-6 col-lg-4 p-2" key={item.id}>
           <div className="collection-img position-relative d-flex justify-content-center align-items-center">
@@ -114,7 +114,15 @@ export default function Collection() {
               }`}
               onClick={() => setActiveFilter("AUTO")}
             >
-              AUTO
+              ATL
+            </button>
+            <button
+                className={`btn m-2 fw-bold ${
+                    activeFilter === "RINGS" && "active-tab"
+                }`}
+                onClick={() => setActiveFilter("RINGS")}
+            >
+              BKN
             </button>
             <button
               className={`btn m-2 fw-bold ${
@@ -122,7 +130,7 @@ export default function Collection() {
               }`}
               onClick={() => setActiveFilter("RINGS")}
             >
-              RINGS
+              BOS
             </button>
             <button
               className={`btn m-2 fw-bold ${
@@ -130,7 +138,7 @@ export default function Collection() {
               }`}
               onClick={() => setActiveFilter("EARRINGS")}
             >
-              EARRINGS
+              CHA
             </button>
             <button
               className={`btn m-2 fw-bold ${
@@ -138,7 +146,207 @@ export default function Collection() {
               }`}
               onClick={() => setActiveFilter("BRACELETS")}
             >
-              BRACELETS
+              CHI
+            </button>
+            <button
+                className={`btn m-2 fw-bold ${
+                    activeFilter === "BRACELETS" && "active-tab"
+                }`}
+                onClick={() => setActiveFilter("BRACELETS")}
+            >
+              CLE
+            </button>
+            <button
+                className={`btn m-2 fw-bold ${
+                    activeFilter === "BRACELETS" && "active-tab"
+                }`}
+                onClick={() => setActiveFilter("BRACELETS")}
+            >
+              DAL
+            </button>
+            <button
+                className={`btn m-2 fw-bold ${
+                    activeFilter === "BRACELETS" && "active-tab"
+                }`}
+                onClick={() => setActiveFilter("BRACELETS")}
+            >
+              DEN
+            </button>
+            <button
+                className={`btn m-2 fw-bold ${
+                    activeFilter === "BRACELETS" && "active-tab"
+                }`}
+                onClick={() => setActiveFilter("BRACELETS")}
+            >
+              DET
+            </button>
+            <button
+                className={`btn m-2 fw-bold ${
+                    activeFilter === "BRACELETS" && "active-tab"
+                }`}
+                onClick={() => setActiveFilter("BRACELETS")}
+            >
+              GSW
+            </button>
+            <button
+                className={`btn m-2 fw-bold ${
+                    activeFilter === "BRACELETS" && "active-tab"
+                }`}
+                onClick={() => setActiveFilter("BRACELETS")}
+            >
+              HOU
+            </button>
+            <button
+                className={`btn m-2 fw-bold ${
+                    activeFilter === "BRACELETS" && "active-tab"
+                }`}
+                onClick={() => setActiveFilter("BRACELETS")}
+            >
+              IND
+            </button>
+            <button
+                className={`btn m-2 fw-bold ${
+                    activeFilter === "BRACELETS" && "active-tab"
+                }`}
+                onClick={() => setActiveFilter("BRACELETS")}
+            >
+              LAC
+            </button>
+            <button
+                className={`btn m-2 fw-bold ${
+                    activeFilter === "BRACELETS" && "active-tab"
+                }`}
+                onClick={() => setActiveFilter("BRACELETS")}
+            >
+              LAL
+            </button>
+            <button
+                className={`btn m-2 fw-bold ${
+                    activeFilter === "BRACELETS" && "active-tab"
+                }`}
+                onClick={() => setActiveFilter("BRACELETS")}
+            >
+              MEM
+            </button>
+            <button
+                className={`btn m-2 fw-bold ${
+                    activeFilter === "BRACELETS" && "active-tab"
+                }`}
+                onClick={() => setActiveFilter("BRACELETS")}
+            >
+              MIA
+            </button>
+            <button
+                className={`btn m-2 fw-bold ${
+                    activeFilter === "BRACELETS" && "active-tab"
+                }`}
+                onClick={() => setActiveFilter("BRACELETS")}
+            >
+              MIL
+            </button>
+            <button
+                className={`btn m-2 fw-bold ${
+                    activeFilter === "BRACELETS" && "active-tab"
+                }`}
+                onClick={() => setActiveFilter("BRACELETS")}
+            >
+              MIN
+            </button>
+            <button
+                className={`btn m-2 fw-bold ${
+                    activeFilter === "BRACELETS" && "active-tab"
+                }`}
+                onClick={() => setActiveFilter("BRACELETS")}
+            >
+              NOP
+            </button>
+            <button
+                className={`btn m-2 fw-bold ${
+                    activeFilter === "BRACELETS" && "active-tab"
+                }`}
+                onClick={() => setActiveFilter("BRACELETS")}
+            >
+              NYK
+            </button>
+            <button
+                className={`btn m-2 fw-bold ${
+                    activeFilter === "BRACELETS" && "active-tab"
+                }`}
+                onClick={() => setActiveFilter("BRACELETS")}
+            >
+              OKC
+            </button>
+            <button
+                className={`btn m-2 fw-bold ${
+                    activeFilter === "BRACELETS" && "active-tab"
+                }`}
+                onClick={() => setActiveFilter("BRACELETS")}
+            >
+              ORL
+            </button>
+            <button
+                className={`btn m-2 fw-bold ${
+                    activeFilter === "BRACELETS" && "active-tab"
+                }`}
+                onClick={() => setActiveFilter("BRACELETS")}
+            >
+              PHI
+            </button>
+            <button
+                className={`btn m-2 fw-bold ${
+                    activeFilter === "BRACELETS" && "active-tab"
+                }`}
+                onClick={() => setActiveFilter("BRACELETS")}
+            >
+              PHO
+            </button>
+            <button
+                className={`btn m-2 fw-bold ${
+                    activeFilter === "BRACELETS" && "active-tab"
+                }`}
+                onClick={() => setActiveFilter("BRACELETS")}
+            >
+              POR
+            </button>
+            <button
+                className={`btn m-2 fw-bold ${
+                    activeFilter === "BRACELETS" && "active-tab"
+                }`}
+                onClick={() => setActiveFilter("BRACELETS")}
+            >
+              SAC
+            </button>
+            <button
+                className={`btn m-2 fw-bold ${
+                    activeFilter === "BRACELETS" && "active-tab"
+                }`}
+                onClick={() => setActiveFilter("BRACELETS")}
+            >
+              SAS
+            </button>
+            <button
+                className={`btn m-2 fw-bold ${
+                    activeFilter === "BRACELETS" && "active-tab"
+                }`}
+                onClick={() => setActiveFilter("BRACELETS")}
+            >
+              TOR
+            </button>
+            <button
+                className={`btn m-2 fw-bold ${
+                    activeFilter === "BRACELETS" && "active-tab"
+                }`}
+                onClick={() => setActiveFilter("BRACELETS")}
+            >
+              UTH
+            </button>
+            <button
+                className={`btn m-2 fw-bold ${
+                    activeFilter === "BRACELETS" && "active-tab"
+                }`}
+                onClick={() => setActiveFilter("BRACELETS")}
+            >
+              WAS
             </button>
           </div>
           <div className="collection-list row mt-4 gx-0 gy-3">

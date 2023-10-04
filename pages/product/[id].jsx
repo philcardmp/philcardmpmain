@@ -119,6 +119,7 @@ const Product = () => {
             </div>
 
             <p className="lead">{item.data().description}</p>
+            <p>PCM ID: 00-0000</p>
             <button
               className="btn btn-outline-dark px-4 py-2"
               onClick={() => addProductToCart(item.data())}
