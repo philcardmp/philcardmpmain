@@ -14,14 +14,14 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-dark py-5">
+    <footer className="footer-bg py-5">
       <div className="container">
         <div className="row text-white g-4">
           <div className="col-md-6 col-lg-3">
-            <Link href="/" className="brand text-decoration-none text-white">
+            <Link href="/" className="brand text-decoration-none text-black">
               Philippine Card Marketplace
             </Link>
-            <p className="text-white mt-3 text-muted">
+            <p className="text-footer mt-3 ">
               We are currently located at Angeles City
               Pampanga. Feel free to browse the card collections!
               Have fun collecting and earning at the same time.
@@ -30,12 +30,12 @@ export default function Footer() {
             </p>
           </div>
           <div className="col-md-6 col-lg-3">
-            <h5 className="fw-light">Links</h5>
+            <h5 className="fw-light text-black">Links</h5>
             <ul className="list-unstyled">
               <li className="my-3">
                 <Link
                   href="/"
-                  className="text-white text-decoration-none text-muted"
+                  className="text-black text-decoration-none "
                 >
                   <FontAwesomeIcon icon={faChevronRight} height={20} /> Home
                 </Link>
@@ -43,7 +43,7 @@ export default function Footer() {
               <li className="my-3">
                 <Link
                   href="/about-us"
-                  className="text-white text-decoration-none text-muted"
+                  className="text-black text-decoration-none"
                 >
                   <FontAwesomeIcon icon={faChevronRight} height={20} /> About Us
                 </Link>
@@ -51,7 +51,7 @@ export default function Footer() {
               <li className="my-3">
                 <Link
                     href="/seller"
-                    className="text-white text-decoration-none text-muted"
+                    className="text-black text-decoration-none"
                 >
                   <FontAwesomeIcon icon={faChevronRight} height={20} /> Sell with Us
                 </Link>
@@ -59,18 +59,18 @@ export default function Footer() {
             </ul>
           </div>
           <div className="col-md-6 col-lg-3">
-            <h5 className="fw-light mb-3">Contact Us</h5>
+            <h5 className="fw-light text-black mb-3">Contact Us</h5>
             <div className="d-flex justify-content-start align-items-start my-2 text-muted">
               <span className="me-3">
                 <FontAwesomeIcon icon={faEnvelope} height={20} />
               </span>
-              <span className="fw-light">philcardmp@gmail.com</span>
+              <span className="fw-light text-black">philcardmp@gmail.com</span>
             </div>
             <div className="d-flex justify-content-start align-items-start my-2 text-muted">
               <span className="me-3">
                 <FontAwesomeIcon icon={faMapMarked} height={20} />
               </span>
-              <span className="fw-light">
+              <span className="fw-light text-black">
                 Angeles City, Pampanga Philippines
               </span>
             </div>
@@ -78,11 +78,11 @@ export default function Footer() {
               <span className="me-3">
                 <FontAwesomeIcon icon={faPhone} height={20} />
               </span>
-              <span className="fw-light">0997 720 0248</span>
+              <span className="fw-light text-black">0997 720 0248</span>
             </div>
           </div>
           <div className="col-md-6 col-lg-3">
-            <h5 className="fw-light mb-3">Follow Us</h5>
+            <h5 className="fw-light mb-3 text-black">Follow Us</h5>
             <ul className="list-unstyled d-flex">
               <li className="text-decoration-none text-muted fs-4 me-4">
                 <Link

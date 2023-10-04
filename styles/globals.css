@@ -148,6 +148,23 @@ body {
   min-height: 40vh;
 }
 
+/* <!-- ---- Footer ---- --> */
+.text-footer {
+    color: black; /* Set the text color to white. */
+    -webkit-text-stroke: .3px gray;
+    font-size: 15px;/* Optionally, add some padding to create space between the text and the border. */
+    z-index: 1;
+}
+.footer-bg {
+    background-image: url("/footer.png");
+    opacity: 1;
+    border: 1px solid black; /* Add a 1px black border around the text. You can adjust the border width as needed. */
+    padding: 5px;
+    z-index: 0;
+}
+
+
+
  /* ---------- Portfolio --------- */
  .portfolio-overlay {
   position: absolute;
@@ -265,3 +282,5 @@ p {
       display: none;
   }
 }
+
+
