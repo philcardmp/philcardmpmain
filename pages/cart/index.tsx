@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Component } from "react";
 import Head from "next/head";
 import NavigationBar from "../../components/NavigationBar";
 import firebase from "firebase/compat/app";
@@ -18,18 +18,25 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { db } from "../../firebase";
 import * as actionCart from "../../redux/actions/actionCart";
 import Image from "next/image";
+import axios from 'axios';
 
 export default function Cart() {
   const [total, setTotal] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const [facebook, setFacebook] = useState("");
   const [invalidFacebook, setinvalidFacebook] = useState(false);
+  const [selectedFile, setSelectedFile] = useState(null); // New state for the selected file
   const validFacebookLink = new RegExp(
     "(?:(?:http|https)://)?(?:www.)?facebook.com/(?:(?:w)*#!/)?(?:pages/)?(?:[?w-]*/)?(?:profile.php?id=(?=d.*))?([w-]*)?"
   );
   const dispatch = useDispatch();
   const cartProducts = useSelector((state: any) => state.cartProducts);
   const { deleteProductCart } = bindActionCreators(actionCart, dispatch);
+
+  // New function to handle file selection
+  const onFileChange = (event) => {
+    setSelectedFile(event.target.files[0]);
+  };
 
   useEffect(() => {
     let value = 0;
@@ -48,6 +55,17 @@ export default function Cart() {
     } else {
       setShowModal(true);
       setinvalidFacebook(false);
+
+      const formData = new FormData();
+      formData.append("myFile", selectedFile, selectedFile.name);
+      formData.append("user", facebook);
+
+      // Now, you can send formData to your backend for processing.
+      axios.post("api/uploadfile", formData).then((response) => {
+        // Handle the response from the server as needed
+        console.log(response.data);
+      });
+
       db.collection("orders").add({
         user: facebook,
         order: cartProducts,
@@ -170,6 +188,17 @@ export default function Cart() {
                   Please enter a valid Facebook link or Phone Number
                 </Form.Control.Feedback>
               </Form.Group>
+
+              {/*file upload function*/}
+              <Form.Group className="mb-3" controlId="formFile">
+                <Form.Label>Upload the screenshot of your payment</Form.Label>
+                <Form.Control
+                    type="file"
+                    accept=".jpg, .jpeg, .png, .pdf" // Add the accepted file types you want
+                    onChange={onFileChange}
+                />
+              </Form.Group>
+
               <button
                 className="btn btn-primary mt-5"
                 disabled={cartProducts.length < 1}
@@ -189,14 +218,13 @@ export default function Cart() {
                   <br />
                   For faster transaction please message us here:
                   <br />
-                  <a href="https://www.facebook.com/phcardsmp">Philippine Card Marketplace</a>
+                  <a target= "_blank" href="https://www.facebook.com/phcardsmp">Philippine Card Marketplace</a>
                 </Modal.Body>
                 <Modal.Footer>
                   <Button onClick={closeModal}>Close</Button>
                 </Modal.Footer>
               </Modal>
               <div className="text-light mb-5">
-                <br />
                 <p>BPI Account: Jowel Castaneda | 000000000</p>
                 <p>GCash Account: Jowel Castaneda | 000000000</p>
               </div>
