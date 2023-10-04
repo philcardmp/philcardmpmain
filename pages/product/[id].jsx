@@ -153,7 +153,7 @@ const Product = () => {
             <Modal.Title className="text-dark">Congratulations!</Modal.Title>
           </Modal.Header>
           <Modal.Body className="text-dark">
-            ⭐ The card has been added to your cart!
+            The card has been added to your cart! ⭐
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={closeModal}>Close</Button>

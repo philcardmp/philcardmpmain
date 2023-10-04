@@ -149,8 +149,8 @@ export default function Cart() {
                 </p>
               </div>
               <div className="text-warning mb-5">
-                <p>Shipping fee will be added upon checkout (for delivery).</p>
-                <p>We also have free delivery (Saturday around Pampanga).</p>
+                <p>Shipping fee will be added upon delivery by the courier.</p>
+                <p>We also have free delivery (Saturday around Angeles, Pampanga).</p>
               </div>
               <Form.Group className="mb-3" controlId="formUsername">
                 <Form.Label>
@@ -195,6 +195,11 @@ export default function Cart() {
                   <Button onClick={closeModal}>Close</Button>
                 </Modal.Footer>
               </Modal>
+              <div className="text-light mb-5">
+                <br />
+                <p>BPI Account: Jowel Castaneda | 000000000</p>
+                <p>GCash Account: Jowel Castaneda | 000000000</p>
+              </div>
             </div>
           </Col>
         </Row>
