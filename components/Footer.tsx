@@ -14,7 +14,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="footer-bg py-5">
+    <footer className="footer-bg py-3">
       <div className="container">
         <div className="row text-white g-4">
           <div className="col-md-6 col-lg-3">

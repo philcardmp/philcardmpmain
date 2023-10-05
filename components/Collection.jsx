@@ -27,7 +27,7 @@ export default function Collection() {
 
   const getStatusColor = (status) => {
     if (status === "sale") {
-      return "bg-warning";
+      return null;
     } else if (status === "sold") {
       return "bg-danger";
     } else if (status === "reserved") {
@@ -98,11 +98,11 @@ export default function Collection() {
   };
 
   return (
-    <section id="collection" className="py-5">
+    <section id="collection" className="py-5" >
       <ToastContainer />
-      <div className="container">
+      <div className="container" >
         <div className="row g-0 mt-5">
-          <div className="d-flex flex-wrap mt-3 justify-content-center">
+          <div className="d-flex flex-wrap mt-lg-3 justify-content-center">
             <h3>NBA Teams</h3>
             <div className="button-container">
             <button

@@ -15,7 +15,7 @@ export default function NavigationBar() {
   const cartProducts = useSelector((state: any) => state.cartProducts);
 
   return (
-    <Navbar bg="light" expand="lg" className="bg-black py-0 fixed-top"> {/*fixed-top*/}
+    <Navbar bg="light" expand="lg" className="bg-black py-0 fixed-top">
       <Container>
         <Link
             href="/"
