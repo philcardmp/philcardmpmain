@@ -77,12 +77,15 @@ export default function Collection() {
               {item.data().status.toUpperCase()}
             </span>
           </div>
-          <div className="text-center">
-            <p className="text-capitalize my-1">{item.data().productName}</p>
+          <div className="text-start mt-3">
             <span className="fw-bold lead fs-4">
               ₱ {parseInt(item.data().price).toLocaleString()}
             </span>
+            <p className="text-capitalize my-1">{item.data().productName}</p>
+
             <br />
+          </div>
+          <div className="text-center mt-3">
             <button
               onClick={() => addProductToCart(item.data())}
               className="btn btn-primary mt-3 w-50"
@@ -99,7 +102,9 @@ export default function Collection() {
       <ToastContainer />
       <div className="container">
         <div className="row g-0 mt-5">
-          <div className="d-flex flex-wrap mt-5 justify-content-center">
+          <div className="d-flex flex-wrap mt-3 justify-content-center">
+            <h3>NBA Teams</h3>
+            <div className="button-container">
             <button
               className={`btn m-2 fw-bold ${
                 activeFilter === "ALL" && "active-tab"
@@ -338,7 +343,7 @@ export default function Collection() {
                 }`}
                 onClick={() => setActiveFilter("BRACELETS")}
             >
-              UTH
+              UTA
             </button>
             <button
                 className={`btn m-2 fw-bold ${
@@ -348,7 +353,9 @@ export default function Collection() {
             >
               WAS
             </button>
+            </div>
           </div>
+          <hr />
           <div className="collection-list row mt-4 gx-0 gy-3">
             {loading ? renderLoading() : renderCollectionList()}
           </div>
