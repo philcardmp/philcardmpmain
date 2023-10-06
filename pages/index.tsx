@@ -10,7 +10,7 @@ const Home: NextPage = () => {
     <div className="max-w-7xl mx-auto">
       <Head>
         <title>Phillipine Card Marketplace</title>
-        <link rel="icon" href="/logo1.png" />
+        <link rel="icon" href="/pcm.png" />
       </Head>
 
       <main>
