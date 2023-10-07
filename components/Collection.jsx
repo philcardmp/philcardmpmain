@@ -12,7 +12,7 @@ import Link from "next/link";
 export default function Collection() {
   const dispatch = useDispatch();
   const { addToCart } = bindActionCreators(actionCart, dispatch);
-  const [activeFilter, setActiveFilter] = useState("NECKLACES");
+  const [activeFilter, setActiveFilter] = useState("EARRINGS");
   const [loading, setLoading] = useState(false);
   const [productList] = useCollection(
     db.collection("products").orderBy("timestamp", "desc")
@@ -98,13 +98,12 @@ export default function Collection() {
   };
 
   return (
-    <section id="collection" className="py-5" >
+    <section id="collection" className="py-lg-4 pt-md-5">
       <ToastContainer />
       <div className="container" >
-        <div className="row g-0 mt-5">
-          <div className="d-flex flex-wrap mt-lg-3 justify-content-center">
-            <h3>NBA Teams</h3>
-            <div className="button-container">
+        <div className="row g-0 mt-0 ">
+          <div className="d-flex flex-wrap mt-lg-2 m-md-5 justify-content-center">
+            <div className="button-container d-lg-none pt-md-5 pt-sm-5 ">
             <button
               className={`btn m-2 fw-bold ${
                 activeFilter === "ALL" && "active-tab"
@@ -115,9 +114,9 @@ export default function Collection() {
             </button>
             <button
               className={`btn m-2 fw-bold ${
-                activeFilter === "AUTO" && "active-tab"
+                activeFilter === "EARRINGS" && "active-tab"
               }`}
-              onClick={() => setActiveFilter("AUTO")}
+              onClick={() => setActiveFilter("EARRINGS")}
             >
               ATL
             </button>
@@ -356,8 +355,49 @@ export default function Collection() {
             </div>
           </div>
           <hr />
-          <div className="collection-list row mt-4 gx-0 gy-3">
-            {loading ? renderLoading() : renderCollectionList()}
+          <div className="col-lg-3 d-lg-block d-none pe-5 py-4">
+            <div className="category-list">
+            {/* Category list sidebar */}
+            <ul className="list-group">
+              <h4>NBA Teams</h4>
+              <li className="list-group-item">Atlanta Hawks</li>
+              <li className="list-group-item">Boston Celtics</li>
+              <li className="list-group-item">Brooklyn Nets</li>
+              <li className="list-group-item">Chicago Bulls</li>
+              <li className="list-group-item">Cleveland Cavaliers</li>
+              <li className="list-group-item">Dallas Mavericks</li>
+              <li className="list-group-item">Denver Nuggets</li>
+              <li className="list-group-item">Detroit Pistons</li>
+              <li className="list-group-item">Golden State Warriors</li>
+              <li className="list-group-item">Houston Rockets</li>
+              <li className="list-group-item">Indiana Pacers</li>
+              <li className="list-group-item">Los Angeles Clippers</li>
+              <li className="list-group-item">Los Angeles Lakers</li>
+              <li className="list-group-item">Memphis Grizzlies</li>
+              <li className="list-group-item">Miami Heat</li>
+              <li className="list-group-item">Milwaukee Bucks</li>
+              <li className="list-group-item">Minnesota Timberwolves</li>
+              <li className="list-group-item">New Orleans Pelicans</li>
+              <li className="list-group-item">New York Knicks</li>
+              <li className="list-group-item">Oklahoma City Thunder</li>
+              <li className="list-group-item">Orlando Magic</li>
+              <li className="list-group-item">Philadelphia 76ers</li>
+              <li className="list-group-item">Phoenix Suns</li>
+              <li className="list-group-item">Portland Trail Blazers</li>
+              <li className="list-group-item">Sacramento Kings</li>
+              <li className="list-group-item">San Antonio Spurs</li>
+              <li className="list-group-item">Toronto Raptors</li>
+              <li className="list-group-item">Utah Jazz</li>
+              <li className="list-group-item">Washington Wizards</li>
+
+              {/* Add more categories as needed */}
+            </ul>
+            </div>
+          </div>
+          <div className="col-lg-9">
+            <div className="collection-list row mt-4 gx-0 gy-3">
+              {loading ? renderLoading() : renderCollectionList()}
+            </div>
           </div>
         </div>
       </div>
