@@ -329,12 +329,14 @@ p {
     border: none; /* Remove list item borders */
     padding: 5px 0; /* Adjust padding for list items */
     font-size: 14px; /* Adjust list item font size */
+    text-align: left;
 }
 
 .list-group-item:hover {
-    background-color: rgb(1, 27, 69); /* Hover background color */
+    background: rgb(2, 37, 94); /* Hover background color */
     color: white;
-    font-weight: bold;
+    font-weight: normal;
     cursor: pointer; /* Change cursor on hover */
+    text-align: left;
 }
 

@@ -63,18 +63,18 @@ const Product = () => {
       <Form.Group controlId="formType" className="w-100 py-3">
         <Form.Select
           aria-label="Default select example"
-          className="fs-3 fw-bold lead border-none"
+          className=" fw-bold lead border-none"
           onChange={(e) => router.push(`/product/${e.target.value}`)}
         >
           {productList?.docs
-            .filter((product) => product.data().type === "REGULAR")
+            .filter((product) => product.data().type === "CARD")
             .map((product) => (
               <option
                 key={product.id}
                 value={product.id}
                 selected={product.data().productName === item.productName}
               >
-                {product.data().productName}
+                {product.data().productName} {product.data().description}
               </option>
             ))}
         </Form.Select>
@@ -96,10 +96,12 @@ const Product = () => {
             />
           </div>
           <div className="col-md-6">
-            <h4 className="text-uppercase text-black-50">
-              {item.data().filter}
-            </h4>
+            {/*<h4 className="text-uppercase text-black-50">*/}
+            {/*  {item.data().filter}*/}
+            {/*</h4>*/}
             {renderName(item.data())}
+
+            <p className="lead">{item.data().productName} {item.data().description}</p>
             <div className="row">
               <p className="col-6 display-6 lead fw-bolder">
                 ₱ {parseInt(item.data().price).toLocaleString()}
@@ -117,9 +119,7 @@ const Product = () => {
               {/*  {item.data().likes}Likes*/}
               {/*</p>*/}
             </div>
-
-            <p className="lead">{item.data().description}</p>
-            <p>PCM ID: 000000 (Auto-generated)</p>
+            <p>{item.data().filter} | PCM ID: {item.data().id}</p>
             <button
               className="btn btn-outline-dark px-4 py-2"
               onClick={() => addProductToCart(item.data())}

@@ -12,7 +12,7 @@ import Link from "next/link";
 export default function Collection() {
   const dispatch = useDispatch();
   const { addToCart } = bindActionCreators(actionCart, dispatch);
-  const [activeFilter, setActiveFilter] = useState("EARRINGS");
+  const [activeFilter, setActiveFilter] = useState("ALL");
   const [loading, setLoading] = useState(false);
   const [productList] = useCollection(
     db.collection("products").orderBy("timestamp", "desc")
@@ -49,9 +49,11 @@ export default function Collection() {
     });
   };
 
+
+
   const renderCollectionList = () => {
     return productList?.docs
-      // .filter((product) => product.data().type === "REGULAR")
+      // .filter((product) => product.data().type === "CARD")
       // .filter((product) => product.data().filter === activeFilter)
       .map((item) => (
         <div className="col-md-6 col-lg-4 p-2" key={item.id}>
@@ -61,8 +63,8 @@ export default function Collection() {
                 <Image
                   src={item.data().postImage}
                   alt={item.data().productName}
-                  width="320"
-                  height="400"
+                  width="280"
+                  height="360"
                 />
               ) : (
                 renderLoading()
@@ -81,14 +83,14 @@ export default function Collection() {
             <span className="fw-bold lead fs-4">
               ₱ {parseInt(item.data().price).toLocaleString()}
             </span>
-            <p className="text-capitalize my-1">{item.data().productName}</p>
-
+            <p className="text-capitalize my-1">{item.data().productName} {item.data().description}</p>
+            <p className="text-capitalize my-1">{item.data().filter}</p>
             <br />
           </div>
-          <div className="text-center mt-3">
+          <div className="text-center mt-1">
             <button
               onClick={() => addProductToCart(item.data())}
-              className="btn btn-primary mt-3 w-50"
+              className="btn btn-primary mt-1 w-50"
             >
               Add to Cart
             </button>
@@ -108,247 +110,247 @@ export default function Collection() {
               className={`btn m-2 fw-bold ${
                 activeFilter === "ALL" && "active-tab"
               }`}
-              onClick={() => setActiveFilter("ALL")}
+              onClick={() => setActiveFilter("ATL")}
             >
               ALL
             </button>
             <button
               className={`btn m-2 fw-bold ${
-                activeFilter === "EARRINGS" && "active-tab"
+                activeFilter === "ATL" && "active-tab"
               }`}
-              onClick={() => setActiveFilter("EARRINGS")}
+              onClick={() => setActiveFilter("ATL")}
             >
               ATL
             </button>
             <button
                 className={`btn m-2 fw-bold ${
-                    activeFilter === "RINGS" && "active-tab"
+                    activeFilter === "BKN" && "active-tab"
                 }`}
-                onClick={() => setActiveFilter("RINGS")}
+                onClick={() => setActiveFilter("BKN")}
             >
               BKN
             </button>
             <button
               className={`btn m-2 fw-bold ${
-                activeFilter === "RINGS" && "active-tab"
+                activeFilter === "BOS" && "active-tab"
               }`}
-              onClick={() => setActiveFilter("RINGS")}
+              onClick={() => setActiveFilter("BOS")}
             >
               BOS
             </button>
             <button
               className={`btn m-2 fw-bold ${
-                activeFilter === "EARRINGS" && "active-tab"
+                activeFilter === "CHA" && "active-tab"
               }`}
-              onClick={() => setActiveFilter("EARRINGS")}
+              onClick={() => setActiveFilter("CHA")}
             >
               CHA
             </button>
             <button
               className={`btn m-2 fw-bold ${
-                activeFilter === "BRACELETS" && "active-tab"
+                activeFilter === "CHI" && "active-tab"
               }`}
-              onClick={() => setActiveFilter("BRACELETS")}
+              onClick={() => setActiveFilter("CHI")}
             >
               CHI
             </button>
             <button
                 className={`btn m-2 fw-bold ${
-                    activeFilter === "BRACELETS" && "active-tab"
+                    activeFilter === "CLE" && "active-tab"
                 }`}
-                onClick={() => setActiveFilter("BRACELETS")}
+                onClick={() => setActiveFilter("CLE")}
             >
               CLE
             </button>
             <button
                 className={`btn m-2 fw-bold ${
-                    activeFilter === "BRACELETS" && "active-tab"
+                    activeFilter === "DAL" && "active-tab"
                 }`}
-                onClick={() => setActiveFilter("BRACELETS")}
+                onClick={() => setActiveFilter("DAL")}
             >
               DAL
             </button>
             <button
                 className={`btn m-2 fw-bold ${
-                    activeFilter === "BRACELETS" && "active-tab"
+                    activeFilter === "DEN" && "active-tab"
                 }`}
-                onClick={() => setActiveFilter("BRACELETS")}
+                onClick={() => setActiveFilter("DEN")}
             >
               DEN
             </button>
             <button
                 className={`btn m-2 fw-bold ${
-                    activeFilter === "BRACELETS" && "active-tab"
+                    activeFilter === "DET" && "active-tab"
                 }`}
-                onClick={() => setActiveFilter("BRACELETS")}
+                onClick={() => setActiveFilter("DET")}
             >
               DET
             </button>
             <button
                 className={`btn m-2 fw-bold ${
-                    activeFilter === "BRACELETS" && "active-tab"
+                    activeFilter === "GSW" && "active-tab"
                 }`}
-                onClick={() => setActiveFilter("BRACELETS")}
+                onClick={() => setActiveFilter("GSW")}
             >
               GSW
             </button>
             <button
                 className={`btn m-2 fw-bold ${
-                    activeFilter === "BRACELETS" && "active-tab"
+                    activeFilter === "HOU" && "active-tab"
                 }`}
-                onClick={() => setActiveFilter("BRACELETS")}
+                onClick={() => setActiveFilter("HOU")}
             >
               HOU
             </button>
             <button
                 className={`btn m-2 fw-bold ${
-                    activeFilter === "BRACELETS" && "active-tab"
+                    activeFilter === "IND" && "active-tab"
                 }`}
-                onClick={() => setActiveFilter("BRACELETS")}
+                onClick={() => setActiveFilter("IND")}
             >
               IND
             </button>
             <button
                 className={`btn m-2 fw-bold ${
-                    activeFilter === "BRACELETS" && "active-tab"
+                    activeFilter === "LAC" && "active-tab"
                 }`}
-                onClick={() => setActiveFilter("BRACELETS")}
+                onClick={() => setActiveFilter("LAC")}
             >
               LAC
             </button>
             <button
                 className={`btn m-2 fw-bold ${
-                    activeFilter === "BRACELETS" && "active-tab"
+                    activeFilter === "LAL" && "active-tab"
                 }`}
-                onClick={() => setActiveFilter("BRACELETS")}
+                onClick={() => setActiveFilter("LAL")}
             >
               LAL
             </button>
             <button
                 className={`btn m-2 fw-bold ${
-                    activeFilter === "BRACELETS" && "active-tab"
+                    activeFilter === "MEM" && "active-tab"
                 }`}
-                onClick={() => setActiveFilter("BRACELETS")}
+                onClick={() => setActiveFilter("MEM")}
             >
               MEM
             </button>
             <button
                 className={`btn m-2 fw-bold ${
-                    activeFilter === "BRACELETS" && "active-tab"
+                    activeFilter === "MIA" && "active-tab"
                 }`}
-                onClick={() => setActiveFilter("BRACELETS")}
+                onClick={() => setActiveFilter("MIA")}
             >
               MIA
             </button>
             <button
                 className={`btn m-2 fw-bold ${
-                    activeFilter === "BRACELETS" && "active-tab"
+                    activeFilter === "MIL" && "active-tab"
                 }`}
-                onClick={() => setActiveFilter("BRACELETS")}
+                onClick={() => setActiveFilter("MIL")}
             >
               MIL
             </button>
             <button
                 className={`btn m-2 fw-bold ${
-                    activeFilter === "BRACELETS" && "active-tab"
+                    activeFilter === "MIN" && "active-tab"
                 }`}
-                onClick={() => setActiveFilter("BRACELETS")}
+                onClick={() => setActiveFilter("MIN")}
             >
               MIN
             </button>
             <button
                 className={`btn m-2 fw-bold ${
-                    activeFilter === "BRACELETS" && "active-tab"
+                    activeFilter === "NOP" && "active-tab"
                 }`}
-                onClick={() => setActiveFilter("BRACELETS")}
+                onClick={() => setActiveFilter("NOP")}
             >
               NOP
             </button>
             <button
                 className={`btn m-2 fw-bold ${
-                    activeFilter === "BRACELETS" && "active-tab"
+                    activeFilter === "NYK" && "active-tab"
                 }`}
-                onClick={() => setActiveFilter("BRACELETS")}
+                onClick={() => setActiveFilter("NYK")}
             >
               NYK
             </button>
             <button
                 className={`btn m-2 fw-bold ${
-                    activeFilter === "BRACELETS" && "active-tab"
+                    activeFilter === "OKC" && "active-tab"
                 }`}
-                onClick={() => setActiveFilter("BRACELETS")}
+                onClick={() => setActiveFilter("OKC")}
             >
               OKC
             </button>
             <button
                 className={`btn m-2 fw-bold ${
-                    activeFilter === "BRACELETS" && "active-tab"
+                    activeFilter === "ORL" && "active-tab"
                 }`}
-                onClick={() => setActiveFilter("BRACELETS")}
+                onClick={() => setActiveFilter("ORL")}
             >
               ORL
             </button>
             <button
                 className={`btn m-2 fw-bold ${
-                    activeFilter === "BRACELETS" && "active-tab"
+                    activeFilter === "PHI" && "active-tab"
                 }`}
-                onClick={() => setActiveFilter("BRACELETS")}
+                onClick={() => setActiveFilter("PHI")}
             >
               PHI
             </button>
             <button
                 className={`btn m-2 fw-bold ${
-                    activeFilter === "BRACELETS" && "active-tab"
+                    activeFilter === "PHO" && "active-tab"
                 }`}
-                onClick={() => setActiveFilter("BRACELETS")}
+                onClick={() => setActiveFilter("PHO")}
             >
               PHO
             </button>
             <button
                 className={`btn m-2 fw-bold ${
-                    activeFilter === "BRACELETS" && "active-tab"
+                    activeFilter === "POR" && "active-tab"
                 }`}
-                onClick={() => setActiveFilter("BRACELETS")}
+                onClick={() => setActiveFilter("POR")}
             >
               POR
             </button>
             <button
                 className={`btn m-2 fw-bold ${
-                    activeFilter === "BRACELETS" && "active-tab"
+                    activeFilter === "SAC" && "active-tab"
                 }`}
-                onClick={() => setActiveFilter("BRACELETS")}
+                onClick={() => setActiveFilter("SAC")}
             >
               SAC
             </button>
             <button
                 className={`btn m-2 fw-bold ${
-                    activeFilter === "BRACELETS" && "active-tab"
+                    activeFilter === "SAS" && "active-tab"
                 }`}
-                onClick={() => setActiveFilter("BRACELETS")}
+                onClick={() => setActiveFilter("SAS")}
             >
               SAS
             </button>
             <button
                 className={`btn m-2 fw-bold ${
-                    activeFilter === "BRACELETS" && "active-tab"
+                    activeFilter === "TOR" && "active-tab"
                 }`}
-                onClick={() => setActiveFilter("BRACELETS")}
+                onClick={() => setActiveFilter("TOR")}
             >
               TOR
             </button>
             <button
                 className={`btn m-2 fw-bold ${
-                    activeFilter === "BRACELETS" && "active-tab"
+                    activeFilter === "UTA" && "active-tab"
                 }`}
-                onClick={() => setActiveFilter("BRACELETS")}
+                onClick={() => setActiveFilter("UTA")}
             >
               UTA
             </button>
             <button
                 className={`btn m-2 fw-bold ${
-                    activeFilter === "BRACELETS" && "active-tab"
+                    activeFilter === "WAS" && "active-tab"
                 }`}
-                onClick={() => setActiveFilter("BRACELETS")}
+                onClick={() => setActiveFilter("WAS")}
             >
               WAS
             </button>
@@ -360,42 +362,161 @@ export default function Collection() {
             {/* Category list sidebar */}
             <ul className="list-group">
               <h4>NBA Teams</h4>
-              <li className="list-group-item">Atlanta Hawks</li>
-              <li className="list-group-item">Boston Celtics</li>
-              <li className="list-group-item">Brooklyn Nets</li>
-              <li className="list-group-item">Chicago Bulls</li>
-              <li className="list-group-item">Cleveland Cavaliers</li>
-              <li className="list-group-item">Dallas Mavericks</li>
-              <li className="list-group-item">Denver Nuggets</li>
-              <li className="list-group-item">Detroit Pistons</li>
-              <li className="list-group-item">Golden State Warriors</li>
-              <li className="list-group-item">Houston Rockets</li>
-              <li className="list-group-item">Indiana Pacers</li>
-              <li className="list-group-item">Los Angeles Clippers</li>
-              <li className="list-group-item">Los Angeles Lakers</li>
-              <li className="list-group-item">Memphis Grizzlies</li>
-              <li className="list-group-item">Miami Heat</li>
-              <li className="list-group-item">Milwaukee Bucks</li>
-              <li className="list-group-item">Minnesota Timberwolves</li>
-              <li className="list-group-item">New Orleans Pelicans</li>
-              <li className="list-group-item">New York Knicks</li>
-              <li className="list-group-item">Oklahoma City Thunder</li>
-              <li className="list-group-item">Orlando Magic</li>
-              <li className="list-group-item">Philadelphia 76ers</li>
-              <li className="list-group-item">Phoenix Suns</li>
-              <li className="list-group-item">Portland Trail Blazers</li>
-              <li className="list-group-item">Sacramento Kings</li>
-              <li className="list-group-item">San Antonio Spurs</li>
-              <li className="list-group-item">Toronto Raptors</li>
-              <li className="list-group-item">Utah Jazz</li>
-              <li className="list-group-item">Washington Wizards</li>
-
-              {/* Add more categories as needed */}
+              <button className={`list-group-item ${
+                  activeFilter === "ALL" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("ALL")}>
+                All Teams</button>
+              <button className={`list-group-item ${
+                  activeFilter === "ATL" && "active-tab"
+              }`}
+                onClick={() => setActiveFilter("ATL")}>
+                Atlanta Hawks</button>
+              <button className={`list-group-item ${
+                  activeFilter === "BOS" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("BOS")}>
+                Boston Celtics</button>
+              <button className={`list-group-item ${
+                  activeFilter === "BKN" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("BKN")}>
+                Brooklyn Nets</button>
+              <button className={`list-group-item ${
+                  activeFilter === "CHI" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("CHI")}>
+                Chicago Bulls</button>
+              <button className={`list-group-item ${
+                  activeFilter === "CLE" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("CLE")}>
+                Cleveland Cavaliers</button>
+              <button className={`list-group-item ${
+                  activeFilter === "DAL" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("DAL")}>
+                Dallas Mavericks</button>
+              <button className={`list-group-item ${
+                  activeFilter === "DEN" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("DEN")}>
+                Denver Nuggets</button>
+              <button className={`list-group-item ${
+                  activeFilter === "DET" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("DET")}>
+                Detroit Pistons</button>
+              <button className={`list-group-item ${
+                  activeFilter === "GSW" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("GSW")}>
+                Golden State Warriors</button>
+              <button className={`list-group-item ${
+                  activeFilter === "HOU" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("HOU")}>
+                Houston Rockets</button>
+              <button className={`list-group-item ${
+                  activeFilter === "IND" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("IND")}>
+                Indiana Pacers</button>
+              <button className={`list-group-item ${
+                  activeFilter === "LAC" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("LAC")}>
+                Los Angeles Clippers</button>
+              <button className={`list-group-item ${
+                  activeFilter === "LAL" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("LAL")}>
+                Los Angeles Lakers</button>
+              <button className={`list-group-item ${
+                  activeFilter === "MEM" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("MEM")}>
+                Memphis Grizzlies</button>
+              <button className={`list-group-item ${
+                  activeFilter === "MIA" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("MIA")}>
+                Miami Heat</button>
+              <button className={`list-group-item ${
+                  activeFilter === "MIL" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("MIL")}>
+                Milwaukee Bucks</button>
+              <button className={`list-group-item ${
+                  activeFilter === "MIN" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("MIN")}>
+                Minnesota Timberwolves</button>
+              <button className={`list-group-item ${
+                  activeFilter === "NOP" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("NOP")}>
+                New Orleans Pelicans</button>
+              <button className={`list-group-item ${
+                  activeFilter === "NYK" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("NYK")}>
+                New York Knicks</button>
+              <button className={`list-group-item ${
+                  activeFilter === "OKC" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("OKC")}>
+                Oklahoma City Thunder</button>
+              <button className={`list-group-item ${
+                  activeFilter === "ORL" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("ORL")}>
+                Orlando Magic</button>
+              <button className={`list-group-item ${
+                  activeFilter === "PHI" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("PHI")}>
+                Philadelphia 76ers</button>
+              <button className={`list-group-item ${
+                  activeFilter === "PHO" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("PHO")}>
+                Phoenix Suns</button>
+              <button className={`list-group-item ${
+                  activeFilter === "POR" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("POR")}>
+                Portland Trail Blazers</button>
+              <button className={`list-group-item ${
+                  activeFilter === "SAC" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("SAC")}>
+                Sacramento Kings</button>
+              <button className={`list-group-item ${
+                  activeFilter === "SAS" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("SAS")}>
+                San Antonio Spurs</button>
+              <button className={`list-group-item ${
+                  activeFilter === "TOR" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("TOR")}>
+                Toronto Raptors</button>
+              <button className={`list-group-item ${
+                  activeFilter === "UTA" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("UTA")}>
+                Utah Jazz</button>
+              <button className={`list-group-item ${
+                  activeFilter === "WAS" && "active-tab"
+              }`}
+                      onClick={() => setActiveFilter("WAS")}>
+                Washington Wizards</button>
             </ul>
             </div>
           </div>
           <div className="col-lg-9">
-            <div className="collection-list row mt-4 gx-0 gy-3">
+            <div className={`collection-list row mt-4 gx-0 gy-3 ${activeFilter !== "ALL"}`}>
               {loading ? renderLoading() : renderCollectionList()}
             </div>
           </div>
