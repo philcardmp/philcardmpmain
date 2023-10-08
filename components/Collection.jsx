@@ -50,11 +50,68 @@ export default function Collection() {
   };
 
 
+  const renderCollectionListAll = () => {
+    return productList?.docs
+        // .filter((product) => product.data().type === "CARD")
+        // .filter((product) => product.data().filter === activeFilter)
+        .map((item) => (
+            <div className="col-md-6 col-lg-4 p-2" key={item.id}>
+              <div className="collection-img position-relative d-flex justify-content-center align-items-center">
+                <Link href={`/product/${item.id}`}>
+                  {item.data().postImage ? (
+                      <Image
+                          src={item.data().postImage}
+                          alt={item.data().productName}
+                          width="280"
+                          height="360"
+                      />
+                  ) : (
+                      renderLoading()
+                  )}
+                </Link>
+
+                <span
+                    className={`${getStatusColor(
+                        item.data().status
+                    )} position-absolute d-flex align-items-center justify-content-center text-white`}
+                >
+              {item.data().status.toUpperCase()}
+            </span>
+              </div>
+              <div className="text-start mt-3">
+            <span className="fw-bold lead fs-4">
+              ₱ {parseInt(item.data().price).toLocaleString()}
+            </span>
+                <p className="text-capitalize my-1">{item.data().productName} {item.data().description}</p>
+                <p className="text-capitalize my-1">{item.data().filter}</p>
+                <br />
+              </div>
+              <div className="text-center mt-1">
+                <button
+                    onClick={() => addProductToCart(item.data())}
+                    className="btn btn-primary mt-1 w-50"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+        ));
+  };
 
   const renderCollectionList = () => {
-    return productList?.docs
-      // .filter((product) => product.data().type === "CARD")
-      // .filter((product) => product.data().filter === activeFilter)
+    const filteredProducts = productList?.docs
+        .filter((product) => product.data().type === "CARD")
+        .filter((product) => product.data().filter === activeFilter);
+
+    if (!filteredProducts || filteredProducts.length === 0) {
+      return (
+          <div className="position-relative d-flex justify-content-center align-items-center">
+            <p>No results</p>
+          </div>
+      );
+    }
+
+    return filteredProducts
       .map((item) => (
         <div className="col-md-6 col-lg-4 p-2" key={item.id}>
           <div className="collection-img position-relative d-flex justify-content-center align-items-center">
@@ -110,7 +167,7 @@ export default function Collection() {
               className={`btn m-2 fw-bold ${
                 activeFilter === "ALL" && "active-tab"
               }`}
-              onClick={() => setActiveFilter("ATL")}
+              onClick={() => setActiveFilter("ALL")}
             >
               ALL
             </button>
@@ -516,8 +573,12 @@ export default function Collection() {
             </div>
           </div>
           <div className="col-lg-9">
-            <div className={`collection-list row mt-4 gx-0 gy-3 ${activeFilter !== "ALL"}`}>
-              {loading ? renderLoading() : renderCollectionList()}
+            <div className={`collection-list row mt-4 gx-0 gy-3 }`}>
+              {loading ? (
+                  renderLoading()
+              ) : (
+                  activeFilter === "ALL" ? renderCollectionListAll() : renderCollectionList())
+              }
             </div>
           </div>
         </div>

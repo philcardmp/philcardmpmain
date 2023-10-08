@@ -26,28 +26,6 @@ const Product = () => {
     db.collection("products").orderBy("timestamp", "desc")
   );
 
-  // const getLike = (product) => {
-  //   if (!isLike) {
-  //     db.collection("products")
-  //       .doc(product.id)
-  //       .update({
-  //         ...product.data,
-  //         likes: product.data().likes + 1,
-  //       });
-  //
-  //     setIsLike(true);
-  //   } else {
-  //     db.collection("products")
-  //       .doc(product.id)
-  //       .update({
-  //         ...product.data,
-  //         likes: product.data().likes - 1,
-  //       });
-  //
-  //     setIsLike(false);
-  //   }
-  // };
-
   const closeModal = (e) => {
     e.preventDefault();
     setShowModal(false);
@@ -92,7 +70,7 @@ const Product = () => {
               src={item.data().postImage}
               alt={item.data().productName}
               height="550"
-              width="500"
+              width="430"
             />
           </div>
           <div className="col-md-6">
@@ -100,26 +78,13 @@ const Product = () => {
             {/*  {item.data().filter}*/}
             {/*</h4>*/}
             {renderName(item.data())}
-
-            <p className="lead">{item.data().productName} {item.data().description}</p>
+              <p className="lead">{item.data().productName} {item.data().description}</p>
             <div className="row">
               <p className="col-6 display-6 lead fw-bolder">
                 ₱ {parseInt(item.data().price).toLocaleString()}
               </p>
-              {/*<p*/}
-              {/*  className="col-6 lead fw-bolder text-secondary d-flex align-items-center"*/}
-              {/*  role="button"*/}
-              {/*  onClick={() => getLike(item)}*/}
-              {/*>*/}
-              {/*  <FontAwesomeIcon*/}
-              {/*    icon={faStar}*/}
-              {/*    height={35}*/}
-              {/*    color={isLike ? "gold" : "grey"}*/}
-              {/*  />*/}
-              {/*  {item.data().likes}Likes*/}
-              {/*</p>*/}
             </div>
-            <p>{item.data().filter} | PCM ID: {item.data().id}</p>
+            <p>{item.data().filter} | PCM ID: {item.id}</p>
             <button
               className="btn btn-outline-dark px-4 py-2"
               onClick={() => addProductToCart(item.data())}
