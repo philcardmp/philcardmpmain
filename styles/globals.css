@@ -3,21 +3,25 @@
   --lg-font: 'Kaisei Tokumin', serif;
   --sm-font: 'Poppins', sans-serif;
   --general: gray !important;
+
 }
+
+
 body {
   font-family: var(--sm-font);
   --general: gray !important;
+    
 }
 .btn:not(.nav-btns .btn){
-  background-color: white;
-  color: rgb(200, 165, 112);
+  background-color: whitesmoke;
+  color: rgb(1, 27, 69);
   padding: 10px 28px;
-  border-radius: 25px;
-  border: 1px solid rgb(200, 165, 112);
+  border-radius: 20px;
+  border: 1px solid rgb(0, 0, 0);
 }
 .btn:not(.nav-btns .btn):hover{
-  background: rgb(200, 165, 112);
-  color: black;
+  background: rgb(2, 37, 94);
+  color: white;
   border: var(--general);
 }
 .title h2::before{
@@ -33,12 +37,13 @@ body {
 
 /* <!-- ---- Navbar ---- --> */
 .navbar-brand img{
-  width: 30px;
+  width: 190px;
 }
 #brand-name{
-  letter-spacing: 2px;
-  font-family: var(--lg-font);
-  font-size: 18px;
+    letter-spacing: 1px;
+    font-family: var(--lg-font);
+    font-size: 18px;
+    font-family: "Rockwell", sans-serif; /* Change font to Colombo */
 }
 .navbar{
  box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1); 
@@ -113,8 +118,8 @@ body {
   border-color: var(--general) !important;
 }
 .active-tab {
-  background: rgb(200, 165, 112) !important;
-  color: black !important;
+  background: rgb(1, 27, 69) !important;
+  color: white !important;
   border: var(--general) !important;
 }
 .collection-img span{
@@ -142,6 +147,23 @@ body {
   background: #ffc300;
   min-height: 40vh;
 }
+
+/* <!-- ---- Footer ---- --> */
+.text-footer {
+    color: black; /* Set the text color to white. */
+    -webkit-text-stroke: .3px gray;
+    font-size: 15px;/* Optionally, add some padding to create space between the text and the border. */
+    z-index: 1;
+}
+.footer-bg {
+    background-image: url("/footer.png");
+    opacity: 1;
+    border: 1px solid black; /* Add a 1px black border around the text. You can adjust the border width as needed. */
+    padding: 5px;
+    z-index: 0;
+}
+
+
 
  /* ---------- Portfolio --------- */
  .portfolio-overlay {
@@ -176,6 +198,10 @@ body {
 /* <!-- ---- About Us ---- --> */
 #aboutUs{
   padding-top: 120px;
+}
+/* <!-- ---- Seller ---- --> */
+#seller{
+    padding-top: 120px;
 }
 
 /* <!-- ---- Contact Us ---- --> */
@@ -256,3 +282,61 @@ p {
       display: none;
   }
 }
+
+.button-container {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    max-width: 100%; /* Adjust the maximum width as needed */
+    padding: 10px; /* Add padding for space between buttons and container edge */
+}
+
+/* CSS for larger screens (computers) */
+@media (min-width: 768px) {
+    #myNavbar {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+}
+
+/* CSS for smaller screens (phones) */
+@media (max-width: 767px) {
+    #myNavbar {
+        position: static; /* or any other position value you prefer */
+    }
+}
+
+/*Left Category List*/
+.category-list {
+    background-color: #f8f9fa; /* Background color */
+    padding: 12px; /* Add padding for spacing */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+}
+
+.category-list h4 {
+    font-size: 18px; /* Adjust the heading font size */
+    font-weight: bold;
+    margin-bottom: 10px; /* Spacing below heading */
+}
+
+.list-group {
+    margin: 0; /* Remove default margin */
+}
+
+.list-group-item {
+    border: none; /* Remove list item borders */
+    padding: 5px 0; /* Adjust padding for list items */
+    font-size: 14px; /* Adjust list item font size */
+    text-align: left;
+}
+
+.list-group-item:hover {
+    background: rgb(2, 37, 94); /* Hover background color */
+    color: white;
+    font-weight: normal;
+    cursor: pointer; /* Change cursor on hover */
+    text-align: left;
+}
+

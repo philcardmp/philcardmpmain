@@ -4,7 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b57a063b-23f3-4f75-901e-73494408e464" name="Changes" comment="changed names from talasulud to PCM&#10;&#10;changed names only" />
+    <list default="true" id="b57a063b-23f3-4f75-901e-73494408e464" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.next/build-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/.next/build-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/images/GM0G7LWkRm4r-qx42lQiEzHGdLhrLuIhia4jvQg6+1g=/60.1695553614914.mogeXpnMxsjhxVUksmCGYXdlo6CVlG7sxavl2VMy2Yo=.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/images/JKlYXHkKhsgdxXE3+e4ZueRWV3pCUtQK4D0H+qdGRy0=/60.1695553613978.Fi8IrJiJRvytf34V2SVma0vw1QikRkvQqsXTOoj9pNE=.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/images/JaikhB6TNyOmp4LTZ30r8QzwUZR-5qTnr8x8FIScut0=/60.1695553615929.qU2b7Yi7++WH4pTJblXwDqEFUk-WWjW-OPMcjpuCy5c=.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/images/MMBR4d3R067rnqALuYuqtayMltakNZcvOcuYeWKXs5Q=/60.1695553617347.mMz+L346M3cYNo6a6ckR05eD+vfY32Ls9z9BlunWffg=.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/images/Uqyhehhn1g65mGSFvq41kmvJbchhE+QnA1OCuoTuwTY=/60.1695553616933.CmzVhHt9y8Eg4Z22IhofsTQ7Ejhp+RiqQoVSzfHDm8g=.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/images/WRwfDqvDrCDBxrt64J1RtqkVOm9a0WxRbyEOmTu3x9o=/60.1695553612477.vUOEbY-RNy5WGfilN9meA+SHglbguxbDK8G+z+vaaDE=.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/images/YHdulRrpKCmCtf-ujg9tmADcvHLZiP9OzB3TeMVyGRI=/60.1695559506684.Lby4ICWEklbYqurMiUpcKVGxJs920p4bVNtEGmFP4B4=.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/images/cRpqDa6Q90w21o2XieYTv6nlA12GTivfMZ6VzRrePP8=/60.1695553614477.aQ3MuUfKN1vE2xu0ulvf-Qf-Q0pHjM6ZA6JsSnFlrIs=.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/images/dAb39zH0z8n4CDcTckzBdPejNe7epXOkyQB3cQG4sAo=/60.1695553613489.wLv1Fo5xl+I2iN2eNif7v3D8ya07KzYago17owvaL3c=.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/images/df8Z9EyrmJiaQCjmWC2XmZCw+z6Ab27zGg-aSNGLiOE=/60.1695553616427.url467VNjyXIr8mvl2ufbkhlNHP7R6KeQW-LHCAmrS4=.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/images/lQPSjwdM4DdY99e-2gis3oiKEo70aFcS6v5JEKLCUbY=/60.1695559503746.qOW2RqYPpUCtN6kBUFIt--d8wqbzJ2w2h5VUGGryQtE=.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/images/olj+wS-tlSaVTfvWKf+HI7R9tIe6eNgp2NGVdLMeFoI=/60.1695553613034.STSN-Dkyhe0iS2zdVMIz939UIUEMYZL8TkWGjdBanPI=.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/images/uWxQAQxGOqcuaYalWHRAQo4myQY2+orPbudopP+czfk=/60.1695553611944.Rf6-u0BBjVIGa3jmB9S54ZtDQ12flNbAVvUfPISE6cU=.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/images/uY5V4wI4XzmA5A8MFQBrsN6lDSU-6vGVid0nYfdIc-U=/60.1695553615353.nb2NMN7wC64wvXyZDMtJ5Vvd4CCQNlk6kxr6kIYLJ3M=.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/client-development/3.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/client-development/3.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/client-development/index.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/client-development/index.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/client-development/index.pack.old" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/client-development/index.pack.old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/server-development/3.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/server-development/3.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/server-development/index.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/server-development/index.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/server-development/index.pack.old" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/server-development/index.pack.old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/server/middleware-build-manifest.js" beforeDir="false" afterPath="$PROJECT_DIR$/.next/server/middleware-build-manifest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/server/pages-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/.next/server/pages-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/server/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/.next/server/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/static/chunks/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/.next/static/chunks/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/static/chunks/webpack.js" beforeDir="false" afterPath="$PROJECT_DIR$/.next/static/chunks/webpack.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/static/development/_buildManifest.js" beforeDir="false" afterPath="$PROJECT_DIR$/.next/static/development/_buildManifest.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,89 +41,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
-  }
-}]]></component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="2c1be4a6-d2a8-441c-b200-3c9e7632c3f9" />
-        <option name="url" value="https://github.com/philcardmp/philcardmpmain.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="2VqPHHsSo7r8hIfFJVCE0Ygp6W9" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "ts.external.directory.path": "/Applications/IntelliJ IDEA.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+    "ts.external.directory.path": "/Users/Gian/LocalDocuments/Projects/Personal Projects/philcardmpmain/node_modules/typescript/lib"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="philcardmpmain" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="philcardmpmain" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="b57a063b-23f3-4f75-901e-73494408e464" name="Changes" comment="" />
-      <created>1695560550140</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1695560550140</updated>
-      <workItem from="1695560551683" duration="251000" />
-    </task>
-    <task id="LOCAL-00001" summary="changed names from talasulud to PCM&#10;&#10;changed names only">
-      <option name="closed" value="true" />
-      <created>1695560635130</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1695560635130</updated>
-    </task>
-    <task id="LOCAL-00002" summary="changed names from talasulud to PCM&#10;&#10;changed names only">
-      <option name="closed" value="true" />
-      <created>1695560687729</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1695560687729</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="changed names from talasulud to PCM&#10;&#10;changed names only" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed names from talasulud to PCM&#10;&#10;changed names only" />
   </component>
 </project>
