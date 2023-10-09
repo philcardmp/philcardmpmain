@@ -14,27 +14,28 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-dark py-5">
+    <footer className="footer-bg py-3">
       <div className="container">
         <div className="row text-white g-4">
           <div className="col-md-6 col-lg-3">
-            <Link href="/" className="brand text-decoration-none text-white">
-              Talasulod
+            <Link href="/" className="brand text-decoration-none text-black">
+              Philippine Card Marketplace
             </Link>
-            <p className="text-white mt-3 text-muted">
-              We are currently located at Yumul Street Mining, Angeles City
-              Pampanga. We offer a variety gold accessories, from necklace,
-              braclets, rings, etc. We do the delivery every saturday around
-              Pampanga but expedited/express shipping is also an option.
+            <p className="text-footer mt-3 ">
+              We are currently located at Angeles City
+              Pampanga. Feel free to browse the card collections!
+              Have fun collecting and earning at the same time.
+              Please contact us if you want to sell your cards
+              on our website. Have fun!
             </p>
           </div>
           <div className="col-md-6 col-lg-3">
-            <h5 className="fw-light">Links</h5>
+            <h5 className="fw-light text-black">Links</h5>
             <ul className="list-unstyled">
               <li className="my-3">
                 <Link
                   href="/"
-                  className="text-white text-decoration-none text-muted"
+                  className="text-black text-decoration-none "
                 >
                   <FontAwesomeIcon icon={faChevronRight} height={20} /> Home
                 </Link>
@@ -42,26 +43,34 @@ export default function Footer() {
               <li className="my-3">
                 <Link
                   href="/about-us"
-                  className="text-white text-decoration-none text-muted"
+                  className="text-black text-decoration-none"
                 >
                   <FontAwesomeIcon icon={faChevronRight} height={20} /> About Us
+                </Link>
+              </li>
+              <li className="my-3">
+                <Link
+                    href="/seller"
+                    className="text-black text-decoration-none"
+                >
+                  <FontAwesomeIcon icon={faChevronRight} height={20} /> Sell with Us
                 </Link>
               </li>
             </ul>
           </div>
           <div className="col-md-6 col-lg-3">
-            <h5 className="fw-light mb-3">Contact Us</h5>
+            <h5 className="fw-light text-black mb-3">Contact Us</h5>
             <div className="d-flex justify-content-start align-items-start my-2 text-muted">
               <span className="me-3">
                 <FontAwesomeIcon icon={faEnvelope} height={20} />
               </span>
-              <span className="fw-light">talasulodjewelry@gmail.com</span>
+              <span className="fw-light text-black">philcardmp@gmail.com</span>
             </div>
             <div className="d-flex justify-content-start align-items-start my-2 text-muted">
               <span className="me-3">
                 <FontAwesomeIcon icon={faMapMarked} height={20} />
               </span>
-              <span className="fw-light">
+              <span className="fw-light text-black">
                 Angeles City, Pampanga Philippines
               </span>
             </div>
@@ -69,15 +78,15 @@ export default function Footer() {
               <span className="me-3">
                 <FontAwesomeIcon icon={faPhone} height={20} />
               </span>
-              <span className="fw-light">0997 720 0248</span>
+              <span className="fw-light text-black">0997 720 0248</span>
             </div>
           </div>
           <div className="col-md-6 col-lg-3">
-            <h5 className="fw-light mb-3">Follow Us</h5>
+            <h5 className="fw-light mb-3 text-black">Follow Us</h5>
             <ul className="list-unstyled d-flex">
               <li className="text-decoration-none text-muted fs-4 me-4">
                 <Link
-                  href="https://www.facebook.com/profile.php?id=100090652545502"
+                  href="https://www.facebook.com/phcardsmp"
                   target="_blank"
                   className="text-white text-decoration-none text-muted"
                 >
@@ -90,7 +99,7 @@ export default function Footer() {
               </li>
               <li className="text-decoration-none text-muted fs-4 me-4">
                 <Link
-                  href="https://www.instagram.com/talasuludjewelry/?igshid=YmMyMTA2M2Y%3D&fbclid=IwAR24RGG3au3VSdINnRFQiXvGPPC3hBw467iTkT7drzaWoakfi89tDLbC6ro"
+                  href="https://www.instagram.com/jowel.castaneda"
                   target="_blank"
                   className="text-white text-decoration-none text-muted"
                 >
@@ -103,7 +112,7 @@ export default function Footer() {
               </li>
               <li className="text-decoration-none text-muted fs-4 me-4">
                 <Link
-                  href="https://www.tiktok.com/@talasuludjewelry?_t=8aTLQ69iHt1&_r=1&fbclid=IwAR2AD-3O5Hfq1XvO3247Kx3XeNDKvqhUGpmNfyojYNmeuIPKJAvI3gRD5tI"
+                  href="www.tiktok.com/@philcardmp.breaks"
                   target="_blank"
                   className="text-white text-decoration-none text-muted"
                 >

@@ -15,20 +15,19 @@ export default function NavigationBar() {
   const cartProducts = useSelector((state: any) => state.cartProducts);
 
   return (
-    <Navbar bg="light" expand="lg" className="bg-white py-4 fixed-top">
+    <Navbar bg="light" expand="lg" className="bg-black py-0" id="myNavbar">
       <Container>
         <Link
-          href="/"
-          className="navbar-brand order-lg-0"
+            href="/"
+            className="navbar-brand order-lg-0 col-md-6 col-lg-3"
         >
           <Image
-            src="/logo1.png"
+            src="/title.png"
             alt="contact"
             width="1000"
-            height="30"
+            height="90"
           />
-          <span id="brand-name">Philippine Card Marketplace</span>
-          <span id="brand-name2">PCM</span>
+          {/*<span id="brand-name2">PCM</span>*/}
         </Link>
 
         <div className="nav-btns order-lg-2">
@@ -49,7 +48,7 @@ export default function NavigationBar() {
             <Form.Control
               type="search"
               className="w-100"
-              placeholder="Search your card"
+              placeholder="Search a card"
               aria-label="Search"
             />
             <div className="nav-btns">
