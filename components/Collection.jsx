@@ -25,15 +25,15 @@ export default function Collection() {
     }, 200);
   }, [activeFilter]);
 
-  const getStatusColor = (status) => {
-    if (status === "sale") {
-      return null;
-    } else if (status === "sold") {
-      return "bg-danger";
-    } else if (status === "reserved") {
-      return "bg-secondary";
-    }
-  };
+  // const getStatusColor = (status) => {
+  //   if (status === "") {
+  //     return null;
+  //   } else if (status === "sold") {
+  //     return "bg-danger";
+  //   } else if (status === "pending") {
+  //     return "bg-secondary";
+  //   }
+  // };
 
   const addProductToCart = (product) => {
     addToCart(product);
@@ -70,13 +70,13 @@ export default function Collection() {
                   )}
                 </Link>
 
-                <span
-                    className={`${getStatusColor(
-                        item.data().status
-                    )} position-absolute d-flex align-items-center justify-content-center text-white`}
-                >
-              {item.data().status.toUpperCase()}
-            </span>
+            {/*    <span*/}
+            {/*        className={`${getStatusColor(*/}
+            {/*            item.data().status*/}
+            {/*        )} position-absolute d-flex align-items-center justify-content-center text-white`}*/}
+            {/*    >*/}
+            {/*  {item.data().status.toUpperCase()}*/}
+            {/*</span>*/}
               </div>
               <div className="text-start mt-3">
             <span className="fw-bold lead fs-4">
@@ -87,12 +87,21 @@ export default function Collection() {
                 <br />
               </div>
               <div className="text-center mt-1">
-                <button
-                    onClick={() => addProductToCart(item.data())}
-                    className="btn btn-primary mt-1 w-50"
-                >
-                  Add to Cart
-                </button>
+                {item.data().status !== "sold" && item.data().status !== "pending" ? (
+                    <button
+                        onClick={() => addProductToCart(item.data())}
+                        className="btn btn-primary mt-1 w-50"
+                    >
+                      Add to Cart
+                    </button>
+                ) : (
+                    <button
+                        className="btn btn-secondary mt-1 w-50"
+                        disabled
+                    >
+                      {item.data().status === "sold" ? "Sold" : "Pending"}
+                    </button>
+                )}
               </div>
             </div>
         ));
@@ -128,13 +137,13 @@ export default function Collection() {
               )}
             </Link>
 
-            <span
-              className={`${getStatusColor(
-                item.data().status
-              )} position-absolute d-flex align-items-center justify-content-center text-white`}
-            >
-              {item.data().status.toUpperCase()}
-            </span>
+            {/*<span*/}
+            {/*  className={`${getStatusColor(*/}
+            {/*    item.data().status*/}
+            {/*  )} position-absolute d-flex align-items-center justify-content-center text-white`}*/}
+            {/*>*/}
+            {/*  {item.data().status.toUpperCase()}*/}
+            {/*</span>*/}
           </div>
           <div className="text-start mt-3">
             <span className="fw-bold lead fs-4">
@@ -145,12 +154,21 @@ export default function Collection() {
             <br />
           </div>
           <div className="text-center mt-1">
-            <button
-              onClick={() => addProductToCart(item.data())}
-              className="btn btn-primary mt-1 w-50"
-            >
-              Add to Cart
-            </button>
+            {item.data().status !== "sold" && item.data().status !== "pending" ? (
+                <button
+                    onClick={() => addProductToCart(item.data())}
+                    className="btn btn-primary mt-1 w-50"
+                >
+                  Add to Cart
+                </button>
+            ) : (
+                <button
+                    className="btn btn-secondary mt-1 w-50"
+                    disabled
+                >
+                  {item.data().status === "sold" ? "Sold" : "Pending"}
+                </button>
+            )}
           </div>
         </div>
       ));

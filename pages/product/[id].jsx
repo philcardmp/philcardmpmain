@@ -85,15 +85,25 @@ const Product = () => {
               </p>
             </div>
             <p>{item.data().filter} | PCM ID: {item.id}</p>
-            <button
-              className="btn btn-outline-dark px-4 py-2"
-              onClick={() => addProductToCart(item.data())}
-            >
-              Add to Cart
-            </button>
-            <Link href="/cart" className="btn btn-dark ms-2 px-3 py-2">
-              Go to Cart
-            </Link>
+            <div className="row">
+              <div className="justify-content-start col-md-6 text-end">
+                {item.data().status !== "sold" && item.data().status !== "pending" ? (
+                    <button
+                        onClick={() => addProductToCart(item.data())}
+                        className="btn btn-outline-dark px-4 py-2 me-2"
+                    >
+                      Add to Cart
+                    </button>
+                ) : (
+                    <button className="btn btn-outline-dark px-4 py-2 me-2" disabled>
+                      {item.data().status === "sold" ? "Sold" : "Pending"}
+                    </button>
+                )}
+                <Link href="/cart" className="btn btn-dark px-3 py-2">
+                  Go to Cart
+                </Link>
+              </div>
+            </div>
           </div>
         </>
       ));
