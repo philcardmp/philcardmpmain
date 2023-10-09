@@ -105,8 +105,8 @@ export default function Collection() {
 
     if (!filteredProducts || filteredProducts.length === 0) {
       return (
-          <div className="position-relative d-flex justify-content-center align-items-center">
-            <p>No results</p>
+          <div className="position-relative d-flex justify-content-center align-items-center fw-bold mt-5">
+            <p>No results found</p>
           </div>
       );
     }
