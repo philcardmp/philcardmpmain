@@ -85,7 +85,7 @@ export default function Collection() {
               <br />
               <span className="fw-bold lead fs-6">
                 ₱{parseInt(item.data().price).toLocaleString()} (
-                {parseInt(item.data().quantity).toLocaleString()} pcs available)
+                {parseInt(item.data().quantity).toLocaleString()} available)
               </span>
               <p className="text-capitalize my-1">{item.data().description}</p>
               <br />

@@ -6,20 +6,33 @@ import {
   faGem,
   faUser,
   faSearch,
+  faSignOut,
 } from "@fortawesome/free-solid-svg-icons";
 import { Container, Form, Navbar } from "react-bootstrap";
 import { useSelector } from "react-redux";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../firebase";
+
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 export default function NavigationBar() {
+  const router = useRouter();
   const cartProducts = useSelector((state: any) => state.cartProducts);
+
+  const logout = (e) => {
+    e.preventDefault();
+    auth.signOut();
+    localStorage.removeItem('email')
+    location.reload()
+  };
 
   return (
     <Navbar bg="light" expand="lg" className="bg-black py-0" id="myNavbar">
       <Container>
         <Link
-            href="/"
-            className="navbar-brand order-lg-0 col-md-6 col-lg-3"
+          href="/"
+          className="navbar-brand order-lg-0 col-md-6 col-lg-3"
         >
           <Image
             src="/title.png"
@@ -40,6 +53,9 @@ export default function NavigationBar() {
             <FontAwesomeIcon icon={faUser} height={20} />
             <span className="nav-btn-label"> Profile </span>
           </Link>
+          <button className="btn position-relative" onClick={(e) => logout(e)}>
+            <FontAwesomeIcon icon={faSignOut} height={20} />
+          </button>
         </div>
 
 

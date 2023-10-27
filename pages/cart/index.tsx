@@ -18,8 +18,10 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { db } from "../../firebase";
 import * as actionCart from "../../redux/actions/actionCart";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 export default function Cart() {
+  const router = useRouter();
   const [total, setTotal] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const [facebook, setFacebook] = useState("");
@@ -30,6 +32,13 @@ export default function Cart() {
   const dispatch = useDispatch();
   const cartProducts = useSelector((state: any) => state.cartProducts);
   const { deleteProductCart } = bindActionCreators(actionCart, dispatch);
+
+  useEffect(() => {
+    const email = localStorage.getItem('email');
+    if (!email) {
+      router.push('/login');
+    }
+  }, []);
 
   useEffect(() => {
     let value = 0;

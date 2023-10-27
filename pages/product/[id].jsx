@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,6 +21,13 @@ const Product = () => {
   const [showModal, setShowModal] = useState(false);
   const [isLike, setIsLike] = useState(false);
   const { addToCart } = bindActionCreators(actionCart, dispatch);
+
+  useEffect(() => {
+    const email = localStorage.getItem("email");
+    if (!email) {
+      router.push("/login");
+    }
+  }, []);
 
   const [productList] = useCollection(
     db.collection("products").orderBy("timestamp", "desc")

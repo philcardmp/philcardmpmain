@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "pages/product/[id].jsx", "pages/product/[id].jsx", "components/Banner.tsx", "components/Collection.jsx", "redux/actions/actionCart.jsx", "components/Specials.jsx"  ],
+, "pages/product/[id].jsx", "pages/product/[id].jsx", "components/Banner.tsx", "components/Collection.jsx", "redux/actions/actionCart.jsx", "components/Specials.jsx", "pages/index.jsx", "components/NavigationBar.jsx", "pages/login/index.tsx"  ],
   "exclude": [
     "node_modules"
   ]

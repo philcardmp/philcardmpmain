@@ -12,14 +12,14 @@ body {
   --general: gray !important;
     
 }
-.btn:not(.nav-btns .btn){
+.btn:not(.nav-btns, .button-container .btn){
   background-color: whitesmoke;
   color: rgb(1, 27, 69);
   padding: 10px 28px;
   border-radius: 20px;
   border: 1px solid rgb(0, 0, 0);
 }
-.btn:not(.nav-btns .btn):hover{
+.btn:not(.nav-btns, .button-container .btn):hover{
   background: rgb(2, 37, 94);
   color: white;
   border: var(--general);
@@ -162,8 +162,6 @@ body {
     padding: 5px;
     z-index: 0;
 }
-
-
 
  /* ---------- Portfolio --------- */
  .portfolio-overlay {
@@ -340,3 +338,39 @@ p {
     text-align: left;
 }
 
+/* <!-- ---- Login ---- --> */
+.login-container {
+  background-color: #f8f8f8;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  padding: 100px;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+
+/* <!-- ---- Loader ---- --> */
+.loader-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-contents {
+  text-align: center;
+}
+
+.custom-spinner {
+  width: 100px;
+  height: 100px;
+  border-width: 5px;
+  border-top-color: #800080; /* Use purple as the top border color */
+}
