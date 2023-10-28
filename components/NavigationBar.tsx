@@ -24,7 +24,7 @@ export default function NavigationBar() {
     e.preventDefault();
     auth.signOut();
     localStorage.removeItem('email')
-    location.reload()
+    router.push('/login')
   };
 
   return (
@@ -49,13 +49,15 @@ export default function NavigationBar() {
             <span className="nav-btn-label"> CART </span> (
             {cartProducts ? cartProducts?.length : 0})
           </Link>
-          <Link href="/profile" className="btn position-relative" type="button">
-            <FontAwesomeIcon icon={faUser} height={20} />
-            <span className="nav-btn-label"> Profile </span>
-          </Link>
-          <button className="btn position-relative" onClick={(e) => logout(e)}>
-            <FontAwesomeIcon icon={faSignOut} height={20} />
-          </button>
+          {localStorage.getItem('email') && <>
+            <Link href="/profile" className="btn position-relative" type="button">
+              <FontAwesomeIcon icon={faUser} height={20} />
+              <span className="nav-btn-label"> Profile </span>
+            </Link>
+            <Link href="/login" className="btn position-relative" onClick={(e) => logout(e)}>
+              <FontAwesomeIcon icon={faSignOut} height={20} />
+            </Link>
+          </>}
         </div>
 
 

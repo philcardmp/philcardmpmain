@@ -14,18 +14,23 @@ const Login = () => {
     }
   }, []);
 
+  const loginProcess = (user) => {
+    localStorage.setItem("email", user.additionalUserInfo.profile.email)
+    router.push('/');
+  }
+
   const googleSignIn = (e) => {
     e.preventDefault();
     auth.signInWithPopup(googleProvider)
       .catch((error) => alert(error.message))
-      .then(user => localStorage.setItem("email", user.additionalUserInfo.profile.email))
+      .then(user => loginProcess(user))
   };
 
   const facebookSignIn = (e) => {
     e.preventDefault();
     auth.signInWithPopup(facebookProvider)
       .catch((error) => alert(error.message))
-      .then(user => localStorage.setItem("email", user.additionalUserInfo.profile.email))
+      .then(user => loginProcess(user))
   };
 
   return (

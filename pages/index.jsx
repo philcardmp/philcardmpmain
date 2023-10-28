@@ -30,22 +30,18 @@ const Home = () => {
 
   return (
     <div>
-      {user || localStorage.getItem("email") ? (
-        <div className="max-w-7xl mx-auto">
-          <Head>
-            <title>Phillipine Card Marketplace</title>
-            <link rel="icon" href="/logo1.png" />
-          </Head>
+      <div className="max-w-7xl mx-auto">
+        <Head>
+          <title>Phillipine Card Marketplace</title>
+          <link rel="icon" href="/logo1.png" />
+        </Head>
 
-          <main>
-            <NavigationBar />
-            <Collection />
-            <Footer />
-          </main>
-        </div>
-      ) : (
-        <Login />
-      )}
+        <main>
+          <NavigationBar />
+          <Collection />
+          <Footer />
+        </main>
+      </div>
     </div>
   );
 };

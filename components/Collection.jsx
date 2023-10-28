@@ -8,12 +8,15 @@ import { useCollection } from "react-firebase-hooks/firestore";
 import { renderLoading, renderLoadingImage } from "../utilities/loader";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Collection() {
   const dispatch = useDispatch();
+  const router = useRouter();
   const { addToCart } = bindActionCreators(actionCart, dispatch);
   const [activeFilter, setActiveFilter] = useState("ALL");
   const [loading, setLoading] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const [productList] = useCollection(
     db.collection("products").orderBy("timestamp", "desc")
   );
@@ -25,28 +28,37 @@ export default function Collection() {
     }, 200);
   }, [activeFilter]);
 
-  // const getStatusColor = (status) => {
-  //   if (status === "") {
-  //     return null;
-  //   } else if (status === "sold") {
-  //     return "bg-danger";
-  //   } else if (status === "pending") {
-  //     return "bg-secondary";
-  //   }
-  // };
-
   const addProductToCart = (product) => {
-    addToCart(product);
+    if (localStorage.getItem("email")) {
+      addToCart(product);
 
-    toast.success(` ${product.productName} has been added to your cart! ⭐`, {
-      position: "top-center",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      theme: "colored",
-    });
+      toast.success(` ${product.productName} has been added to your cart! ⭐`, {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "colored",
+      });
+    } else {
+      router.push("/login");
+    }
+  };
+
+  const getDescription = (text) => {
+    const truncatedText = isHovered ? text : text.slice(0, 40);
+
+    return (
+      <p
+        className="text-capitalize my-1"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {truncatedText}
+        {text.length > 40 && !isHovered && "..."}
+      </p>
+    );
   };
 
   const renderCollectionListAll = () => {
@@ -69,14 +81,6 @@ export default function Collection() {
                   renderLoading()
                 )}
               </Link>
-
-              {/*    <span*/}
-              {/*        className={`${getStatusColor(*/}
-              {/*            item.data().status*/}
-              {/*        )} position-absolute d-flex align-items-center justify-content-center text-white`}*/}
-              {/*    >*/}
-              {/*  {item.data().status.toUpperCase()}*/}
-              {/*</span>*/}
             </div>
             <div className="text-start mt-3">
               <span className="fw-bold lead fs-4">
@@ -87,23 +91,18 @@ export default function Collection() {
                 ₱{parseInt(item.data().price).toLocaleString()} (
                 {parseInt(item.data().quantity).toLocaleString()} available)
               </span>
-              <p className="text-capitalize my-1">{item.data().description}</p>
+              <p className="text-capitalize my-1">
+                {getDescription(item.data().description)}
+              </p>
               <br />
             </div>
             <div className="text-center mt-1">
-              {item.data().status !== "sold" &&
-              item.data().status !== "pending" ? (
-                <button
-                  onClick={() => addProductToCart(item.data())}
-                  className="btn btn-primary mt-1 w-50"
-                >
-                  Add to Cart
-                </button>
-              ) : (
-                <button className="btn btn-secondary mt-1 w-50" disabled>
-                  {item.data().status === "sold" ? "Sold" : "Pending"}
-                </button>
-              )}
+              <button
+                onClick={() => addProductToCart(item.data())}
+                className="btn btn-primary mt-1 w-50"
+              >
+                Add to Cart
+              </button>
             </div>
           </div>
         ))
