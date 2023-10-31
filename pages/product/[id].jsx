@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,13 +21,6 @@ const Product = () => {
   const [showModal, setShowModal] = useState(false);
   const [isLike, setIsLike] = useState(false);
   const { addToCart } = bindActionCreators(actionCart, dispatch);
-
-  useEffect(() => {
-    const email = localStorage.getItem("email");
-    if (!email) {
-      router.push("/login");
-    }
-  }, []);
 
   const [productList] = useCollection(
     db.collection("products").orderBy("timestamp", "desc")
@@ -74,7 +67,7 @@ const Product = () => {
           onChange={(e) => router.push(`/product/${e.target.value}`)}
         >
           {productList?.docs
-            .filter((product) => product.data().type === "REGULAR")
+            .filter((product) => product.data().type === "CARD")
             .map((product) => (
               <option
                 key={product.id}
@@ -143,7 +136,7 @@ const Product = () => {
   return (
     <div className="max-w-7xl mx-auto">
       <Head>
-        <title>Talasulod Jewelry</title>
+        <title>Philippine Card Marketplace</title>
         <link rel="icon" href="/logo.png" />
       </Head>
 

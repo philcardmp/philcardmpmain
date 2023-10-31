@@ -19,7 +19,7 @@ export default function AboutUs() {
   return (
     <>
       <Head>
-        <title>Talasulod Jewelry</title>
+        <title>Philippine Card Marketplace</title>
         <link rel="icon" href="/logo.png" />
       </Head>
 
@@ -31,7 +31,7 @@ export default function AboutUs() {
               <div className="title pt-3 pb-5">
                 <h2 className="position-relative d-inline-block">About Us</h2>
               </div>
-              <p className="lead text-muted">Talasulod Jewelry</p>
+              <p className="lead text-muted">Philippine Card Marketplace</p>
               <p className="fs-6">
                 We are currently located at Yumul Street Mining, Angeles City
                 Pampanga. We offer a variety gold accessories, from necklace,

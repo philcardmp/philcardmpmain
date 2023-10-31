@@ -10,17 +10,22 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Container, Form, Navbar } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase";
 
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 export default function NavigationBar() {
   const router = useRouter();
   const cartProducts = useSelector((state: any) => state.cartProducts);
+  const [loginEmail, setLoginEmail] = useState(null);
 
-  const logout = (e) => {
+  useEffect(() => {
+    setLoginEmail(localStorage.getItem('email'))
+  }, [])
+
+  const logout = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     auth.signOut();
     localStorage.removeItem('email')
@@ -49,7 +54,7 @@ export default function NavigationBar() {
             <span className="nav-btn-label"> CART </span> (
             {cartProducts ? cartProducts?.length : 0})
           </Link>
-          {localStorage.getItem('email') && <>
+          {loginEmail && <>
             <Link href="/profile" className="btn position-relative" type="button">
               <FontAwesomeIcon icon={faUser} height={20} />
               <span className="nav-btn-label"> Profile </span>
