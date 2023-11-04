@@ -24,9 +24,6 @@ export default function Cart() {
   const [showModal, setShowModal] = useState(false);
   const [facebook, setFacebook] = useState("");
   const [invalidFacebook, setinvalidFacebook] = useState(false);
-  const validFacebookLink = new RegExp(
-    "(?:(?:http|https)://)?(?:www.)?facebook.com/(?:(?:w)*#!/)?(?:pages/)?(?:[?w-]*/)?(?:profile.php?id=(?=d.*))?([w-]*)?"
-  );
   const dispatch = useDispatch();
   const cartProducts = useSelector((state: any) => state.cartProducts);
   const { deleteProductCart } = bindActionCreators(actionCart, dispatch);
@@ -68,7 +65,7 @@ export default function Cart() {
   return (
     <div>
       <Head>
-        <title>Talasulod Jewelry</title>
+        <title>Philippine Card Marketplace</title>
         <link rel="icon" href="/logo.png" />
       </Head>
 

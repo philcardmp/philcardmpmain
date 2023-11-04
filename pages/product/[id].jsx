@@ -67,7 +67,7 @@ const Product = () => {
           onChange={(e) => router.push(`/product/${e.target.value}`)}
         >
           {productList?.docs
-            .filter((product) => product.data().type === "REGULAR")
+            .filter((product) => product.data().type === "CARD")
             .map((product) => (
               <option
                 key={product.id}
@@ -136,7 +136,7 @@ const Product = () => {
   return (
     <div className="max-w-7xl mx-auto">
       <Head>
-        <title>Talasulod Jewelry</title>
+        <title>Philippine Card Marketplace</title>
         <link rel="icon" href="/logo.png" />
       </Head>
 
