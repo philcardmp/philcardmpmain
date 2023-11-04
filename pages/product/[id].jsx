@@ -54,8 +54,12 @@ const Product = () => {
   };
 
   const addProductToCart = (product) => {
-    addToCart(product);
-    setShowModal(true);
+    if (localStorage.getItem("email")) {
+      addToCart(product);
+      setShowModal(true);
+    } else {
+      router.push("/login");
+    }
   };
 
   const renderName = (item) => {
@@ -150,10 +154,10 @@ const Product = () => {
         <br />
         <Modal show={showModal}>
           <Modal.Header>
-            <Modal.Title className="text-dark">Congratulation!</Modal.Title>
+            <Modal.Title className="text-dark">Order Placed!</Modal.Title>
           </Modal.Header>
           <Modal.Body className="text-dark">
-            ⭐ Your product has been added to your cart!
+            ⭐ Your card has been added to your cart!
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={closeModal}>Close</Button>
