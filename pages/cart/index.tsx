@@ -29,18 +29,22 @@ export default function Cart() {
   const [invalidAddress, setinvalidAddress] = useState(false);
   const dispatch = useDispatch();
   const cartProducts = useSelector((state: any) => state.cartProducts);
-  const { deleteProductCart } = bindActionCreators(actionCart, dispatch);
+  const { updateCart, deleteProductCart } = bindActionCreators(
+    actionCart,
+    dispatch
+  );
   const [loginEmail, setLoginEmail] = useState(null);
 
   useEffect(() => {
-    setLoginEmail(localStorage.getItem('email'))
-  }, [])
+    setLoginEmail(localStorage.getItem("email"));
+  }, []);
 
   useEffect(() => {
     let value = 0;
     cartProducts?.forEach((product) => {
       const productValue =
-        product.price * (product.quantity ? product.quantity : 1);
+        product.price *
+        (product.quantitySelected ? product.quantitySelected : 1);
       value = value + productValue;
     });
     setTotal(value);
@@ -64,6 +68,23 @@ export default function Cart() {
     }
   };
 
+  const setQuantity = (id, quantity) => {
+    const newProductList = [];
+
+    cartProducts.forEach((data) => {
+      if (id === data.id) {
+        newProductList.push({
+          ...data,
+          quantitySelected: quantity,
+        });
+      } else {
+        newProductList.push(data);
+      }
+    });
+
+    updateCart(newProductList);
+  };
+
   const closeModal = (e) => {
     e.preventDefault();
     setShowModal(false);
@@ -71,7 +92,7 @@ export default function Cart() {
   };
 
   const selectCard = (product) => {
-    console.log("first", product)
+    console.log("first", product);
     router.push(`/product/${product.id}`);
   };
 
@@ -88,7 +109,7 @@ export default function Cart() {
           <Col xs={12} md={6}>
             <ListGroup>
               {cartProducts?.map((product, index) => (
-                <ListGroup.Item key={index} onClick={() => selectCard(product)}>
+                <ListGroup.Item key={index}>
                   <div className="cartContainer">
                     <div className="cartImage">
                       <Image
@@ -96,6 +117,7 @@ export default function Cart() {
                         alt={product.productName}
                         width="100"
                         height="120"
+                        onClick={() => selectCard(product)}
                       />
                     </div>
                     <div className="cartProdName">
@@ -111,15 +133,49 @@ export default function Cart() {
                         alignItems: "center",
                       }}
                     >
-                      <p className="fw-bold">QTY: {product.quantity}pcs</p>
-                      <FontAwesomeIcon
-                        className="ps-3"
-                        icon={faTrash}
-                        height={20}
-                        role="button"
-                        color="red"
-                        onClick={() => deleteProductCart(product.productName)}
-                      />
+                      <div
+                        className="px-2"
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-around",
+                          alignItems: "center",
+                        }}
+                      >
+                        <p>QTY:</p>
+                        <Form.Select
+                          aria-label="QTY"
+                          style={{
+                            marginLeft: "10px",
+                            width: "69px",
+                            cursor: "pointer",
+                          }}
+                          onChange={(e) =>
+                            setQuantity(product.id, e.target.value)
+                          }
+                          defaultValue={
+                            product.quantitySelected > product.quantity
+                              ? product.quantity
+                              : product.quantitySelected
+                          }
+                        >
+                          {Array.from(
+                            { length: product.quantity },
+                            (_, index) => index + 1
+                          ).map((optionValue) => (
+                            <option key={optionValue} value={optionValue}>
+                              {optionValue}
+                            </option>
+                          ))}
+                        </Form.Select>
+                        <FontAwesomeIcon
+                          className="ps-3"
+                          icon={faTrash}
+                          height={30}
+                          color="red"
+                          role="button"
+                          onClick={() => deleteProductCart(product.id)}
+                        />
+                      </div>
                     </div>
                     <div className="RemoveCartItem"></div>
                   </div>
@@ -141,12 +197,14 @@ export default function Cart() {
                   >
                     <p>
                       {product.productName} (
-                      {product.quantity ? product.quantity : 1})
+                      {product.quantitySelected ? product.quantitySelected : 1})
                     </p>
                     <p>
                       ₱{" "}
                       {product.price *
-                        (product.quantity ? product.quantity : 1)}
+                        (product.quantitySelected
+                          ? product.quantitySelected
+                          : 1)}
                     </p>
                   </div>
                 ))}
@@ -160,31 +218,38 @@ export default function Cart() {
               </div>
               <hr />
               <div className="text-warning my-5">
-                <h4>If you refresh the page without logging in, your cart will be cleared.</h4>
+                <h4>
+                  If you refresh the page without logging in, your cart will be
+                  cleared.
+                </h4>
               </div>
-              {loginEmail ? <Form.Group className="mb-3" controlId="formUsername">
-                <Form.Control
-                  type="text"
-                  size="sm"
-                  placeholder="Please enter your shipping address"
-                  value={address}
-                  onChange={(e) => setAddress(e.target.value)}
-                  autoComplete="username"
-                  isInvalid={invalidAddress}
-                ></Form.Control>
-                <Form.Control.Feedback type="invalid">
-                  Please enter a valid address.
-                </Form.Control.Feedback>
-                <button
-                  className="btn btn-primary mt-5"
-                  disabled={cartProducts.length < 1}
-                  onClick={cartCheckOut}
-                >
-                  CHECKOUT
-                </button>
-              </Form.Group> : <Link href="/login" className="btn position-relative">
-                Login or Register now to checkout
-              </Link>}
+              {loginEmail ? (
+                <Form.Group className="mb-3" controlId="formUsername">
+                  <Form.Control
+                    type="text"
+                    size="sm"
+                    placeholder="Please enter your shipping address"
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
+                    autoComplete="username"
+                    isInvalid={invalidAddress}
+                  ></Form.Control>
+                  <Form.Control.Feedback type="invalid">
+                    Please enter a valid address.
+                  </Form.Control.Feedback>
+                  <button
+                    className="btn btn-primary mt-5"
+                    disabled={cartProducts.length < 1}
+                    onClick={cartCheckOut}
+                  >
+                    CHECKOUT
+                  </button>
+                </Form.Group>
+              ) : (
+                <Link href="/login" className="btn position-relative">
+                  Login or Register now to checkout
+                </Link>
+              )}
               <Modal show={showModal}>
                 <Modal.Header>
                   <Modal.Title className="text-dark">
@@ -197,7 +262,9 @@ export default function Cart() {
                   <br />
                   For faster transaction please message us here:
                   <br />
-                  <a href="https://www.address.com/profile.php?id=100090652545502&mibextid=LQQJ4d">Talasulod address Page</a>
+                  <a href="https://www.address.com/profile.php?id=100090652545502&mibextid=LQQJ4d">
+                    Talasulod address Page
+                  </a>
                 </Modal.Body>
                 <Modal.Footer>
                   <Button onClick={closeModal}>Close</Button>

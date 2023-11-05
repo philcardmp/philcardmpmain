@@ -22,7 +22,7 @@ const cartReducer = (state = initialState, action: any) => {
           if (product.productName === action.payload.productName) {
             updatedProductList.push({
               ...product,
-              quantity: product.quantity + 1,
+              quantitySelected: product.quantitySelected + 1,
             });
           } else {
             updatedProductList.push(product);
@@ -39,7 +39,7 @@ const cartReducer = (state = initialState, action: any) => {
 
     case "DELETE_PRODUCT_CART":
       return [...state].filter(
-        (product) => product.productName !== action.payload
+        (product) => product.id !== action.payload
       );
 
     default:

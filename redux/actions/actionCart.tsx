@@ -1,19 +1,28 @@
 export const addToCart = (product: object) => {
   return (
-    dispatch: (arg0: { type: string; payload: { quantity: number } }) => void
+    dispatch: (arg0: { type: string; payload: { quantitySelected: number } }) => void
   ) => {
     dispatch({
       type: "ADD_TO_CART",
-      payload: { ...product, quantity: 1 },
+      payload: { ...product, quantitySelected: 1 },
     });
   };
 };
 
-export const deleteProductCart = (name: string) => {
-  return (dispatch: (arg0: { type: string; payload: string }) => void) => {
+export const updateCart = (newProductList: Array<any>) => {
+  return (dispatch: (arg0: { type: string; payload: any[] }) => void) => {
+    dispatch({
+      type: "UPDATE_CART",
+      payload: newProductList,
+    });
+  };
+};
+
+export const deleteProductCart = (id: Array<any>) => {
+  return (dispatch: (arg0: { type: string; payload: any[] }) => void) => {
     dispatch({
       type: "DELETE_PRODUCT_CART",
-      payload: name,
+      payload: id,
     });
   };
 };

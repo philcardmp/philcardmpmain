@@ -262,6 +262,8 @@ p {
   border: 1px solid rgb(231, 222, 222);
   flex: 20%;
   margin-right: 15px;
+  border: none;
+  cursor: pointer;
 }
 .cartProdName {
   flex: 70%;
@@ -334,7 +336,6 @@ p {
     background: rgb(2, 37, 94); /* Hover background color */
     color: white;
     font-weight: normal;
-    cursor: pointer; /* Change cursor on hover */
     text-align: left;
 }
 
