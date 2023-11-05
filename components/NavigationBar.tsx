@@ -32,6 +32,14 @@ export default function NavigationBar() {
     router.push('/login')
   };
 
+  const checkUser = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    if (!loginEmail) {
+      router.push('/login')
+    }
+  };
+
+
   return (
     <Navbar bg="light" expand="lg" className="bg-black py-0" id="myNavbar">
       <Container>
@@ -49,20 +57,20 @@ export default function NavigationBar() {
         </Link>
 
         <div className="nav-btns order-lg-2">
-          <Link href="/cart" className="btn position-relative" type="button">
+          <Link href="/cart" className="btn position-relative">
             <FontAwesomeIcon icon={faShoppingCart} height={20} />
             <span className="nav-btn-label"> CART </span> (
             {cartProducts ? cartProducts?.length : 0})
           </Link>
-          {loginEmail && <>
-            <Link href="/profile" className="btn position-relative" type="button">
-              <FontAwesomeIcon icon={faUser} height={20} />
-              <span className="nav-btn-label"> Profile </span>
-            </Link>
-            <Link href="/login" className="btn position-relative" onClick={(e) => logout(e)}>
+          <Link href="/profile" className="btn position-relative" onClick={checkUser}>
+            <FontAwesomeIcon icon={faUser} height={20} />
+            <span className="nav-btn-label"> Profile </span>
+          </Link>
+          {loginEmail &&
+            <Link href="/login" className="btn position-relative" onClick={logout}>
               <FontAwesomeIcon icon={faSignOut} height={20} />
             </Link>
-          </>}
+          }
         </div>
 
 
