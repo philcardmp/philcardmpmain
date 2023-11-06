@@ -28,22 +28,18 @@ export default function Collection() {
     }, 200);
   }, [activeFilter]);
 
-  const addProductToCart = (product) => {
-    if (localStorage.getItem("email")) {
-      addToCart(product);
+  const addProductToCart = (id, product) => {
+    addToCart({ ...product, id });
 
-      toast.success(` ${product.productName} has been added to your cart! ⭐`, {
-        position: "top-center",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        theme: "colored",
-      });
-    } else {
-      router.push("/login");
-    }
+    toast.success(` ${product.productName} has been added to your cart! ⭐`, {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      theme: "colored",
+    });
   };
 
   const getDescription = (text) => {
@@ -98,7 +94,7 @@ export default function Collection() {
             </div>
             <div className="text-center mt-1">
               <button
-                onClick={() => addProductToCart(item.data())}
+                onClick={() => addProductToCart(item.id, item.data())}
                 className="btn btn-primary mt-1 w-50"
               >
                 Add to Cart
