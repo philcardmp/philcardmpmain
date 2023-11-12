@@ -81,7 +81,6 @@ export default function Chat() {
                         alt="order image"
                         width="120"
                         height="120"
-                        // onClick={() => selectCard(product)}
                       />
                     </div>
                     <div className="m-3">

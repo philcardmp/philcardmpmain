@@ -89,7 +89,7 @@ export default function Cart() {
   const closeModal = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     setShowModal(false);
-    window.location.reload();
+    router.push("/profile");
   };
 
   const selectCard = (product: { id: any; }) => {
@@ -256,14 +256,9 @@ export default function Cart() {
                   </Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="text-dark">
-                  Successful Checkout! Please wait for our message, thank you.
+                  Successful Checkout!
                   <br />
-                  <br />
-                  For faster transaction please message us here:
-                  <br />
-                  <a href="https://www.address.com/profile.php?id=100090652545502&mibextid=LQQJ4d">
-                    Talasulod address Page
-                  </a>
+                  Please send us a message on the profile page.
                 </Modal.Body>
                 <Modal.Footer>
                   <Button onClick={closeModal}>Close</Button>

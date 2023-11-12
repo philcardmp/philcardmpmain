@@ -34,11 +34,11 @@ export default function AboutUs() {
                             <p className="lead text-muted">FB Page: Mr. PCM</p>
                             <p className="fs-6">
                                 Please visit our <Link
-                                href="https://www.facebook.com/phcardsmp"
-                                target="_blank"
-                                className="text-white text-decoration-none text-muted"
-                            >Facebook page </Link>
-                                 and leave us a message if you want to want to sell and showcase your cards on our
+                                    href="https://www.facebook.com/phcardsmp"
+                                    target="_blank"
+                                    className="text-white text-decoration-none text-muted"
+                                >Facebook page </Link>
+                                and leave us a message if you want to want to sell and showcase your cards on our
                                 website! Feel free to chat us anytime.
                             </p>
                         </div>
@@ -52,30 +52,30 @@ export default function AboutUs() {
                         <div className="col-lg-6">
                             <h3 className="mt-3">Let us know how we can help you.</h3>
                             <Link href="/" className="brand text-decoration-none text-white">
-                                Talasulod
+                                Philippine Card Marketplace
                             </Link>
                             <p className="text-white text-muted">
                                 Please send us a message, we usually send our reply between 8am
                                 to 10pm.
                             </p>
                             <div className="d-flex justify-content-start align-items-start my-2 text-muted">
-                <span className="me-3">
-                  <FontAwesomeIcon icon={faEnvelope} height={20} />
-                </span>
+                                <span className="me-3">
+                                    <FontAwesomeIcon icon={faEnvelope} height={20} />
+                                </span>
                                 <span className="fw-light">philcardmp@gmail.com</span>
                             </div>
                             <div className="d-flex justify-content-start align-items-start my-2 text-muted">
-                <span className="me-3">
-                  <FontAwesomeIcon icon={faMapMarked} height={20} />
-                </span>
+                                <span className="me-3">
+                                    <FontAwesomeIcon icon={faMapMarked} height={20} />
+                                </span>
                                 <span className="fw-light">
-                  Angeles City, Pampanga, Philippines
-                </span>
+                                    Angeles City, Pampanga, Philippines
+                                </span>
                             </div>
                             <div className="d-flex justify-content-start align-items-start my-2 text-muted">
-                <span className="me-3">
-                  <FontAwesomeIcon icon={faPhone} height={20} />
-                </span>
+                                <span className="me-3">
+                                    <FontAwesomeIcon icon={faPhone} height={20} />
+                                </span>
                                 <span className="fw-light">0997 720 0248</span>
                             </div>
                             <br />

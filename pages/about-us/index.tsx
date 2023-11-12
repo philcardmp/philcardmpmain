@@ -59,7 +59,7 @@ export default function AboutUs() {
             <div className="col-lg-6">
               <h3 className="mt-3">Let us know how we can help you.</h3>
               <Link href="/" className="brand text-decoration-none text-white">
-                Talasulod
+                Philippine Card Marketplace
               </Link>
               <p className="text-white text-muted">
                 Please send us a message, we usually send our reply between 8am
