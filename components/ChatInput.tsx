@@ -13,7 +13,7 @@ export default function ChatInput({ email, userId, chatRef, image }) {
             message: input,
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
             user: email,
-            userImage: image,
+            userImage: image ? image : "/user.jpeg",
         });
 
         chatRef.current.scrollIntoView({

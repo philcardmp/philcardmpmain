@@ -68,72 +68,76 @@ export default function Chat() {
             className="messages-container overflow-auto"
             style={{ maxHeight: "600px" }}
           >
-            {orders?.docs.map((order, index) => (
-              <ListGroup.Item key={index}>
-                <div className="cartContainer">
-                  <div className="m-2" style={{ cursor: "pointer" }}>
-                    <Image
-                      src="/screenshot.png"
-                      alt="order image"
-                      width="120"
-                      height="120"
-                      // onClick={() => selectCard(product)}
-                    />
-                  </div>
-                  <div className="m-3">
-                    <h6>Order Id:{order.id}</h6>
-                    <p className="fs-6">
-                      Price: ₱{order.data().totalPrice.toLocaleString()}
-                    </p>
-                  </div>
-                  <div>
-                    {order?.data().order.map((product, index) => (
-                      <div
-                        key={index}
-                        style={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                        }}
-                      >
-                        <p>
-                          {product.productName} (
-                          {product.quantitySelected
-                            ? product.quantitySelected
-                            : 1}
-                          )
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                  <div
-                    className="px-2"
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                    }}
-                  >
+            {orders?.docs
+              .filter(
+                (order) => order.data().email === localStorage.getItem("email")
+              )
+              .map((order, index) => (
+                <ListGroup.Item key={index}>
+                  <div className="cartContainer">
+                    <div className="m-2" style={{ cursor: "pointer" }}>
+                      <Image
+                        src="/screenshot.png"
+                        alt="order image"
+                        width="120"
+                        height="120"
+                        // onClick={() => selectCard(product)}
+                      />
+                    </div>
+                    <div className="m-3">
+                      <h6>Order Id:{order.id}</h6>
+                      <p className="fs-6">
+                        Price: ₱{order.data().totalPrice.toLocaleString()}
+                      </p>
+                    </div>
+                    <div>
+                      {order?.data().order.map((product, index) => (
+                        <div
+                          key={index}
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                          }}
+                        >
+                          <p>
+                            {product.productName} (
+                            {product.quantitySelected
+                              ? product.quantitySelected
+                              : 1}
+                            )
+                          </p>
+                        </div>
+                      ))}
+                    </div>
                     <div
                       className="px-2"
                       style={{
                         display: "flex",
-                        justifyContent: "space-around",
+                        justifyContent: "space-between",
                         alignItems: "center",
                       }}
                     >
-                      <p>Status: {order.data().status}</p>
-                    </div>
+                      <div
+                        className="px-2"
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-around",
+                          alignItems: "center",
+                        }}
+                      >
+                        <p>Status: {order.data().status}</p>
+                      </div>
 
-                    <p className="fw-bold">
-                      {new Date(
-                        order.data().timestamp.seconds * 1000
-                      ).toLocaleDateString()}
-                    </p>
+                      <p className="fw-bold">
+                        {new Date(
+                          order.data().timestamp.seconds * 1000
+                        ).toLocaleDateString()}
+                      </p>
+                    </div>
+                    <div className="RemoveCartItem"></div>
                   </div>
-                  <div className="RemoveCartItem"></div>
-                </div>
-              </ListGroup.Item>
-            ))}
+                </ListGroup.Item>
+              ))}
           </ListGroup>
         </Col>
 
@@ -151,7 +155,7 @@ export default function Chat() {
 
                 <div
                   className="messages-container overflow-auto"
-                  style={{ maxHeight: "500px" }}
+                  style={{ maxHeight: "500px", height: "500px" }}
                   ref={messagesContainerRef}
                 >
                   {userMessages?.docs.map((doc) => {
