@@ -415,7 +415,6 @@ p {
   color: #66fcf1;
 }
 
-
 /* <!-- ---- Loader ---- --> */
 .loader-container {
   height: 100vh;
@@ -423,14 +422,27 @@ p {
   justify-content: center;
   align-items: center;
 }
-
 .loader-contents {
   text-align: center;
 }
-
 .custom-spinner {
   width: 100px;
   height: 100px;
   border-width: 5px;
   border-top-color: #800080; /* Use purple as the top border color */
+}
+
+/* <!-- ---- Message ---- --> */
+.message-container {
+  align-items: flex-start;
+}
+.user-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+.timestamp {
+  font-size: 14px;
+}
+.message-text {
+  font-size: 16px;
 }

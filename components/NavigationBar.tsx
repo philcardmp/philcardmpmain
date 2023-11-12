@@ -29,6 +29,7 @@ export default function NavigationBar() {
     e.preventDefault();
     auth.signOut();
     localStorage.removeItem('email')
+    localStorage.removeItem('userId')
     router.push('/login')
   };
 
@@ -36,6 +37,8 @@ export default function NavigationBar() {
     e.preventDefault();
     if (!loginEmail) {
       router.push('/login')
+    } else {
+      router.push('/profile')
     }
   };
 

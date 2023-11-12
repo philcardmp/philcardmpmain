@@ -57,10 +57,11 @@ export default function Cart() {
     } else {
       setShowModal(true);
       setinvalidAddress(false);
+
       db.collection("orders").add({
-        user: address,
+        email: loginEmail,
         order: cartProducts,
-        status: "prepare",
+        status: "waiting for payment",
         totalPrice: total,
         partialPayment: 0,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
@@ -85,24 +86,22 @@ export default function Cart() {
     updateCart(newProductList);
   };
 
-  const closeModal = (e) => {
+  const closeModal = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     setShowModal(false);
     window.location.reload();
   };
 
-  const selectCard = (product) => {
-    console.log("first", product);
+  const selectCard = (product: { id: any; }) => {
     router.push(`/product/${product.id}`);
   };
 
   return (
     <div>
       <Head>
-        <title>Philippine Card Marketplace</title>
-        <link rel="icon" href="/logo.png" />
+        <title>Phillipine Card Marketplace</title>
+        <link rel="icon" href="/logo1.png" />
       </Head>
-
       <NavigationBar />
       <Container fluid style={{ marginTop: "140px" }}>
         <Row style={{ marginTop: "30px" }}>
