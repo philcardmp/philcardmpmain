@@ -206,6 +206,9 @@ body {
 #contactUs{
   padding-top: 50px;
 }
+#checkoutItems{
+    padding-top: 50px;
+}
 
 /* <!-- ---- Cart ---- --> */
 .cartQty {
