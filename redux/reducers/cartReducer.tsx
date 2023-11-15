@@ -22,7 +22,7 @@ const cartReducer = (state = initialState, action: any) => {
           if (product.productName === action.payload.productName) {
             updatedProductList.push({
               ...product,
-              quantitySelected: product.quantitySelected + 1,
+              quantitySelected: product.quantity == product.quantitySelected ? product.quantity : product.quantitySelected + 1,
             });
           } else {
             updatedProductList.push(product);
@@ -31,7 +31,7 @@ const cartReducer = (state = initialState, action: any) => {
 
         return updatedProductList;
       } else {
-        return [action.payload, ...state];
+        return [{ ...action.payload, quantitySelected: 1 }, ...state];
       }
 
     case "UPDATE_CART":
@@ -41,6 +41,9 @@ const cartReducer = (state = initialState, action: any) => {
       return [...state].filter(
         (product) => product.id !== action.payload
       );
+
+    case "CLEAR_CART":
+      return [];
 
     default:
       return state;

@@ -20,10 +20,20 @@ export default function NavigationBar() {
   const router = useRouter();
   const cartProducts = useSelector((state: any) => state.cartProducts);
   const [loginEmail, setLoginEmail] = useState(null);
+  const [totalQuantity, setTotalQuantity] = useState(0);
+
 
   useEffect(() => {
     setLoginEmail(localStorage.getItem('email'))
   }, [])
+
+  useEffect(() => {
+    let totalQuantity = 0;
+    cartProducts?.forEach((product) => {
+      totalQuantity = totalQuantity + parseInt(product.quantitySelected)
+    });
+    setTotalQuantity(totalQuantity)
+  }, [cartProducts]);
 
   const logout = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
@@ -63,7 +73,7 @@ export default function NavigationBar() {
           <Link href="/cart" className="btn position-relative">
             <FontAwesomeIcon icon={faShoppingCart} height={20} />
             <span className="nav-btn-label"> CART </span> (
-            {cartProducts ? cartProducts?.length : 0})
+            {totalQuantity})
           </Link>
           <Link href="/profile" className="btn position-relative" onClick={checkUser}>
             <FontAwesomeIcon icon={faUser} height={20} />
@@ -82,7 +92,7 @@ export default function NavigationBar() {
             <Form.Control
               type="search"
               className="w-100"
-              placeholder="Search a card"
+              placeholder="Search by name"
               aria-label="Search"
             />
             <div className="nav-btns">

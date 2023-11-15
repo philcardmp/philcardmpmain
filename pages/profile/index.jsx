@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useCollection, useDocument } from "react-firebase-hooks/firestore";
-import { db } from "../../firebase";
+import { db, storage } from "../../firebase";
 import { Container, Row, Col, ListGroup, Image } from "react-bootstrap";
 import ChatInput from "../../components/ChatInput";
 import Message from "../../components/Message";
@@ -9,6 +9,7 @@ import Head from "next/head";
 
 export default function Chat() {
   const [userId, setUserId] = useState("");
+  const [activeOrderId, setActiveOrderId] = useState("");
   const chatRef = useRef(null);
   const messagesContainerRef = useRef(null);
   const [userDetails] = useDocument(
@@ -43,6 +44,36 @@ export default function Chat() {
     });
   }, [userId, loading]);
 
+  const handleFileChange = async (event) => {
+    const file = event.target.files[0];
+
+    if (file) {
+      const storageRef = storage.ref(`orders/${activeOrderId}/screenshot.png`);
+      const imageRef = storageRef.child("screenshot.png");
+
+      // Check if there's an existing image URL in Firestore
+      const orderRef = db.collection("orders").doc(activeOrderId);
+      orderRef
+        .get()
+        .then((doc) => {
+          // Upload the new image
+          imageRef.put(file).then(async () => {
+            const imageUrl = await imageRef.getDownloadURL();
+
+            // Save image URL in Firestore under "orders" document
+            orderRef.set({ image: imageUrl }, { merge: true });
+          });
+        })
+        .catch((error) => {
+          console.error("Error getting document:", error);
+        });
+    }
+  };
+
+  const handleButtonClick = (orderId) => {
+    setActiveOrderId(orderId);
+    document.getElementById("fileInput").click();
+  };
   return (
     <div>
       <Head>
@@ -76,17 +107,35 @@ export default function Chat() {
                 <ListGroup.Item key={index}>
                   <div className="cartContainer">
                     <div className="m-2" style={{ cursor: "pointer" }}>
-                      <Image
-                        src="/screenshot.png"
+                      <img
+                        src={
+                          order.data().image
+                            ? order.data().image
+                            : "/screenshot.png"
+                        }
                         alt="order image"
                         width="120"
                         height="120"
+                        style={{ cursor: "pointer" }}
+                        onClick={() => handleButtonClick(order.id)}
+                      />
+                      <input
+                        type="file"
+                        id="fileInput"
+                        style={{ display: "none" }}
+                        accept="image/*"
+                        onChange={handleFileChange}
                       />
                     </div>
                     <div className="m-3">
                       <h6>Order Id:{order.id}</h6>
                       <p className="fs-6">
                         Price: ₱{order.data().totalPrice.toLocaleString()}
+                      </p>
+                      <p className="fs-6">
+                        {new Date(
+                          order?.data().timestamp?.seconds * 1000
+                        ).toLocaleDateString()}
                       </p>
                     </div>
                     <div>
@@ -129,7 +178,7 @@ export default function Chat() {
 
                       <p className="fw-bold">
                         {new Date(
-                          order.data().timestamp.seconds * 1000
+                          order?.data().timestamp?.seconds * 1000
                         ).toLocaleDateString()}
                       </p>
                     </div>
@@ -142,7 +191,7 @@ export default function Chat() {
 
         <Col md={6}>
           <Container fluid className="d-flex flex-column flex-grow-1 mt-5">
-            {userDetails?.data().email && userMessages && (
+            {userDetails?.data()?.email && userMessages && (
               <>
                 <Row className="justify-content-between p-3 border-bottom">
                   <Col className="d-flex align-items-center">

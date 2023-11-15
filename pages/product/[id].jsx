@@ -19,34 +19,11 @@ const Product = () => {
   const router = useRouter();
   const { id } = router.query;
   const [showModal, setShowModal] = useState(false);
-  const [isLike, setIsLike] = useState(false);
   const { addToCart } = bindActionCreators(actionCart, dispatch);
 
   const [productList] = useCollection(
     db.collection("products").orderBy("timestamp", "desc")
   );
-
-  const getLike = (product) => {
-    if (!isLike) {
-      db.collection("products")
-        .doc(product.id)
-        .update({
-          ...product.data,
-          likes: product.data().likes + 1,
-        });
-
-      setIsLike(true);
-    } else {
-      db.collection("products")
-        .doc(product.id)
-        .update({
-          ...product.data,
-          likes: product.data().likes - 1,
-        });
-
-      setIsLike(false);
-    }
-  };
 
   const closeModal = (e) => {
     e.preventDefault();
@@ -100,24 +77,6 @@ const Product = () => {
               {item.data().filter}
             </h4>
             {renderName(item.data())}
-            <div className="row">
-              <p className="col-6 display-6 lead fw-bolder">
-                ₱ {parseInt(item.data().price).toLocaleString()}
-              </p>
-              <p
-                className="col-6 lead fw-bolder text-secondary d-flex align-items-center"
-                role="button"
-                onClick={() => getLike(item)}
-              >
-                <FontAwesomeIcon
-                  icon={faStar}
-                  height={35}
-                  color={isLike ? "gold" : "grey"}
-                />
-                {item.data().likes}Likes
-              </p>
-            </div>
-
             <p className="lead">{item.data().description}</p>
             <button
               className="btn btn-outline-dark px-4 py-2"

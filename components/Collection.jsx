@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import * as actionCart from "../redux/actions/actionCart";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
 import { ToastContainer, toast } from "react-toastify";
 import { db } from "../firebase";
@@ -8,15 +8,17 @@ import { useCollection } from "react-firebase-hooks/firestore";
 import { renderLoading, renderLoadingImage } from "../utilities/loader";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 export default function Collection() {
   const dispatch = useDispatch();
-  const router = useRouter();
   const { addToCart } = bindActionCreators(actionCart, dispatch);
   const [activeFilter, setActiveFilter] = useState("ALL");
+  const [activeCard, setActiveCard] = useState("");
+  const [cardAdded, setCardAdded] = useState(false);
+  const [totalQuantity, setTotalQuantity] = useState(0);
   const [loading, setLoading] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const cartProducts = useSelector((state) => state.cartProducts);
   const [productList] = useCollection(
     db.collection("products").orderBy("timestamp", "desc")
   );
@@ -28,18 +30,49 @@ export default function Collection() {
     }, 200);
   }, [activeFilter]);
 
-  const addProductToCart = (id, product) => {
-    addToCart({ ...product, id });
-
-    toast.success(` ${product.productName} has been added to your cart! ⭐`, {
-      position: "top-center",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      theme: "colored",
+  useEffect(() => {
+    let updatedTotalQuantity = 0;
+    cartProducts?.forEach((product) => {
+      updatedTotalQuantity =
+        updatedTotalQuantity + parseInt(product.quantitySelected);
     });
+
+    if (cardAdded) {
+      if (updatedTotalQuantity > totalQuantity) {
+        toast.success(` ${activeCard} has been added to your cart! ⭐`, {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          theme: "colored",
+        });
+      } else {
+        toast.error(
+          ` 😔 you exceeds the maximum quantity allowed for ${activeCard}`,
+          {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            theme: "colored",
+          }
+        );
+      }
+
+      setCardAdded(false);
+    }
+
+    setTotalQuantity(updatedTotalQuantity);
+  }, [cartProducts]);
+
+  const addProductToCart = (product) => {
+    addToCart(product);
+    setActiveCard(product.productName);
+    setCardAdded(true);
   };
 
   const getDescription = (text) => {
@@ -94,7 +127,7 @@ export default function Collection() {
             </div>
             <div className="text-center mt-1">
               <button
-                onClick={() => addProductToCart(item.id, item.data())}
+                onClick={() => addProductToCart(item.data())}
                 className="btn btn-primary mt-1 w-50"
               >
                 Add to Cart

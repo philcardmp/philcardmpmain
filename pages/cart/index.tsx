@@ -24,16 +24,18 @@ import Link from "next/link";
 export default function Cart() {
   const router = useRouter();
   const [total, setTotal] = useState(0);
+  const [totalQuantity, setTotalQuantity] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const [address, setAddress] = useState(null);
   const [invalidAddress, setinvalidAddress] = useState(false);
   const dispatch = useDispatch();
   const cartProducts = useSelector((state: any) => state.cartProducts);
-  const { updateCart, deleteProductCart } = bindActionCreators(
+  const { updateCart, deleteProductCart, clearCart } = bindActionCreators(
     actionCart,
     dispatch
   );
   const [loginEmail, setLoginEmail] = useState(null);
+
 
   useEffect(() => {
     setLoginEmail(localStorage.getItem("email"));
@@ -41,13 +43,16 @@ export default function Cart() {
 
   useEffect(() => {
     let value = 0;
+    let totalQuantity = 0;
     cartProducts?.forEach((product) => {
       const productValue =
         product.price *
-        (product.quantitySelected ? product.quantitySelected : 1);
+        (product.quantitySelected);
       value = value + productValue;
+      totalQuantity = totalQuantity + parseInt(product.quantitySelected)
     });
     setTotal(value);
+    setTotalQuantity(totalQuantity)
   }, [cartProducts]);
 
   const cartCheckOut = (e) => {
@@ -64,6 +69,7 @@ export default function Cart() {
         status: "waiting for payment",
         totalPrice: total,
         partialPayment: 0,
+        address: address,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       });
     }
@@ -89,6 +95,7 @@ export default function Cart() {
   const closeModal = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     setShowModal(false);
+    clearCart()
     router.push("/profile");
   };
 
@@ -151,11 +158,7 @@ export default function Cart() {
                           onChange={(e) =>
                             setQuantity(product.id, e.target.value)
                           }
-                          defaultValue={
-                            product.quantitySelected > product.quantity
-                              ? product.quantity
-                              : product.quantitySelected
-                          }
+                          defaultValue={product.quantitySelected}
                         >
                           {Array.from(
                             { length: product.quantity },
@@ -185,7 +188,7 @@ export default function Cart() {
           <Col xs={12} md={6} style={{ margin: "0px" }}>
             <div className="Cart-total">
               <h4 className="Cart-total-heading">
-                Subtotal ({cartProducts ? cartProducts?.length : 0})
+                Subtotal ({totalQuantity} cards)
               </h4>
               <hr />
               <div>
@@ -196,14 +199,12 @@ export default function Cart() {
                   >
                     <p>
                       {product.productName} (
-                      {product.quantitySelected ? product.quantitySelected : 1})
+                      {product.quantitySelected})
                     </p>
                     <p>
                       ₱{" "}
                       {product.price *
-                        (product.quantitySelected
-                          ? product.quantitySelected
-                          : 1)}
+                        (product.quantitySelected)}
                     </p>
                   </div>
                 ))}
@@ -218,8 +219,7 @@ export default function Cart() {
               <hr />
               <div className="text-warning my-5">
                 <h4>
-                  If you refresh the page without logging in, your cart will be
-                  cleared.
+                  If you refresh the page your cart will be cleared.
                 </h4>
               </div>
               {loginEmail ? (

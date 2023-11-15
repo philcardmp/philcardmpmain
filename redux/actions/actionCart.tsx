@@ -4,7 +4,7 @@ export const addToCart = (product: object) => {
   ) => {
     dispatch({
       type: "ADD_TO_CART",
-      payload: { ...product, quantitySelected: 1 },
+      payload: { ...product, quantitySelected: 0 },
     });
   };
 };
@@ -23,6 +23,15 @@ export const deleteProductCart = (id: Array<any>) => {
     dispatch({
       type: "DELETE_PRODUCT_CART",
       payload: id,
+    });
+  };
+};
+
+export const clearCart = () => {
+  return (dispatch: (arg0: { type: string; payload: any[] }) => void) => {
+    dispatch({
+      type: "CLEAR_CART",
+      payload: null,
     });
   };
 };
