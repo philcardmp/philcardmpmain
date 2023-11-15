@@ -88,17 +88,17 @@ export default function Chat() {
         <Col md={6} className="bg-dark">
           <h4 className="text-light fw-bold">Order Details:</h4>
           <ListGroup
-            className="messages-container overflow-auto"
+            className="messages-container overflow-auto pt-2"
             style={{ maxHeight: "600px" }}
           >
-            {orders?.docs.length > 0 ? (
+            {orders?.docs.length > undefined ? (
               orders?.docs
               .filter(
                 (order) => order.data().email === localStorage.getItem("email")
               )
               .map((order, index) => (
                 <ListGroup.Item key={index}>
-                  <div className="cartContainer">
+                  <div className="cartContainer ">
                     <div className="m-2" style={{ cursor: "pointer" }}>
                       <img
                         src={
@@ -180,8 +180,9 @@ export default function Chat() {
                     </p>
                   </div>
                 </ListGroup.Item>
-              ))) : (
-                <ListGroup.Item>No orders yet</ListGroup.Item>
+              ))
+            ) : (
+                <ListGroup.Item><div className="m-1 text-center">No orders yet</div></ListGroup.Item>
               )}
           </ListGroup>
           <hr />
@@ -204,12 +205,12 @@ export default function Chat() {
             </li>
             <li>
               <p className="d-flex mb-2 text-light">
-                2. Please save a screenshot of your payment and attach it to your order details.
+                2. Save a screenshot of your payment and attach it to your order details.
               </p>
             </li>
             <li>
               <p className="d-flex mb-2 text-light">
-                3. We'll send a message in the chatbox to confirm your order.
+                3. We'll send a message in the chatbox to confirm your order. Chatbox will be available after your first order.
               </p>
             </li>
             <li>

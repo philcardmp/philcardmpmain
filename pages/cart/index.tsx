@@ -217,13 +217,10 @@ export default function Cart() {
                 </p>
               </div>
               <hr />
-              <div className="text-warning my-5">
-                <h4>
-                  If you refresh the page your cart will be cleared.
-                </h4>
-              </div>
+
               {loginEmail ? (
                 <Form.Group className="mb-3" controlId="formUsername">
+                  <div className="py-2">Enter your current shipping address</div>
                   <Form.Control
                     type="text"
                     size="sm"
@@ -236,8 +233,13 @@ export default function Cart() {
                   <Form.Control.Feedback type="invalid">
                     Please enter a valid address.
                   </Form.Control.Feedback>
+                  <div className="text-warning my-5">
+                    <h6>
+                      Note: If you refresh the page your cart will be cleared.
+                    </h6>
+                  </div>
                   <button
-                    className="btn btn-primary mt-5"
+                    className="btn btn-primary mt-4"
                     disabled={cartProducts.length < 1}
                     onClick={cartCheckOut}
                   >
