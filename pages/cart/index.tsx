@@ -252,7 +252,7 @@ export default function Cart() {
               <Modal show={showModal}>
                 <Modal.Header>
                   <Modal.Title className="text-dark">
-                    Congratulation!
+                    Congratulations!
                   </Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="text-dark">
