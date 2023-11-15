@@ -92,7 +92,7 @@ export default function NavigationBar() {
             <Form.Control
               type="search"
               className="w-100"
-              placeholder="Search by name"
+              placeholder="Search by player's name"
               aria-label="Search"
             />
             <div className="nav-btns">

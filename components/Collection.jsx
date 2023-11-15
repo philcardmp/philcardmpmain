@@ -75,6 +75,21 @@ export default function Collection() {
     setCardAdded(true);
   };
 
+  const getCardName = (name) => {
+    const truncatedText = isHovered ? name : name.slice(0, 15);
+
+    return (
+      <span
+        className="fw-bold lead fs-4"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {truncatedText}
+        {name.length > 15 && !isHovered && "..."}
+      </span>
+    );
+  };
+
   const getDescription = (text) => {
     const truncatedText = isHovered ? text : text.slice(0, 40);
 
@@ -90,68 +105,8 @@ export default function Collection() {
     );
   };
 
-  const renderCollectionListAll = () => {
+  const renderCards = (item) => {
     return (
-      productList?.docs
-        // .filter((product) => product.data().type === "CARD")
-        // .filter((product) => product.data().filter === activeFilter)
-        .map((item) => (
-          <div className="col-md-6 col-lg-4 p-2" key={item.id}>
-            <div className="collection-img position-relative d-flex justify-content-center align-items-center">
-              <Link href={`/product/${item.id}`}>
-                {item.data().postImage ? (
-                  <Image
-                    src={item.data().postImage}
-                    alt={item.data().productName}
-                    width="280"
-                    height="360"
-                  />
-                ) : (
-                  renderLoading()
-                )}
-              </Link>
-            </div>
-            <div className="text-start mt-3">
-              <span className="fw-bold lead fs-4">
-                {item.data().productName}
-              </span>
-              <br />
-              <span className="fw-bold lead fs-6">
-                ₱{parseInt(item.data().price).toLocaleString()} (
-                {parseInt(item.data().quantity).toLocaleString()} available)
-              </span>
-              <p className="text-capitalize my-1">
-                {getDescription(item.data().description)}
-              </p>
-              <br />
-            </div>
-            <div className="text-center mt-1">
-              <button
-                onClick={() => addProductToCart(item.data())}
-                className="btn btn-primary mt-1 w-50"
-              >
-                Add to Cart
-              </button>
-            </div>
-          </div>
-        ))
-    );
-  };
-
-  const renderCollectionList = () => {
-    const filteredProducts = productList?.docs
-      .filter((product) => product.data().type === "CARD")
-      .filter((product) => product.data().filter === activeFilter);
-
-    if (!filteredProducts || filteredProducts.length === 0) {
-      return (
-        <div className="position-relative d-flex justify-content-center align-items-center fw-bold mt-5">
-          <p>No results found</p>
-        </div>
-      );
-    }
-
-    return filteredProducts.map((item) => (
       <div className="col-md-6 col-lg-4 p-2" key={item.id}>
         <div className="collection-img position-relative d-flex justify-content-center align-items-center">
           <Link href={`/product/${item.id}`}>
@@ -166,41 +121,49 @@ export default function Collection() {
               renderLoading()
             )}
           </Link>
-
-          {/*<span*/}
-          {/*  className={`${getStatusColor(*/}
-          {/*    item.data().status*/}
-          {/*  )} position-absolute d-flex align-items-center justify-content-center text-white`}*/}
-          {/*>*/}
-          {/*  {item.data().status.toUpperCase()}*/}
-          {/*</span>*/}
         </div>
         <div className="text-start mt-3">
-          <span className="fw-bold lead fs-4">
-            ₱ {parseInt(item.data().price).toLocaleString()}
+          {getCardName(item.data().productName)}
+          <br />
+          <span className="fw-bold lead fs-6">
+            ₱{parseInt(item.data().price).toLocaleString()} (
+            {parseInt(item.data().quantity).toLocaleString()} available)
           </span>
           <p className="text-capitalize my-1">
-            {item.data().productName} {item.data().description}
+            {getDescription(item.data().description)}
           </p>
-          <p className="text-capitalize my-1">{item.data().filter}</p>
           <br />
         </div>
         <div className="text-center mt-1">
-          {item.data().status !== "sold" && item.data().status !== "pending" ? (
-            <button
-              onClick={() => addProductToCart(item.data())}
-              className="btn btn-primary mt-1 w-50"
-            >
-              Add to Cart
-            </button>
-          ) : (
-            <button className="btn btn-secondary mt-1 w-50" disabled>
-              {item.data().status === "sold" ? "Sold" : "Pending"}
-            </button>
-          )}
+          <button
+            onClick={() => addProductToCart(item.data())}
+            className="btn btn-primary mt-1 w-50"
+          >
+            Add to Cart
+          </button>
         </div>
       </div>
-    ));
+    );
+  };
+
+  const renderCollectionListAll = () => {
+    return productList?.docs.map((item) => renderCards(item));
+  };
+
+  const renderCollectionList = () => {
+    const filteredProducts = productList?.docs.filter(
+      (product) => product.data().filter === activeFilter
+    );
+
+    if (!filteredProducts || filteredProducts.length === 0) {
+      return (
+        <div className="position-relative d-flex justify-content-center align-items-center fw-bold mt-5">
+          <p>No results found</p>
+        </div>
+      );
+    }
+
+    return filteredProducts.map((item) => renderCards(item));
   };
 
   return (

@@ -173,16 +173,18 @@ export default function Chat() {
                           alignItems: "center",
                         }}
                       >
-                        <p>Status: {order.data().status}</p>
+                        <p>
+                          Address:
+                          <p className="fw-bold">{order.data().address}</p>
+                        </p>
                       </div>
-
-                      <p className="fw-bold">
-                        {new Date(
-                          order?.data().timestamp?.seconds * 1000
-                        ).toLocaleDateString()}
-                      </p>
                     </div>
-                    <div className="RemoveCartItem"></div>
+                    <p>
+                      Status:{" "}
+                      <p className="fw-bold text-danger">
+                        {order.data().status}
+                      </p>
+                    </p>
                   </div>
                 </ListGroup.Item>
               ))}
