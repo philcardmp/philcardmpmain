@@ -182,17 +182,40 @@ export default function Chat() {
               ))}
           </ListGroup>
           <hr />
-          <div className="d-flex justify-content-between text-light">
-            <strong>Send your payment and attach the screenshot to process your order</strong>
-          </div>
-          <div className="d-flex justify-content-between text-light">
-            <div>Name: Jowel Castañeda</div>
-          </div>
-          <div className="d-flex justify-content-between text-light">
-            <div>Gcash: 09974722392</div>
-            <div>BPI: 9709258327</div>
-            <div>BDO: 001311177068</div>
-          </div>
+          <p className="d-flex justify-content-between text-light ">
+            <strong>To process your order:</strong>
+          </p>
+          <ol>
+            <li>
+              <p className="d-flex mb-2 text-light">
+                1. Sumbit your payment to
+              </p>
+              <div className="d-flex mb-2 text-light px-5">
+                <strong>Name: Jowel Castañeda</strong>
+              </div>
+              <div className="d-flex justify-content-between text-light px-5">
+                <div>Gcash: 09974722392</div>
+                <div>BPI: 9709258327</div>
+                <div>BDO: 001311177068</div>
+              </div>
+            </li>
+            <li>
+              <p className="d-flex mb-2 text-light">
+                2. Please save a screenshot of your payment and attach it to your order details.
+              </p>
+            </li>
+            <li>
+              <p className="d-flex mb-2 text-light">
+                3. We'll send a message in the chatbox to confirm your order.
+              </p>
+            </li>
+            <li>
+              <p className="d-flex mb-2 text-light">
+                4. If you have any questions or concerns, please don't hesitate to chat with us. Thank you.
+              </p>
+            </li>
+          </ol>
+
         </Col>
 
         <Col md={6}>
