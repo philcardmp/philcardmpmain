@@ -86,12 +86,13 @@ export default function Chat() {
       <br />
       <Row className="justify-content-between p-3 border-bottom mt-5">
         <Col md={6} className="bg-dark">
-          <h4 className="text-light fw-bold">Order History:</h4>
+          <h4 className="text-light fw-bold">Order Details:</h4>
           <ListGroup
             className="messages-container overflow-auto"
             style={{ maxHeight: "600px" }}
           >
-            {orders?.docs
+            {orders?.docs.length > 0 ? (
+              orders?.docs
               .filter(
                 (order) => order.data().email === localStorage.getItem("email")
               )
@@ -179,7 +180,9 @@ export default function Chat() {
                     </p>
                   </div>
                 </ListGroup.Item>
-              ))}
+              ))) : (
+                <ListGroup.Item>No orders yet</ListGroup.Item>
+              )}
           </ListGroup>
           <hr />
           <p className="d-flex justify-content-between text-light ">
