@@ -86,14 +86,6 @@ export default function Chat() {
       <br />
       <Row className="justify-content-between p-3 border-bottom mt-5">
         <Col md={6} className="bg-dark">
-          <div className="d-flex justify-content-between text-warning">
-            <h4>Name: Jowel Castañeda</h4>
-          </div>
-          <div className="d-flex justify-content-between text-warning">
-            <h4>Gcash: 09974722392</h4>
-            <h4>BPI: 9709258327</h4>
-            <h4>BDO: 001311177068</h4>
-          </div>
           <h4 className="text-light fw-bold">Order History:</h4>
           <ListGroup
             className="messages-container overflow-auto"
@@ -189,6 +181,18 @@ export default function Chat() {
                 </ListGroup.Item>
               ))}
           </ListGroup>
+          <hr />
+          <div className="d-flex justify-content-between text-light">
+            <strong>Send your payment and attach the screenshot to process your order</strong>
+          </div>
+          <div className="d-flex justify-content-between text-light">
+            <div>Name: Jowel Castañeda</div>
+          </div>
+          <div className="d-flex justify-content-between text-light">
+            <div>Gcash: 09974722392</div>
+            <div>BPI: 9709258327</div>
+            <div>BDO: 001311177068</div>
+          </div>
         </Col>
 
         <Col md={6}>
