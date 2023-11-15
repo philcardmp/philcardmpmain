@@ -210,7 +210,7 @@ export default function Chat() {
             </li>
             <li>
               <p className="d-flex mb-2 text-light">
-                3. We'll send a message in the chatbox to confirm your order. Chatbox will be available after your first order.
+                3. We'll send a message in the chatbox to confirm your order.
               </p>
             </li>
             <li>
