@@ -91,7 +91,7 @@ export default function Chat() {
             className="messages-container overflow-auto pt-2"
             style={{ maxHeight: "600px" }}
           >
-            {orders?.docs.length > undefined ? (
+            {orders?.docs.length > 0 ? (
               orders?.docs
               .filter(
                 (order) => order.data().email === localStorage.getItem("email")
