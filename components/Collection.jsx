@@ -76,33 +76,15 @@ export default function Collection() {
   };
 
   const getCardName = (name) => {
-    const truncatedText = isHovered ? name : name.slice(0, 15);
-
     return (
-      <span
-        className="fw-bold lead fs-4"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        {truncatedText}
-        {name.length > 15 && !isHovered && "..."}
-      </span>
+      <span className="fw-bold lead fs-4">{`${name.slice(0, 18)}...`}</span>
     );
   };
 
   const getDescription = (text) => {
     const truncatedText = isHovered ? text : text.slice(0, 40);
 
-    return (
-      <p
-        className="text-capitalize my-1"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        {truncatedText}
-        {text.length > 40 && !isHovered && "..."}
-      </p>
-    );
+    return <p className="text-capitalize my-1">{`${text.slice(0, 40)}...`}</p>;
   };
 
   const renderCards = (item) => {
