@@ -1,26 +1,28 @@
 import Link from "next/link";
+import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faShoppingCart,
-  faMoon,
-  faGem,
   faUser,
   faSearch,
   faSignOut,
 } from "@fortawesome/free-solid-svg-icons";
-import { Container, Form, Navbar } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { Button, Container, Form, FormControl, Navbar } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../firebase";
-
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import * as actionSearch from "../redux/actions/actionSearch";
+import { bindActionCreators } from "@reduxjs/toolkit";
 
 export default function NavigationBar() {
   const router = useRouter();
   const cartProducts = useSelector((state: any) => state.cartProducts);
   const [loginEmail, setLoginEmail] = useState(null);
   const [totalQuantity, setTotalQuantity] = useState(0);
+  const [searchPlayer, setSearchPlayer] = useState('');
+  const dispatch = useDispatch();
+  const { addSearchPlayer, clearSearch } = bindActionCreators(actionSearch, dispatch);
 
 
   useEffect(() => {
@@ -34,6 +36,17 @@ export default function NavigationBar() {
     });
     setTotalQuantity(totalQuantity)
   }, [cartProducts]);
+
+  useEffect(() => {
+    if (searchPlayer == "") {
+      clearSearch()
+    }
+  }, [searchPlayer]);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    addSearchPlayer(searchPlayer)
+  }
 
   const logout = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
@@ -88,17 +101,23 @@ export default function NavigationBar() {
 
 
         <div id="searchbar" className="order-lg-1">
-          <Form className="d-flex">
-            <Form.Control
+          <Form className="d-flex" onSubmit={handleSearch}>
+            <FormControl
               type="search"
               className="w-100"
-              placeholder="Search by player's name"
+              placeholder="Search By Player's Name"
               aria-label="Search"
+              value={searchPlayer}
+              onChange={(e) => setSearchPlayer(e.target.value)}
             />
             <div className="nav-btns">
-              <Link href="/cart" className="btn position-relative m-0" type="button">
+              <Button
+                className="btn position-relative m-0"
+                onClick={handleSearch}
+                type="button"
+              >
                 <FontAwesomeIcon icon={faSearch} height={20} />
-              </Link>
+              </Button>
             </div>
           </Form>
         </div>

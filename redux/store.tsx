@@ -7,11 +7,13 @@ import { createWrapper } from "next-redux-wrapper";
 
 // Reducers
 import cartReducer from "./reducers/cartReducer";
+import searchReducer from "./reducers/searchReducer";
 
 const makeStore = () =>
   configureStore({
     reducer: {
       cartProducts: cartReducer,
+      searchPlayer: searchReducer,
     },
     middleware: [thunk, promiseMiddleware, promise, logger],
   });

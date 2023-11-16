@@ -17,11 +17,20 @@ export default function Collection() {
   const [cardAdded, setCardAdded] = useState(false);
   const [totalQuantity, setTotalQuantity] = useState(0);
   const [loading, setLoading] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
+  const [activePlayerSearch, setActivePlayerSearch] = useState(null);
   const cartProducts = useSelector((state) => state.cartProducts);
+  const searchPlayer = useSelector((state) => state.searchPlayer);
   const [productList] = useCollection(
     db.collection("products").orderBy("timestamp", "desc")
   );
+
+  useEffect(() => {
+    if (searchPlayer == "") {
+      setActivePlayerSearch(null);
+    } else {
+      setActivePlayerSearch(searchPlayer);
+    }
+  }, [searchPlayer]);
 
   useEffect(() => {
     setLoading(true);
@@ -82,8 +91,6 @@ export default function Collection() {
   };
 
   const getDescription = (text) => {
-    const truncatedText = isHovered ? text : text.slice(0, 40);
-
     return <p className="text-capitalize my-1">{`${text.slice(0, 40)}...`}</p>;
   };
 
@@ -128,14 +135,26 @@ export default function Collection() {
     );
   };
 
-  const renderCollectionListAll = () => {
-    return productList?.docs.map((item) => renderCards(item));
-  };
-
   const renderCollectionList = () => {
-    const filteredProducts = productList?.docs.filter(
-      (product) => product.data().filter === activeFilter
-    );
+    let filteredProducts = productList?.docs;
+
+    if (activeFilter && activeFilter !== "ALL") {
+      filteredProducts = filteredProducts.filter(
+        (product) => product.data().filter === activeFilter
+      );
+    }
+
+    if (activePlayerSearch) {
+      filteredProducts = filteredProducts.filter((product) => {
+        const { firstName, lastName } = product.data();
+        const filterText = activePlayerSearch.toLowerCase(); // Convert the filter text to lowercase
+
+        return (
+          firstName.toLowerCase().startsWith(filterText) ||
+          lastName.toLowerCase().startsWith(filterText)
+        );
+      });
+    }
 
     if (!filteredProducts || filteredProducts.length === 0) {
       return (
@@ -656,11 +675,7 @@ export default function Collection() {
           </div>
           <div className="col-lg-9">
             <div className={`collection-list row mt-4 gx-0 gy-3 }`}>
-              {loading
-                ? renderLoading()
-                : activeFilter === "ALL"
-                ? renderCollectionListAll()
-                : renderCollectionList()}
+              {loading ? renderLoading() : renderCollectionList()}
             </div>
           </div>
         </div>
