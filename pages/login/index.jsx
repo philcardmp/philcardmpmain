@@ -34,7 +34,9 @@ const Login = () => {
       .signInWithEmailAndPassword(email, password)
       .then(() => {
         saveUserId(email);
-        localStorage.setItem("email", email);
+        if (email) {
+          localStorage.setItem("email", email);
+        }
         router.push("/");
       })
       .catch((error) => {
@@ -68,7 +70,9 @@ const Login = () => {
 
   const loginProcess = (newUser) => {
     const newUserEmail = newUser?.additionalUserInfo?.profile.email;
-    localStorage.setItem("email", newUserEmail);
+    if (newUserEmail) {
+      localStorage.setItem("email", newUserEmail);
+    }
 
     if (!users?.docs.some((user) => user.data().email === newUserEmail)) {
       db.collection("users")
@@ -77,7 +81,9 @@ const Login = () => {
           image: newUser?.additionalUserInfo?.profile.picture,
         })
         .then((addedUser) => {
-          localStorage.setItem("userId", addedUser.id);
+          if (addedUser.id) {
+            localStorage.setItem("userId", addedUser.id);
+          }
         });
     } else {
       saveUserId(newUserEmail);
@@ -89,7 +95,9 @@ const Login = () => {
   const saveUserId = (userEmail) => {
     users?.docs.forEach((item) => {
       if (item.data().email == userEmail) {
-        localStorage.setItem("userId", item.id);
+        if (item.id) {
+          localStorage.setItem("userId", item.id);
+        }
       }
     });
   };
