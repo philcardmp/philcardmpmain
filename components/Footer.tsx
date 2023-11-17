@@ -18,19 +18,10 @@ export default function Footer() {
       <div className="container">
         <div className="row text-white g-4">
           <div className="col-md-6 col-lg-3">
-            <Link href="/" className="brand text-decoration-none text-black">
-              Philippine Card Marketplace
-            </Link>
-            <p className="text-footer mt-3 ">
-              We are currently located at Angeles City
-              Pampanga. Feel free to browse the card collections!
-              Have fun collecting and earning at the same time.
-              Please contact us if you want to sell your cards
-              on our website. Have fun!
-            </p>
-          </div>
-          <div className="col-md-6 col-lg-3">
-            <h5 className="fw-light text-black">Links</h5>
+            <h6 className="fw-light text-black text-decoration-none"><Link href="/" className=" text-decoration-none text-black">
+              PHILIPPINE CARD MARKETPLACE
+            </Link></h6>
+            <hr />
             <ul className="list-unstyled">
               <li className="my-3">
                 <Link
@@ -59,7 +50,8 @@ export default function Footer() {
             </ul>
           </div>
           <div className="col-md-6 col-lg-3">
-            <h5 className="fw-light text-black mb-3">Contact Us</h5>
+            <h6 className="fw-light text-black mb-3">CONTACT US</h6>
+            <hr />
             <div className="d-flex justify-content-start align-items-start my-2 text-muted">
               <span className="me-3">
                 <FontAwesomeIcon icon={faEnvelope} height={20} />
@@ -82,7 +74,8 @@ export default function Footer() {
             </div>
           </div>
           <div className="col-md-6 col-lg-3">
-            <h5 className="fw-light mb-3 text-black">Follow Us</h5>
+            <h6 className="fw-light mb-3 text-black">FOLLOW US</h6>
+            <hr />
             <ul className="list-unstyled d-flex">
               <li className="text-decoration-none text-muted fs-4 me-4">
                 <Link
