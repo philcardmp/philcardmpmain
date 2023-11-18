@@ -3,7 +3,7 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faShoppingCart,
-  faUser,
+  faMessage,
   faSearch,
   faSignOut,
 } from "@fortawesome/free-solid-svg-icons";
@@ -88,7 +88,7 @@ export default function NavigationBar() {
             <span className="ms-1">({totalQuantity}) </span>
           </Link>
           <Link href="/profile" className="btn position-sticky" onClick={checkUser}>
-            <FontAwesomeIcon icon={faUser} height={20} />
+            <FontAwesomeIcon icon={faMessage} height={20} />
             <span className="nav-btn-label"> Profile </span>
           </Link>
           {loginEmail &&

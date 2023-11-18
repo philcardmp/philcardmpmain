@@ -84,7 +84,7 @@ const Product = () => {
             <Image
               src={item.data().postImage}
               alt={item.data().productName}
-              height="550"
+              height="600"
               width="500"
               style={{ cursor: "pointer" }}
               onClick={() => clickImage(item.data().postImage)}
@@ -160,7 +160,7 @@ const Product = () => {
                 style={{
                   cursor: "pointer",
                   maxHeight: "80vh",
-                  maxWidth: "80vw",
+                  maxWidth: "30vw",
                 }}
               />
             </div>
