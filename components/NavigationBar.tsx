@@ -83,9 +83,9 @@ export default function NavigationBar() {
         </Link>
 
         <div className="d-flex nav-btns order-lg-2">
-          <Link href="/cart" className="btn position-sticky">
+          <Link href="/cart" className="btn position-sticky d-flex align-items-center justify-content-center">
             <FontAwesomeIcon icon={faShoppingCart} height={20} />
-            <span className="nav-btn-label"> CART ({totalQuantity}) </span>
+            <span className="ms-1">({totalQuantity}) </span>
           </Link>
           <Link href="/profile" className="btn position-sticky" onClick={checkUser}>
             <FontAwesomeIcon icon={faUser} height={20} />

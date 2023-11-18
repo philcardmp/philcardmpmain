@@ -78,8 +78,8 @@ export default function Collection() {
     setTotalQuantity(updatedTotalQuantity);
   }, [cartProducts]);
 
-  const addProductToCart = (product) => {
-    addToCart(product);
+  const addProductToCart = (product, id) => {
+    addToCart({ ...product, id });
     setActiveCard(product.productName);
     setCardAdded(true);
   };
@@ -125,7 +125,7 @@ export default function Collection() {
         </div>
         <div className="text-center mt-1 pb-lg-0 pb-4">
           <button
-            onClick={() => addProductToCart(item.data())}
+            onClick={() => addProductToCart(item.data(), item.id)}
             className="btn btn-primary mt-1 w-50"
           >
             Add to Cart
