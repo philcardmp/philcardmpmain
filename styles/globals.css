@@ -85,12 +85,12 @@ body {
       width: 100%;
   }
 }
-@media(min-width: 420px){
+@media(min-width: 0px){/*420*/
   #searchbar{
-      width: 50%;
+      width: 100%;
   }
 }
-@media(min-width: 420px){
+@media(min-width: 0px){ /*420*/
   .nav-btn-label{
       display: none;
   }
@@ -247,7 +247,7 @@ p {
   margin: 0;
   background-color: #212529;
   width: 100%;
-  height: 90vh;
+
   color: white;
   padding: 20px;
 }
@@ -260,6 +260,14 @@ p {
   justify-content: space-between;
   align-items: center;
 }
+
+.checkoutContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
 .cartImage {
   overflow: hidden;
   border: 1px solid rgb(231, 222, 222);
@@ -434,7 +442,7 @@ p {
 
 /* <!-- ---- Message ---- --> */
 .message-container {
-  align-items: flex-start;
+  align-items:flex-start;
 }
 .user-name {
   font-size: 18px;

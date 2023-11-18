@@ -6,18 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="b57a063b-23f3-4f75-901e-73494408e464" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/client-development/13.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/client-development/13.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/client-development/17.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/client-development/17.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.next/cache/webpack/client-development/index.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/client-development/index.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.next/cache/webpack/client-development/index.pack.old" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/client-development/index.pack.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/server-development/12.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/server-development/12.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/server-development/index.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/server-development/index.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/server-development/index.pack.old" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/server-development/index.pack.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/about-us/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/about-us/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/cart/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/cart/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/login/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Collection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Collection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/NavigationBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/NavigationBar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/product/[id].jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/product/[id].jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/profile/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/profile/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +78,7 @@
       <workItem from="1699290159988" duration="6508000" />
       <workItem from="1700081747118" duration="5581000" />
       <workItem from="1700248066975" duration="4515000" />
+      <workItem from="1700269162149" duration="5812000" />
     </task>
     <servers />
   </component>

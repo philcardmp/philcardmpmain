@@ -78,18 +78,18 @@ export default function Chat() {
     <div>
       <Head>
         <title>Phillipine Card Marketplace</title>
-        <link rel="icon" href="/logo1.png" />
+        <link rel="icon" href="/pcm.png" />
       </Head>
       <NavigationBar />
       <br />
       <br />
       <br />
-      <Row className="justify-content-between p-3 border-bottom mt-5">
+      <Row className="justify-content-between border-bottom mt-lg-5 mt-md-0 mt-sm-0 ps-lg-3 ps-sm-2">
         <Col md={6} className="bg-dark">
           <h4 className="text-light fw-bold">Order Details:</h4>
           <ListGroup
-            className="messages-container overflow-auto pt-2"
-            style={{ maxHeight: "600px" }}
+            className="message-container overflow-auto pt-2 ps-1"
+            style={{ maxHeight: "600px"}}
           >
             {orders?.docs.length > 0 ? (
               orders?.docs
@@ -98,7 +98,7 @@ export default function Chat() {
               )
               .map((order, index) => (
                 <ListGroup.Item key={index}>
-                  <div className="cartContainer ">
+                  <div className="checkoutContainer ">
                     <div className="m-2" style={{ cursor: "pointer" }}>
                       <img
                         src={
@@ -198,9 +198,9 @@ export default function Chat() {
                 <strong>Name: Jowel Castañeda</strong>
               </div>
               <div className="d-flex justify-content-between text-light px-5">
-                <div>Gcash: 09974722392</div>
-                <div>BPI: 9709258327</div>
-                <div>BDO: 001311177068</div>
+                <div className="pe-2">Gcash: 09974722392</div>
+                <div className="pe-2">BPI: 9709258327</div>
+                <div className="pe-2">BDO: 001311177068</div>
               </div>
             </li>
             <li>
@@ -229,7 +229,7 @@ export default function Chat() {
                 <Row className="justify-content-between p-3 border-bottom">
                   <Col className="d-flex align-items-center">
                     <h4 className="m-0">
-                      <strong>#{userDetails?.data().email}</strong>
+                      <strong>Hello, {userDetails?.data().email}</strong>
                     </h4>
                   </Col>
                 </Row>
@@ -253,7 +253,7 @@ export default function Chat() {
                   })}
                 </div>
 
-                <div ref={chatRef} className="pb-5" />
+                <div ref={chatRef} className="pb-lg-5 pb-sm-0" />
 
                 <ChatInput
                   chatRef={chatRef}

@@ -119,10 +119,10 @@ const Product = () => {
         <link rel="icon" href="/pcm.png" />
       </Head>
 
-      <main>
-        <div id="product">
+      <main className="pt-lg-5 pt-md-5 mt-lg-4 mt-md-5">
+        <div id="product py-5">
           <NavigationBar />
-          <div className="container py-5">
+          <div className="container py-lg-5 mt-lg-0 mt-md-5">
             <div className="row py-4">{renderProduct()}</div>
           </div>
         </div>

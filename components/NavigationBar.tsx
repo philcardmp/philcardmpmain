@@ -67,7 +67,7 @@ export default function NavigationBar() {
 
 
   return (
-    <Navbar bg="light" expand="lg" className="bg-black py-0" id="myNavbar">
+    <Navbar bg="light" expand="lg" className="bg-black py-sm-2" id="myNavbar">
       <Container>
         <Link
           href="/"
@@ -82,18 +82,17 @@ export default function NavigationBar() {
           {/*<span id="brand-name2">PCM</span>*/}
         </Link>
 
-        <div className="nav-btns order-lg-2">
-          <Link href="/cart" className="btn position-relative">
+        <div className="d-flex nav-btns order-lg-2">
+          <Link href="/cart" className="btn position-sticky">
             <FontAwesomeIcon icon={faShoppingCart} height={20} />
-            <span className="nav-btn-label"> CART </span> (
-            {totalQuantity})
+            <span className="nav-btn-label"> CART ({totalQuantity}) </span>
           </Link>
-          <Link href="/profile" className="btn position-relative" onClick={checkUser}>
+          <Link href="/profile" className="btn position-sticky" onClick={checkUser}>
             <FontAwesomeIcon icon={faUser} height={20} />
             <span className="nav-btn-label"> Profile </span>
           </Link>
           {loginEmail &&
-            <Link href="/login" className="btn position-relative" onClick={logout}>
+            <Link href="/login" className="btn position-sticky" onClick={logout}>
               <FontAwesomeIcon icon={faSignOut} height={20} />
             </Link>
           }

@@ -123,7 +123,7 @@ export default function Collection() {
           </p>
           <br />
         </div>
-        <div className="text-center mt-1">
+        <div className="text-center mt-1 pb-lg-0 pb-4">
           <button
             onClick={() => addProductToCart(item.data())}
             className="btn btn-primary mt-1 w-50"
@@ -674,7 +674,7 @@ export default function Collection() {
             </div>
           </div>
           <div className="col-lg-9">
-            <div className={`collection-list row mt-4 gx-0 gy-3 }`}>
+            <div className={`collection-list row m-4 gx-0 gy-3 }`}>
               {loading ? renderLoading() : renderCollectionList()}
             </div>
           </div>
