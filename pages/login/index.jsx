@@ -231,7 +231,7 @@ const Login = () => {
           className={`btn btn-theme${darkMode}`}
           onClick={() => setDarkMode(darkMode ? "" : "-dark")}
         >
-          <FontAwesomeIcon icon={darkMode ? faSun : faMoon} />
+          <FontAwesomeIcon icon={darkMode ? faSun : faMoon} height={"1.2em"} />
         </button>
       </div>
     </>
