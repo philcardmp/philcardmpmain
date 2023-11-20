@@ -19,8 +19,8 @@ export default function AboutUs() {
   return (
     <>
       <Head>
-        <title>Philippine Card Marketplace</title>
-        <link rel="icon" href="/pcm.png" />
+        <title>Double Dribble</title>
+        <link rel="icon" href="/ddicon.jpeg" />
       </Head>
 
       <NavigationBar />
@@ -31,7 +31,7 @@ export default function AboutUs() {
               <div className="pt-3 pb-5">
                 <h2 className="position-relative d-inline-block">About Us</h2>
               </div>
-              <p className="lead text-muted">Welcome to the Philippine Card Marketplace!</p>
+              <p className="lead text-muted">Welcome to the Double Dribble!</p>
               <p className="fs-6">
 
                 Explore diverse card collections, buy NBA cards, and enjoy a seamless,
@@ -63,10 +63,10 @@ export default function AboutUs() {
             <div className="col-lg-6">
               <h3 className="mt-3">Hi, we're pleased to meet you!</h3>
               <Link href="/" className="brand text-decoration-none text-white">
-                Philippine Card Marketplace
+                Double Dribble
               </Link>
               <p className="text-black">
-                Jowel Castaneda and I are the people behind Philippine Card Marketplace.
+                Jowel Castaneda and I are the people behind Double Dribble.
                 We love basketball and we love to collect cards. We want to share our experience with you
                 and we'd love to see you collect and build your personal collection too. Feel free to browse our website
                 and explore through all the available cards. Cheers!
@@ -79,7 +79,7 @@ export default function AboutUs() {
             </div>
             <div className="col-lg-6">
               <Image
-                src="/owners.jpg"
+                src="/DDgettoknowus.jpg"
                 alt="contact"
                 width="900"
                 height="350"

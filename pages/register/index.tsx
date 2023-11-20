@@ -69,8 +69,8 @@ export default function Register() {
   return (
     <>
       <Head>
-        <title>Phillipine Card Marketplace</title>
-        <link rel="icon" href="/logo1.png" />
+        <title>Double Dribble</title>
+        <link rel="icon" href="/DDiconname.jpeg" />
       </Head>
 
       <div className="auth">
@@ -81,7 +81,7 @@ export default function Register() {
                 <div className="p-3 mt-3 d-flex justify-content-center">
                   <Link href="/">
                     <Image
-                      src="/title.png"
+                      src="/DDbanner.png"
                       alt="contact"
                       width={250}
                       height={150}

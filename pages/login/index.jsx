@@ -114,7 +114,7 @@ const Login = () => {
     <>
       <Head>
         <title>Phillipine Card Marketplace</title>
-        <link rel="icon" href="/pcm.png" />
+        <link rel="icon" href="/ddicon.jpeg" />
       </Head>
       <div className="auth">
         <div className={`page-content${darkMode} d-flex align-items-center`}>

@@ -106,8 +106,8 @@ export default function Cart() {
   return (
     <div>
       <Head>
-        <title>Phillipine Card Marketplace</title>
-        <link rel="icon" href="/pcm.png" />
+        <title>Double Dribble</title>
+        <link rel="icon" href="/ddicon.jpeg" />
       </Head>
       <NavigationBar />
       <Container fluid style={{ marginTop: "140px" }}>

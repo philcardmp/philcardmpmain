@@ -19,7 +19,7 @@ export default function Footer() {
         <div className="row text-white g-4">
           <div className="col-md-6 col-lg-3">
             <h6 className="fw-light text-black text-decoration-none"><Link href="/" className=" text-decoration-none text-black">
-              PHILIPPINE CARD MARKETPLACE
+              DOUBLE DRIBBLE
             </Link></h6>
             <hr />
             <ul className="list-unstyled">

@@ -77,8 +77,8 @@ export default function Chat() {
   return (
     <div>
       <Head>
-        <title>Phillipine Card Marketplace</title>
-        <link rel="icon" href="/pcm.png" />
+        <title>Double Dribble</title>
+        <link rel="icon" href="/ddicon.jpeg" />
       </Head>
       <NavigationBar />
       <br />

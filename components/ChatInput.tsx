@@ -32,7 +32,7 @@ export default function ChatInput({ email, userId, chatRef, image }) {
                     type="text"
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
-                    placeholder="Message PCM Admin"
+                    placeholder="Message DD Admin"
                     aria-label="Message input"
                     aria-describedby="basic-addon2"
                     style={{

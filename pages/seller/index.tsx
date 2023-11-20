@@ -124,7 +124,7 @@ export default function AboutUs() {
                         </div>
                         <div className="col-lg-6">
                             <Image
-                                src="/seller.jpg"
+                                src="/cards4sale.png"
                                 alt="contact"
                                 width="1000"
                                 height="500"

@@ -74,7 +74,7 @@ export default function NavigationBar() {
           className="navbar-brand order-lg-0 col-md-6 col-lg-3"
         >
           <Image
-            src="/title.png"
+            src="/DDbanner.jpeg"
             alt="contact"
             width="1000"
             height="90"

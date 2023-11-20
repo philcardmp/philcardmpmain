@@ -15,7 +15,7 @@ const Home = () => {
     return (
       <Container className="loader-container">
         <div className="loader-contents">
-          <Image src="/title.png" alt="" fluid />
+          <Image src="/DDbanner.jpeg" alt="" fluid />
           <br />
           <br />
           <Spinner
@@ -33,7 +33,7 @@ const Home = () => {
       <div className="max-w-7xl mx-auto">
         <Head>
           <title>Phillipine Card Marketplace</title>
-          <link rel="icon" href="/pcm.png" />
+          <link rel="icon" href="/ddicon.jpeg" />
         </Head>
 
         <main>
