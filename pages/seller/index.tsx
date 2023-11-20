@@ -20,7 +20,7 @@ export default function AboutUs() {
         <>
             <Head>
                 <title>Philippine Card Marketplace</title>
-                <link rel="icon" href="/pcm.png" />
+                <link rel="icon" href="/ddicon.jpeg" />
             </Head>
 
             <NavigationBar />
@@ -34,7 +34,7 @@ export default function AboutUs() {
                             <p className="lead text-muted">FB Page: Mr. PCM</p>
                             <p className="fs-6">
                                 Please visit our <Link
-                                    href="https://www.facebook.com/philcardmp"
+                                    href="https://www.facebook.com/doubledribblehub"
                                     target="_blank"
                                     className="text-white text-decoration-none text-muted"
                                 >Facebook page </Link>
@@ -83,7 +83,7 @@ export default function AboutUs() {
                             <ul className="list-unstyled d-flex">
                                 <li className="text-decoration-none text-muted fs-4 me-4">
                                     <Link
-                                        href="https://www.facebook.com/philcardmp"
+                                        href="https://www.facebook.com/doubledribblehub"
                                         target="_blank"
                                         className="text-white text-decoration-none text-muted"
                                     >
@@ -96,7 +96,7 @@ export default function AboutUs() {
                                 </li>
                                 <li className="text-decoration-none text-muted fs-4 me-4">
                                     <Link
-                                        href="https://www.facebook.com/philcardmp"
+                                        href="https://www.facebook.com/doubledribblehub"
                                         target="_blank"
                                         className="text-white text-decoration-none text-muted"
                                     >

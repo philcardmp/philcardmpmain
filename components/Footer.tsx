@@ -79,7 +79,7 @@ export default function Footer() {
             <ul className="list-unstyled d-flex">
               <li className="text-decoration-none text-muted fs-4 me-4">
                 <Link
-                  href="https://www.facebook.com/philcardmp"
+                  href="https://www.facebook.com/doubledribblehub"
                   target="_blank"
                   className="text-white text-decoration-none text-muted"
                 >

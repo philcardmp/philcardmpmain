@@ -113,8 +113,8 @@ const Login = () => {
   return (
     <>
       <Head>
-        <title>Phillipine Card Marketplace</title>
-        <link rel="icon" href="/ddicon.jpeg" />
+        <title>Double Dribble</title>
+        <link rel="icon" href="/ddicon.png" />
       </Head>
       <div className="auth">
         <div className={`page-content${darkMode} d-flex align-items-center`}>
@@ -124,10 +124,10 @@ const Login = () => {
                 <div className="p-3 mt-3 d-flex justify-content-center">
                   <Link href="/">
                     <Image
-                      src="/title.png"
+                      src="/DDbanner.jpeg"
                       alt="contact"
                       width={250}
-                      height={150}
+                      height={100}
                     />
                   </Link>
                 </div>
