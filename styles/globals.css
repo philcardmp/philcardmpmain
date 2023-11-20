@@ -454,3 +454,11 @@ p {
 .message-text {
   font-size: 16px;
 }
+/*----Show only on mobile------*/
+#mobileshow {
+    display:none;
+}
+@media screen and (max-width: 500px) {
+    #mobileshow {
+        display:block; }
+}

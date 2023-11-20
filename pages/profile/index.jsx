@@ -198,9 +198,27 @@ export default function Chat() {
                 <strong>Name: Jowel Castañeda</strong>
               </div>
               <div className="d-flex justify-content-between text-light px-5">
-                <div className="pe-2">Gcash: 09974722392</div>
-                <div className="pe-2">BPI: 9709258327</div>
-                <div className="pe-2">BDO: 001311177068</div>
+                <div className="pe-2"><Image
+                    src="/gcash.jpeg"
+                    alt="gcash"
+                    width="20px"
+                    height="20px"
+                    className=""
+                /> Gcash: 09974722392</div>
+                <div className="pe-2"><Image
+                    src="/bpi.jpeg"
+                    alt="bpi"
+                    width="20px"
+                    height="20px"
+                    className=""
+                /> BPI: 9709258327</div>
+                <div className="pe-2"><Image
+                    src="/bdo.png"
+                    alt="bdo"
+                    width="20px"
+                    height="20px"
+                    className=""
+                /> BDO: 001311177068</div>
               </div>
             </li>
             <li>
