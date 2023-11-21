@@ -57,7 +57,7 @@ const Product = () => {
     return (
       <Form.Group controlId="formType" className="w-100 py-3">
         <Form.Select
-          aria-label="Default select example"
+            aria-label="Default select example"
           className="fs-5 fw-bold lead border-none"
           onChange={(e) => router.push(`/product/${e.target.value}`)}
         >
@@ -86,15 +86,16 @@ const Product = () => {
               alt={item.data().productName}
               height="500"
               width="380"
+              className="image-fluid p-2"
               style={{ cursor: "pointer",
-                objectFit: "cover"
+                objectFit: "cover",
             }}
               onClick={() => clickImage(item.data().postImage)}
             />
           </div>
           <div className="col-md-6">
-            <h4 className="text-uppercase text-black-50">{item.data().team}</h4>
-            {renderName(item.data())}
+            <h4 className="text-uppercase text-black-50 pt-lg-0 pt-3">{item.data().team}</h4>
+            <div className="fw-bold lead pb-2">{item.data().productName}</div> {/*{renderName(item.data())}*/}
             <p className="fs-4 ">
               ₱{parseInt(item.data().price).toLocaleString()}
             </p>
