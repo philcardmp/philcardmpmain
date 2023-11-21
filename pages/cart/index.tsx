@@ -186,10 +186,10 @@ export default function Cart() {
             </ListGroup>
           </Col>
           <Col xs={12} md={6} style={{ margin: "0px" }}>
-            <div className="Cart-total">
-              <h4 className="Cart-total-heading">
-                Subtotal ({totalQuantity} cards)
-              </h4>
+            <div className="Cart-total flex">
+              <h5 className="Cart-total-heading">
+                Subtotal of {totalQuantity} card/s
+              </h5>
               <hr />
               <div>
                 {cartProducts?.map((product, index) => (
@@ -197,7 +197,7 @@ export default function Cart() {
                     key={index}
                     style={{ display: "flex", justifyContent: "space-between" }}
                   >
-                    <p>
+                    <p className="cartProd2" >
                       {product.productName} (
                       {product.quantitySelected})
                     </p>

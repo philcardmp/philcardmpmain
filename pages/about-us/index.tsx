@@ -28,7 +28,7 @@ export default function AboutUs() {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6 text-start text-lg-1 order-lg-1">
-              <div className="pt-3 pb-5">
+              <div className="pt-lg-3 pt-md-3 pt-sm-0 pb-3">
                 <h2 className="position-relative d-inline-block">About Us</h2>
               </div>
               <p className="lead text-muted">Welcome to the Double Dribble!</p>
@@ -81,9 +81,9 @@ export default function AboutUs() {
               <Image
                 src="/DDgettoknowus.jpg"
                 alt="contact"
-                width="900"
-                height="350"
-                className="w-100"
+                width="800"
+                height="3500"
+                className="img-fluid"
               />
             </div>
           </div>

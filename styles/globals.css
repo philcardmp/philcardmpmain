@@ -3,20 +3,18 @@
   --lg-font: 'Kaisei Tokumin', serif;
   --sm-font: 'Poppins', sans-serif;
   --general: gray !important;
-
 }
-
 
 body {
   font-family: var(--sm-font);
   --general: gray !important;
-    
+
 }
 .btn:not(.nav-btns, .button-container .btn){
   background-color: whitesmoke;
   color: rgb(1, 27, 69);
   padding: 10px 28px;
-  border-radius: 20px;
+  border-radius: 10px;
   border: 1px solid rgb(0, 0, 0);
 }
 .btn:not(.nav-btns, .button-container .btn):hover{
@@ -46,7 +44,7 @@ body {
     font-family: "Rockwell", sans-serif; /* Change font to Colombo */
 }
 .navbar{
- box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1); 
+ box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
 }
 .nav-link:hover{
   color: var(--general) !important;
@@ -195,8 +193,24 @@ body {
 
 /* <!-- ---- About Us ---- --> */
 #aboutUs{
-  padding-top: 120px;
+  padding-top: 170px;
 }
+@media (max-width: 420px){
+    #aboutUs {
+        padding-top: 20px;
+    }
+}
+
+/* <!-- ---- Collection ---- --> */
+#collection1{
+    padding-top: 70px;
+}
+@media (max-width: 420px){
+    #collection1 {
+        padding-top: 5px;
+    }
+}
+
 /* <!-- ---- Seller ---- --> */
 #seller{
     padding-top: 120px;
@@ -223,6 +237,11 @@ body {
 .cartProd {
   flex: 65%;
 }
+
+.cartProd2 {
+    flex: 60%;
+}
+
 .RemoveFromCart {
   flex: 15%;
 }
@@ -481,4 +500,5 @@ p {
 #mobileshow {
     display:none;
 }
+
 
