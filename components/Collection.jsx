@@ -86,12 +86,12 @@ export default function Collection() {
 
   const getCardName = (name) => {
     return (
-      <span className="fw-bold lead fs-4">{`${name.slice(0, 18)}...`}</span>
+      <span className="fw-bold">{`${name.slice(0, 30)}...`}</span>
     );
   };
 
   const getDescription = (text) => {
-    return <p className="text-capitalize my-1">{`${text.slice(0, 40)}...`}</p>;
+    return <p className="text-capitalize my-1">{`${text.slice(0, 80)}...`}</p>;
   };
 
   const renderCards = (item) => {
@@ -114,14 +114,15 @@ export default function Collection() {
         <div className="text-start mt-3">
           {getCardName(item.data().productName)}
           <br />
-          <span className="fw-bold lead fs-6">
-            ₱{parseInt(item.data().price).toLocaleString()} (
-            {parseInt(item.data().quantity).toLocaleString()} available)
+          <div>
+          <span className="fw-bold lead fs-5">
+            ₱{parseInt(item.data().price).toLocaleString()}
           </span>
+          <span>{' | '}{parseInt(item.data().quantity).toLocaleString()} available</span>
+          </div>
           <p className="text-capitalize my-1">
             {getDescription(item.data().description)}
           </p>
-          <br />
         </div>
         <div className="text-center mt-1 pb-lg-0 pb-4">
           <button

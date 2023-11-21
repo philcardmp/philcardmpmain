@@ -58,7 +58,7 @@ const Product = () => {
       <Form.Group controlId="formType" className="w-100 py-3">
         <Form.Select
           aria-label="Default select example"
-          className="fs-3 fw-bold lead border-none"
+          className="fs-5 fw-bold lead border-none"
           onChange={(e) => router.push(`/product/${e.target.value}`)}
         >
           {productList?.docs.map((product) => (
@@ -95,11 +95,11 @@ const Product = () => {
           <div className="col-md-6">
             <h4 className="text-uppercase text-black-50">{item.data().team}</h4>
             {renderName(item.data())}
-            <p className="fs-4 fw-bold">
+            <p className="fs-4 ">
               ₱{parseInt(item.data().price).toLocaleString()}
             </p>
-            <p className="lead">{item.data().description}</p>
-            <p className="fs-4">{item.data().quantity} available</p>
+            <p className="lead fs-6">{item.data().description}</p>
+            <p className="fs-6">{item.data().quantity} available</p>
             <button
               className="btn btn-outline-dark px-4 py-2"
               onClick={() => addProductToCart(item.id, item.data())}
