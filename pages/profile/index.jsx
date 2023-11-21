@@ -90,7 +90,7 @@ export default function Chat() {
           <ListGroup
             className="message-container ps-2 pt-2 ps-1 overflow-scroll"
             id="flex-item-left"
-            style={{ minHeight: "400px"}}
+            style={{ minHeight: "300px"}}
           >
             {orders?.docs.length > 0 ? (
               orders?.docs

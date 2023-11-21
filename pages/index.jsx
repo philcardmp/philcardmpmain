@@ -33,7 +33,7 @@ const Home = () => {
       <div className="max-w-7xl mx-auto">
         <Head>
           <title>Phillipine Card Marketplace</title>
-          <link rel="icon" href="/ddicon.jpeg" />
+          <link rel="icon" href="/DDicon.jpeg" />
         </Head>
 
         <main>

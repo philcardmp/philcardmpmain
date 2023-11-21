@@ -17,63 +17,63 @@ export default function Footer() {
     <footer className="footer-bg py-3">
       <div className="container">
         <div className="row text-white g-4">
-          <div className="col-md-6 col-lg-3">
+          <div className="col-md-6 col-lg-4">
             <h6 className="fw-light text-black text-decoration-none"><Link href="/" className=" text-decoration-none text-black">
               DOUBLE DRIBBLE
             </Link></h6>
             <hr />
             <ul className="list-unstyled">
-              <li className="my-3">
+              <p className="my-2">
                 <Link
                   href="/"
-                  className="text-black text-decoration-none "
+                  className="text-black text-decoration-none"
                 >
                   <FontAwesomeIcon icon={faChevronRight} height={20} /> Home
                 </Link>
-              </li>
-              <li className="my-3">
+              </p>
+              <p className="my-2">
                 <Link
                   href="/about-us"
                   className="text-black text-decoration-none"
                 >
                   <FontAwesomeIcon icon={faChevronRight} height={20} /> About Us
                 </Link>
-              </li>
-              <li className="my-3">
+              </p>
+              <p className="my-2">
                 <Link
                     href="/seller"
                     className="text-black text-decoration-none"
                 >
                   <FontAwesomeIcon icon={faChevronRight} height={20} /> Sell with Us
                 </Link>
-              </li>
+              </p>
             </ul>
           </div>
-          <div className="col-md-6 col-lg-3">
+          <div className="col-md-6 col-lg-4">
             <h6 className="fw-light text-black mb-3">CONTACT US</h6>
             <hr />
-            <div className="d-flex justify-content-start align-items-start my-2 text-muted">
+            <p className="d-flex justify-content-start align-items-start my-2 text-muted">
               <span className="me-3">
                 <FontAwesomeIcon icon={faEnvelope} height={20} />
               </span>
               <span className="fw-light text-black">philcardmp@gmail.com</span>
-            </div>
-            <div className="d-flex justify-content-start align-items-start my-2 text-muted">
+            </p>
+            <p className="d-flex justify-content-start align-items-start my-2 text-muted">
               <span className="me-3">
                 <FontAwesomeIcon icon={faMapMarked} height={20} />
               </span>
               <span className="fw-light text-black">
                 Angeles City, Pampanga Philippines
               </span>
-            </div>
-            <div className="d-flex justify-content-start align-items-start my-2 text-muted">
+            </p>
+            <p className="d-flex justify-content-start align-items-start my-2 text-muted">
               <span className="me-3">
                 <FontAwesomeIcon icon={faPhone} height={20} />
               </span>
               <span className="fw-light text-black">0997 720 0248</span>
-            </div>
+            </p>
           </div>
-          <div className="col-md-6 col-lg-3">
+          <div className="col-md-6 col-lg-4 ">
             <h6 className="fw-light mb-3 text-black">FOLLOW US</h6>
             <hr />
             <ul className="list-unstyled d-flex">
@@ -81,7 +81,7 @@ export default function Footer() {
                 <Link
                   href="https://www.facebook.com/doubledribblehub"
                   target="_blank"
-                  className="text-white text-decoration-none text-muted"
+                  className="text-black text-decoration-none"
                 >
                   <FontAwesomeIcon
                     icon={faFacebook}
@@ -90,11 +90,11 @@ export default function Footer() {
                   />
                 </Link>
               </li>
-              <li className="text-decoration-none text-muted fs-4 me-4">
+              <li className="text-decoration-none fs-4 me-4">
                 <Link
                   href="https://www.instagram.com/jowel.castaneda"
                   target="_blank"
-                  className="text-white text-decoration-none text-muted"
+                  className="text-black text-decoration-none"
                 >
                   <FontAwesomeIcon
                     icon={faInstagram}
@@ -103,11 +103,11 @@ export default function Footer() {
                   />
                 </Link>
               </li>
-              <li className="text-decoration-none text-muted fs-4 me-4">
+              <li className="text-decoration-none fs-4 me-4">
                 <Link
                   href="www.tiktok.com/@philcardmp.breaks"
                   target="_blank"
-                  className="text-white text-decoration-none text-muted"
+                  className="text-black text-decoration-none"
                 >
                   <FontAwesomeIcon
                     icon={faTiktok}

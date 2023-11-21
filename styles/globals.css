@@ -158,8 +158,8 @@ body {
 .footer-bg {
     background-image: url("/footer.png");
     opacity: 1;
-    border: 1px solid black; /* Add a 1px black border around the text. You can adjust the border width as needed. */
-    padding: 5px;
+    border-top: 2px solid black; /* Add a 1px black border around the text. You can adjust the border width as needed. */
+    padding: 40px;
     z-index: 0;
 }
 
@@ -481,3 +481,4 @@ p {
 #mobileshow {
     display:none;
 }
+
