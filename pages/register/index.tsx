@@ -70,7 +70,7 @@ export default function Register() {
     <>
       <Head>
         <title>Double Dribble</title>
-        <link rel="icon" href="/DDiconname.jpeg" />
+        <link rel="icon" href="/DDicon.jpeg" />
       </Head>
 
       <div className="auth">
@@ -81,10 +81,10 @@ export default function Register() {
                 <div className="p-3 mt-3 d-flex justify-content-center">
                   <Link href="/">
                     <Image
-                      src="/DDbanner.png"
+                      src="/DDbanner.jpeg"
                       alt="contact"
                       width={250}
-                      height={150}
+                      height={100}
                     />
                   </Link>
                 </div>
@@ -134,7 +134,7 @@ export default function Register() {
                   <Modal show={showModal}>
                     <Modal.Header>
                       <Modal.Title className="text-dark">
-                        Congratulation!
+                        Congratulations!
                       </Modal.Title>
                     </Modal.Header>
                     <Modal.Body className="text-dark">

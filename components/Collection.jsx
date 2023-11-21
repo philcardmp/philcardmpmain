@@ -85,13 +85,23 @@ export default function Collection() {
   };
 
   const getCardName = (name) => {
-    return (
-      <span className="fw-bold">{`${name.slice(0, 30)}...`}</span>
-    );
+    const maxLength = 30;
+
+    if (name.length <= maxLength) {
+      return <span className="fw-bold">{name}</span>;
+    } else {
+      return <span className="fw-bold">{`${name.slice(0, maxLength)}...`}</span>;
+    }
   };
 
   const getDescription = (text) => {
-    return <p className="text-capitalize my-1">{`${text.slice(0, 80)}...`}</p>;
+    const maxLength = 80;
+
+    if (text.length <= maxLength) {
+      return <p className="text-capitalize my-1">{text}</p>;
+    } else {
+      return <p className="text-capitalize my-1">{`${text.slice(0, maxLength)}...`}</p>;
+    }
   };
 
   const renderCards = (item) => {

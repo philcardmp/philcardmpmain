@@ -86,7 +86,7 @@ export default function Chat() {
       <br />
       <Row className="justify-content-between border-bottom mt-lg-5 mt-md-0 mt-sm-0 ps-lg-3 ps-sm-2 py-sm-2">
         <Col md={6} className="bg-dark">
-          <h4 className="text-light fw-bold">Order Details: {userDetails?.data().email}</h4>
+          <h4 className="text-light fw-bold pt-lg-3">Order Details: {userDetails?.data().email}</h4>
           <ListGroup
             className="message-container ps-2 pt-2 ps-1 overflow-scroll"
             id="flex-item-left"
@@ -205,7 +205,7 @@ export default function Chat() {
           <div>
             <div>
               <p className="ps-3  d-flex mb-2 text-light">
-                1. Sumbit your payment to
+                1. Submit your payment to
               </p>
               <div className="d-flex mb-2 text-light px-5">
                 <strong>Name: Jowel Castañeda</strong>
