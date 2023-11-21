@@ -84,9 +84,11 @@ const Product = () => {
             <Image
               src={item.data().postImage}
               alt={item.data().productName}
-              height="600"
-              width="500"
-              style={{ cursor: "pointer" }}
+              height="500"
+              width="380"
+              style={{ cursor: "pointer",
+                objectFit: "cover"
+            }}
               onClick={() => clickImage(item.data().postImage)}
             />
           </div>
@@ -123,7 +125,7 @@ const Product = () => {
         <div id="product py-5">
           <NavigationBar />
           <div className="container py-lg-5 mt-lg-0 mt-md-5">
-            <div className="row py-4">{renderProduct()}</div>
+            <div className="row py-4 ">{renderProduct()}</div>
           </div>
         </div>
         <br />

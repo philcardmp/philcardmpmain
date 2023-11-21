@@ -266,6 +266,9 @@ p {
     width: 100%;
     justify-content: space-between;
     align-items: stretch;
+    height: 200px;
+    overflow-y: scroll;
+    width: 700px
 }
 
 .cartImage {
@@ -280,9 +283,9 @@ p {
   flex: 70%;
 }
 .cartProdName h4 {
-  font-size: 20px;
-  margin-right: 10px;
-  margin-bottom: 0;
+    font-size: 20px;
+    margin-right: 10px;
+    margin-bottom: 0;
 }
 .RemoveCartItem {
   flex: 10%;
@@ -441,6 +444,26 @@ p {
 }
 
 /* <!-- ---- Message ---- --> */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-item-left {
+    flex: 50%;
+}
+
+.flex-item-right {
+    flex: 50%;
+}
+
+/* Responsive layout - makes a one column layout (100%) instead of a two-column layout (50%) */
+@media (max-width: 800px) {
+    .flex-item-right, .flex-item-left {
+        flex: 100%;
+    }
+}
+
 .message-container {
   align-items:flex-start;
 }
@@ -457,8 +480,4 @@ p {
 /*----Show only on mobile------*/
 #mobileshow {
     display:none;
-}
-@media screen and (max-width: 500px) {
-    #mobileshow {
-        display:block; }
 }

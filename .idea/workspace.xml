@@ -5,23 +5,64 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b57a063b-23f3-4f75-901e-73494408e464" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.next/cache/images/-8Ii-xdHKACopps34penKfv1Pb6ng6hYLO8NX2dvFcs=/60.1700520495324.P5qfxeL40VLY7qL3s1ggddd7Urh2gy6EOLNlKnKAaxI=.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.next/cache/images/1bC-RQfPwHTBLxz52NApzLX7pF-5ZzVi7oJYl6MJJh8=/60.1700520898755.3qLntQsaOeAXNrYNwGQ+84cbPZ6MLg6vTy2fsH2G7Js=.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.next/cache/images/70LE63EpTt7d+bwOa1w8Q3OD0Y846m7tXTOKZ2BdeLQ=/60.1700520494939.80dkL-wMfbos66h7zVrjHDQxsJ5kgFZE1H+v7e+HMJc=.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.next/cache/images/BHao8kccyZUFYp8lQ3Usz04eu1xu1p9iFikTx0zSVb0=/60.1700520898389.vY8AW1ucSjoZORRF02N6vxUlFdJYm616tHcv30BfmUY=.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.next/cache/images/GLdEbZ1TRA82kaJnOzUWGIFZr2cj+2yev3w+cpKbq-Y=/60.1700520491627.BbY+hEKwiXk4gPT+uerI8piQ-+TxdxQodHd18rXyvtc=.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.next/cache/images/RVfMkjFFoMQctkC9sFcdf1omZvG7YPCRuUFXcXCBywg=/60.1700520495446.1VT1gJxeoGvzjqRJzxfO62Spl80-zAUV-vW2yfo3s9E=.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.next/cache/images/XcWtpCgwypblWDhtx1ZiaDtK6g0XrosBl1yTQpD37q4=/60.1700520495564.q9yeAjG+Sl7kpCLRu+tHL3o+EuG50Wujzgh1-BvyoaU=.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.next/cache/images/aNjExKp0YWoEkXXjfT58IjkY-FZwP+QR1V6IpiEXs9U=/60.1700520495821.XyhBmPeeJv4Nv18+fCXgZx1k4evgU-t7GYdbhlW5BUU=.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.next/cache/images/dA9eQQSv1-eg1rcWCn-Ulh79xZcZNtGFa2QCuDVa6AI=/60.1700520898574.+X9KXNxHTAsVUo6AzeDS+76JzoT4MBLiyBuadQYgyiw=.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.next/cache/images/nrpqLT2XSuIKD9YlP++rfdZWwsI0FaiHeEL-7y3Op9E=/60.1700520100906.FrIu1okRDU+wirleEp50RHBgH2gfq9r5CH64g7jPwsU=.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.next/cache/images/pDH8ghx8VEB8HV74nmOnrnndFMRhBJs0jwS+z9ELfqY=/60.1700520495077.sy9Sba6XnxQMzqQVYs17PFKaeKGcg3NDr73oQ5MXmE4=.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.next/cache/images/pN2Ea0UDILlNWKugysNQcBK-6DMXsTOh12KkYzG6I4E=/60.1700520496867.w-ebG0ayfVLByiVPInnZl4v5HgQrYbFf5IpZqjeQ4bk=.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.next/server/pages/profile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.next/static/chunks/pages/profile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/build-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/.next/build-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/images/-8Ii-xdHKACopps34penKfv1Pb6ng6hYLO8NX2dvFcs=/60.1700506798142.P5qfxeL40VLY7qL3s1ggddd7Urh2gy6EOLNlKnKAaxI=.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/images/1bC-RQfPwHTBLxz52NApzLX7pF-5ZzVi7oJYl6MJJh8=/60.1700506927114.3qLntQsaOeAXNrYNwGQ+84cbPZ6MLg6vTy2fsH2G7Js=.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/images/70LE63EpTt7d+bwOa1w8Q3OD0Y846m7tXTOKZ2BdeLQ=/60.1700506798261.80dkL-wMfbos66h7zVrjHDQxsJ5kgFZE1H+v7e+HMJc=.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/images/BHao8kccyZUFYp8lQ3Usz04eu1xu1p9iFikTx0zSVb0=/60.1700506926638.vY8AW1ucSjoZORRF02N6vxUlFdJYm616tHcv30BfmUY=.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/images/GLdEbZ1TRA82kaJnOzUWGIFZr2cj+2yev3w+cpKbq-Y=/60.1700506915355.BbY+hEKwiXk4gPT+uerI8piQ-+TxdxQodHd18rXyvtc=.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/images/RVfMkjFFoMQctkC9sFcdf1omZvG7YPCRuUFXcXCBywg=/60.1700506866994.1VT1gJxeoGvzjqRJzxfO62Spl80-zAUV-vW2yfo3s9E=.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/images/XcWtpCgwypblWDhtx1ZiaDtK6g0XrosBl1yTQpD37q4=/60.1700506798494.q9yeAjG+Sl7kpCLRu+tHL3o+EuG50Wujzgh1-BvyoaU=.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/images/aA-FRSbAXCUr6neMEnwQTtgg4pJaRdxjueSZhFvqe3w=/60.1700506861336.4dgk6OLHVyx1oL1lEa3D5VDHX7r242vAbIRrRyFekoQ=.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/images/aNjExKp0YWoEkXXjfT58IjkY-FZwP+QR1V6IpiEXs9U=/60.1700506798620.XyhBmPeeJv4Nv18+fCXgZx1k4evgU-t7GYdbhlW5BUU=.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/images/dA9eQQSv1-eg1rcWCn-Ulh79xZcZNtGFa2QCuDVa6AI=/60.1700506926827.+X9KXNxHTAsVUo6AzeDS+76JzoT4MBLiyBuadQYgyiw=.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/images/pDH8ghx8VEB8HV74nmOnrnndFMRhBJs0jwS+z9ELfqY=/60.1700506926972.sy9Sba6XnxQMzqQVYs17PFKaeKGcg3NDr73oQ5MXmE4=.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/images/pN2Ea0UDILlNWKugysNQcBK-6DMXsTOh12KkYzG6I4E=/60.1700506799398.w-ebG0ayfVLByiVPInnZl4v5HgQrYbFf5IpZqjeQ4bk=.webp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.next/cache/webpack/client-development/0.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/client-development/0.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/client-development/15.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/client-development/15.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/client-development/18.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/client-development/18.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/client-development/9.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/client-development/9.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/client-development/1.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/client-development/1.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/client-development/10.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/client-development/10.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/client-development/12.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/client-development/12.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/client-development/14.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/client-development/14.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/client-development/16.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/client-development/16.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/client-development/2.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/client-development/2.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/client-development/6.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/client-development/6.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/client-development/7.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/client-development/7.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/client-development/8.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/client-development/8.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.next/cache/webpack/client-development/index.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/client-development/index.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.next/cache/webpack/client-development/index.pack.old" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/client-development/index.pack.old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/server-development/0.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/server-development/0.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/server-development/12.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/server-development/12.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/server-development/15.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/server-development/15.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/server-development/16.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/server-development/16.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/server-development/2.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/server-development/2.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.next/cache/webpack/server-development/3.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/server-development/3.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/server-development/5.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/server-development/5.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/server-development/7.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/server-development/7.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/server-development/6.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/server-development/6.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/cache/webpack/server-development/8.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/server-development/8.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.next/cache/webpack/server-development/index.pack" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/server-development/index.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.next/cache/webpack/server-development/index.pack.old" beforeDir="false" afterPath="$PROJECT_DIR$/.next/cache/webpack/server-development/index.pack.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/server/pages/seller.js" beforeDir="false" afterPath="$PROJECT_DIR$/.next/server/pages/seller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/static/chunks/pages/seller.js" beforeDir="false" afterPath="$PROJECT_DIR$/.next/static/chunks/pages/seller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/login/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/seller/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/seller/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/server/middleware-build-manifest.js" beforeDir="false" afterPath="$PROJECT_DIR$/.next/server/middleware-build-manifest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/server/pages-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/.next/server/pages-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/static/chunks/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/.next/static/chunks/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/static/chunks/webpack.js" beforeDir="false" afterPath="$PROJECT_DIR$/.next/static/chunks/webpack.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/static/development/_buildManifest.js" beforeDir="false" afterPath="$PROJECT_DIR$/.next/static/development/_buildManifest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/trace" beforeDir="false" afterPath="$PROJECT_DIR$/.next/trace" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/product/[id].jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/product/[id].jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/profile/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/profile/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +130,7 @@
       <workItem from="1700248066975" duration="4515000" />
       <workItem from="1700269162149" duration="6668000" />
       <workItem from="1700341840638" duration="2453000" />
-      <workItem from="1700503742237" duration="2602000" />
+      <workItem from="1700503742237" duration="9341000" />
     </task>
     <servers />
   </component>
