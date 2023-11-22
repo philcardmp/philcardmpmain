@@ -119,7 +119,7 @@ const Product = () => {
     <div className="max-w-7xl mx-auto">
       <Head>
         <title>Double Dribble</title>
-        <link rel="icon" href="/ddicon.jpeg" />
+        <link rel="icon" href="/DDicon.jpeg" />
       </Head>
 
       <main className="pt-lg-5 pt-md-5 mt-lg-4 mt-md-5">

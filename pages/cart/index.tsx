@@ -107,7 +107,7 @@ export default function Cart() {
     <div>
       <Head>
         <title>Double Dribble</title>
-        <link rel="icon" href="/ddicon.jpeg" />
+        <link rel="icon" href="/DDicon.jpeg" />
       </Head>
       <NavigationBar />
       <Container fluid style={{ marginTop: "140px" }}>

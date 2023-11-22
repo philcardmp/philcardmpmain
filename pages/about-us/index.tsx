@@ -20,7 +20,7 @@ export default function AboutUs() {
     <>
       <Head>
         <title>Double Dribble</title>
-        <link rel="icon" href="/ddicon.jpeg" />
+        <link rel="icon" href="/DDicon.jpeg" />
       </Head>
 
       <NavigationBar />

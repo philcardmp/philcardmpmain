@@ -56,7 +56,7 @@ export default function Footer() {
               <span className="me-3">
                 <FontAwesomeIcon icon={faEnvelope} height={20} />
               </span>
-              <span className="fw-light text-black">philcardmp@gmail.com</span>
+              <span className="fw-light text-black">doubledribblehub@gmail.com</span>
             </p>
             <p className="d-flex justify-content-start align-items-start my-2 text-muted">
               <span className="me-3">

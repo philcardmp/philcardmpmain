@@ -32,7 +32,7 @@ const Home = () => {
     <div>
       <div className="max-w-7xl mx-auto">
         <Head>
-          <title>Phillipine Card Marketplace</title>
+          <title>Double Dribble</title>
           <link rel="icon" href="/DDicon.jpeg" />
         </Head>
 
