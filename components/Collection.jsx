@@ -475,6 +475,14 @@ export default function Collection() {
                 </button>
                 <button
                   className={`list-group-item ${
+                    activeFilter === "CHA" && "active-tab"
+                  }`}
+                  onClick={() => setActiveFilter("CHA")}
+                >
+                  Charlotte Hornets
+                </button>
+                <button
+                  className={`list-group-item ${
                     activeFilter === "CHI" && "active-tab"
                   }`}
                   onClick={() => setActiveFilter("CHI")}
